@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Laravel App!</h1>
+        <h1>Welcome to ShopEasy</h1>
     </header>
     <main>
         <p>This is a basic home page.</p>
