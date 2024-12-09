@@ -16,3 +16,8 @@ i will make a frontend and bacaend project. with laravel and react.
 - thank make model `php artisan make:model Order -m`
 - added some more field in the users table.
 - added some more field in the admin table.
+- added some more filed in colors table.
+- added some more filed in size table.
+- added some more filed in coupon table.
+- added some more filed in product table.
+
