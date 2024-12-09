@@ -28,3 +28,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - we also added relationship function in the models-> size.
 - also make checkValid functiobn in the model-> coupon.
 - added relationship function in the models-> order.
+- added some function in the models-> porduct
