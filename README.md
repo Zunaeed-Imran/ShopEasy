@@ -23,4 +23,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some more filed in the revied table.
 - added some more filed in the order table.
 - than we migrate `php artisan migrate`
-
+- than from models 'Admin' replace all content form models-> 'User'
+- than we add more content form model-> 'color.php' for many to many realationship.
+- we also added relationship function in the models-> size.
+- also make checkValid functiobn in the model-> coupon.
