@@ -31,5 +31,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some function in the models-> porduct.
 - added some function in models-> Review.
 - added some function in models-> User.
-- than run in terminal `php artisan make:migration create_order_product_table`
-- than run in terminal `php artisan make:migration create_color_product_table`
+- than create table `php artisan make:migration create_order_product_table`
+- than create another table `php artisan make:migration create_color_product_table`
