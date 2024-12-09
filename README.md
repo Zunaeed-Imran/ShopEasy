@@ -27,3 +27,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than we add more content form model-> 'color.php' for many to many realationship.
 - we also added relationship function in the models-> size.
 - also make checkValid functiobn in the model-> coupon.
+- added relationship function in the models-> order.
