@@ -11,3 +11,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make model `php artisan make:model Coloe -m`
 - than make model `php artisan make:model Size -m`
 - than make model `php artisan make:model Coupon -m`
+- than make model `php artisan make:model Product -m`
