@@ -33,4 +33,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some function in models-> User.
 - than create table `php artisan make:migration create_order_product_table`
 - than create another table `php artisan make:migration create_color_product_table`
+- than create another table `php artisan make:migration create_product_size_table`
 - 23.25
