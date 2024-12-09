@@ -20,4 +20,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some more filed in size table.
 - added some more filed in coupon table.
 - added some more filed in product table.
+- added some more filed in the revied table.
+- added some more filed in the order table.
+- than we migrate `php artisan migrate`
 
