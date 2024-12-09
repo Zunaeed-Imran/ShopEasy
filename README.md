@@ -14,3 +14,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make model `php artisan make:model Product -m`
 - than make model `php artisan make:model Review -m`
 - thank make model `php artisan make:model Order -m`
+- added some more field in the users table.
+- added some more field in the admin table.
