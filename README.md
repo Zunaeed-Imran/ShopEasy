@@ -38,3 +38,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than run migration `php artisan migrate`
 - added some content in admin factory.
 - added content on admin seeder and database seeder.
+- than we seed `php artisan db:seed`
