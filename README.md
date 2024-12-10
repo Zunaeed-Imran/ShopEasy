@@ -37,3 +37,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than added some foreign key in the product table order, size and color.
 - than run migration `php artisan migrate`
 - added some content in admin factory.
+- added content on admin seeder and database seeder.
