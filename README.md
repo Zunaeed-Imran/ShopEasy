@@ -39,3 +39,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some content in admin factory.
 - added content on admin seeder and database seeder.
 - than we seed `php artisan db:seed`
+- than make controller in admin `php artisan make:controller \Admin\AdminController`
