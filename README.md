@@ -36,3 +36,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than create another table `php artisan make:migration create_product_size_table`
 - than added some foreign key in the product table order, size and color.
 - than run migration `php artisan migrate`
+- added some content in admin factory.
