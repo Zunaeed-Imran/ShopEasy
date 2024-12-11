@@ -2,9 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminAdminController extends Controller
 {
-    //
+    // fetch and display today yesterday this month this year orders 
+    public function index(){
+        // get today's orders.
+        $todayOrders = Order::whereDay('created_at', Carbon::today())->get();
+        $yesterdayOrders = Order::whereDay('created_at', Carbon::yesterday())->get();
+        $monthOrders = Order::whereMonth('created_at', Carbon::now()->month)->get();
+        $yearOrders = Order::whereYear('created_at', Carbon::now()->year)->get();
+
+        return view('admin.index')->with([
+            'todayOrders' => $todayOrders,
+            'yesterdayOrders' => $yesterdayOrders,
+            'monthOrders' => $monthOrders,
+            'yearOrders' => $yearOrders
+        ]);
+
+    }
+
+    // Display the login form.
+    public function login(){
+        if(!auth()->guard('admin')->check()){
+            return view('admin.login');
+        }
+        return redirect('admin/dashboard');
+    }
+
+    // Auth Admin.
+    public function auth(){
+        if(!auth()->guard('admin')->check()){
+            return view('admin.login');
+        }
+        return redirect('admin/dashboard');
+    }
 }
