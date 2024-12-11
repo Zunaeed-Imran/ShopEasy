@@ -40,3 +40,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - added content on admin seeder and database seeder.
 - than we seed `php artisan db:seed`
 - than make controller in admin `php artisan make:controller \Admin\AdminController`
+- add content in the admin controller.
+- than we run `php artisan make:request AuthAdminRequest`
