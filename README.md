@@ -46,3 +46,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - make it true in 'AuthAdminRequest'.
 - in 'AuthAdminRequest' set email and password validation.
 - in 'auth' file set Guards, providers, and password for 'admins'.
+- Now we make Admin login page and index blade page.
+- then we setup the route for admin login page.
