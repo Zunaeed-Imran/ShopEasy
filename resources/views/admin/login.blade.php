@@ -12,7 +12,7 @@
     <div class="row justify-content-center"> 
       <div class="col-md-6 col-lg-4"> 
   <h1 class="text-center mb-4">Admin Login Page</h1>
-        <form action="">
+        <form action="{{route('admin.auth')}}" method="post">
             <div class="form-group mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
