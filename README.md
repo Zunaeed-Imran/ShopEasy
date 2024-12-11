@@ -44,3 +44,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than we run `php artisan make:request AuthAdminRequest`
 - add some function and controller in "admincontroller".
 - make it true in 'AuthAdminRequest'.
+- in 'AuthAdminRequest' set email and password validation.
