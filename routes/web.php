@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [AdminAdminController::class, 'login'])->name('admin.login');
+Route::get('admin/auth', [AdminAdminController::class, 'auth'])->name('admin.auth');
