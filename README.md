@@ -45,3 +45,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - add some function and controller in "admincontroller".
 - make it true in 'AuthAdminRequest'.
 - in 'AuthAdminRequest' set email and password validation.
+- in 'auth' file set Guards, providers, and password for 'admins'.
