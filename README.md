@@ -49,3 +49,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - Now we make Admin login page and index blade page.
 - then we setup the route for admin login page.
 - also added csrf token in the form.
+- set the route as in the form (it was post).
