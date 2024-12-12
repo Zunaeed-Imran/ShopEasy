@@ -50,3 +50,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - then we setup the route for admin login page.
 - also added csrf token in the form.
 - set the route as in the form (it was post).
+- than we added @session and @endsesstion in the login page.
+- than we make Adminmiddelware `php artisan make:middleware AdminMiddleware`

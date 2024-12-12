@@ -11,6 +11,11 @@
    <div class="container mt-5"> 
     <div class="row justify-content-center"> 
       <div class="col-md-6 col-lg-4"> 
+        @session('error')
+            <div class="alert alert-danger">
+              {{session('error')}}
+            </div>
+        @endsession
   <h1 class="text-center mb-4">Admin Login Page</h1>
         <form action="{{route('admin.auth')}}" method="post">
           @csrf
