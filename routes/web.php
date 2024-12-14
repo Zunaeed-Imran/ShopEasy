@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminAdminController::class, 'login'])->name('admin.login');
 Route::post('admin/auth', [AdminAdminController::class, 'auth'])->name('admin.auth');
-Route::middleware('admin');
+Route::get('admin/dashboard', [AdminAdminController::class, 'index'])->name('admin.index');
