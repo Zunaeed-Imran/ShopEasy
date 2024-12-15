@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdminAdminController::class, 'login'])->name('admin.login');
 Route::post('admin/auth', [AdminAdminController::class, 'auth'])->name('admin.auth');
+
 // Route::get('admin/dashboard', [AdminAdminController::class, 'index'])->name('admin.index');
+
 Route::middleware('admin')->group(function(){
   Route::get('admin/dashboard', [AdminAdminController::class, 'index'])->name('admin.index');
 });
