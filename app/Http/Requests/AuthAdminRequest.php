@@ -23,6 +23,8 @@ class AuthAdminRequest extends FormRequest
     {
         return [
             //
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:6|max:255'
         ];
     }
 }
