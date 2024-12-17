@@ -8,7 +8,7 @@ i will make a frontend and bacaend project. with laravel and react.
 
 ### project start process.
 - first i `php artisan make:model Admin -msf`
-- than make model `php artisan make:model Coloe -m`
+- than make model `php artisan make:model Color -m`
 - than make model `php artisan make:model Size -m`
 - than make model `php artisan make:model Coupon -m`
 - than make model `php artisan make:model Product -m`
@@ -39,7 +39,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some content in admin factory.
 - added content on admin seeder and database seeder.
 - than we seed `php artisan db:seed`
-- than make controller in admin `php artisan make:controller \Admin\AdminController`
+- than make controller in admin `php artisan make:controller \Admin\Controller`
 - add content in the admin controller.
 - than we run `php artisan make:request AuthAdminRequest`
 - add some function and controller in "admincontroller".
