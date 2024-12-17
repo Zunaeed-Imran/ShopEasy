@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ShopEasy
+i will make a frontend and bacaend project. with laravel and react.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## project setup process.
+- `composer create-project laravel/laravel your-project-name`
+- than run it `php artisan serve`
+- if download from git-hub i should `composer update` than `composer i` than `npm i` than i can run it.
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### project start process.
+- first i `php artisan make:model Admin -msf`
+- than make model `php artisan make:model Coloe -m`
+- than make model `php artisan make:model Size -m`
+- than make model `php artisan make:model Coupon -m`
+- than make model `php artisan make:model Product -m`
+- than make model `php artisan make:model Review -m`
+- thank make model `php artisan make:model Order -m`
+- added some more field in the users table.
+- added some more field in the admin table.
+- added some more filed in colors table.
+- added some more filed in size table.
+- added some more filed in coupon table.
+- added some more filed in product table.
+- added some more filed in the revied table.
+- added some more filed in the order table.
+- than we migrate `php artisan migrate`
+- than from models 'Admin' replace all content form models-> 'User'
+- than we add more content form model-> 'color.php' for many to many realationship.
+- we also added relationship function in the models-> size.
+- also make checkValid functiobn in the model-> coupon.
+- added relationship function in the models-> order.
+- added some function in the models-> porduct.
+- added some function in models-> Review.
+- added some function in models-> User.
+- than create table `php artisan make:migration create_order_product_table`
+- than create another table `php artisan make:migration create_color_product_table`
+- than create another table `php artisan make:migration create_product_size_table`
+- than added some foreign key in the product table order, size and color.
+- than run migration `php artisan migrate`
+- added some content in admin factory.
+- added content on admin seeder and database seeder.
+- than we seed `php artisan db:seed`
+- than make controller in admin `php artisan make:controller \Admin\AdminController`
+- add content in the admin controller.
+- than we run `php artisan make:request AuthAdminRequest`
+- add some function and controller in "admincontroller".
+- make it true in 'AuthAdminRequest'.
+- in 'AuthAdminRequest' set email and password validation.
+- in 'auth' file set Guards, providers, and password for 'admins'.
+- Now we make Admin login page and index blade page.
+- then we setup the route for admin login page.
+- also added csrf token in the form.
+- set the route as in the form (it was post).
+- than we added @session and @endsesstion in the login page.
+- than we make Adminmiddelware `php artisan make:middleware AdminMiddleware`
