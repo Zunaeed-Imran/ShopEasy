@@ -21,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address',
+        'city',
+        'zip_code',
+        'country',
+        'phone_number',
+        'profile_image',
+        'profile_completed'
     ];
 
     /**
@@ -44,5 +51,19 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class)->with('product')->latest();
+    }
+
+    public function image_path()
+    {
+        if ($this->profile_image) {
+            return asset('storage/image/users' . $this->profile_image);
+        } else {
+            return 'https://pixabay.com/illustrations/bot-colorful-robot-helper-friendly-4877998/';
+        }
     }
 }
