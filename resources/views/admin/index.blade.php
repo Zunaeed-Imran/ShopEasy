@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  @include('admin.layouts.sidebar')
+  {{-- @include('admin.layouts.sidebar') --}}
   <div class="col-md-9">
     <div class="row mt-5">
       <div class="col-md-12">
