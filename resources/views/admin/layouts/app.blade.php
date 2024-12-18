@@ -73,6 +73,7 @@
     <div class="container-fluid">
       <!-- content here -->
       @include('admin.layouts.sidebar')
+      @yield('content')
     </div>
     <!-- Jquery JS -->
     <script
