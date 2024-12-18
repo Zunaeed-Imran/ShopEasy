@@ -52,3 +52,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - set the route as in the form (it was post).
 - than we added @session and @endsesstion in the login page.
 - than we make Adminmiddelware `php artisan make:middleware AdminMiddleware`
+- than index blade file @extends admin layout app page added.
+- than add a js file in public js file.
+- than in app file set asset for css and js file.

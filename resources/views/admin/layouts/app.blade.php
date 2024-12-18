@@ -16,7 +16,7 @@
         <!-- DataTables CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" />
         <!-- Dashboard CSS -->
-        <link href="css/dashboard.css" rel="stylesheet">
+        <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -112,5 +112,5 @@
             });
         }
     </script>
-    <script src="js/colors.js"></script>
+    <script src="{{asset('js/colors.js')}}"></script>
 </html>
