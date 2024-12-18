@@ -57,7 +57,8 @@ class AdminController extends Controller
     // Logout the admin
     public function logout()
     {
-        auth()->guard('admin')->logout;
+        auth()->guard('admin')->logout(); // Add parentheses here
         return redirect()->route('admin.index');
     }
+
 }
