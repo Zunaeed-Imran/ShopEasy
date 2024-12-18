@@ -15,45 +15,45 @@
         <div class="card-body">
           <div class="row mb-2">
   {{-- first card --}}
-            <div class="col-md-6 mb-2">
-             <div class="card shadow-sm">
-              <div class="card-header bg-white">
-                <div class="d-flex justify-content-between">
-                  <strong class="badge bg-dark">
-                    Today's Orders
-                  </strong>
-                  <span class="badge bg-dark">
-                    {{ $todayOrders->count() }}
-                  </span>
-                </div>
-              </div>
-              <div class="card-footer text-center bg-white">
-                <strong>
-                  {{$todayOrders->sum('total')}}
-                </strong>
-              </div>
-              </div>
-            </div>
+<div class="col-md-6 mb-2">
+  <div class="card shadow-sm">
+  <div class="card-header bg-white">
+    <div class="d-flex justify-content-between">
+      <strong class="badge bg-dark">
+        Today's Orders
+      </strong>
+      <span class="badge bg-dark">
+        {{ $todayOrders->count() }}
+      </span>
+    </div>
+</div>
+  <div class="card-footer text-center bg-white">
+    <strong>
+      {{$todayOrders->sum('total')}}
+    </strong>
+  </div>
+</div>
+</div>
   {{-- second card --}}
-        <div class="col-md-6 mb-2">
-          <div class="card shadow-sm">
-            <div class="card-header bg-white">
-              <div class="d-flex justify-content-between">
-                <strong class="badge bg-dark">
-                  Yesterday's Orders
-                </strong>
-                <span class="badge bg-dark">
-                  {{ $yesterdayOrders->count() }}
-                </span>
-                </div>
-              </div>
-              <div class="card-footer text-center bg-white">
-                <strong>
-                  {{$yesterdayOrders->sum('total')}}
-                </strong>
-              </div>
-              </div>
-            </div>
+<div class="col-md-6 mb-2">
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <div class="d-flex justify-content-between">
+        <strong class="badge bg-dark">
+          Yesterday's Orders
+        </strong>
+        <span class="badge bg-dark">
+          {{ $yesterdayOrders->count() }}
+        </span>
+        </div>
+    </div>
+    <div class="card-footer text-center bg-white">
+      <strong>
+        {{$yesterdayOrders->sum('total')}}
+      </strong>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
