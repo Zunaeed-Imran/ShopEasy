@@ -39,10 +39,10 @@
   <div class="card shadow-sm">
     <div class="card-header bg-white">
       <div class="d-flex justify-content-between">
-        <strong class="badge bg-dark">
+        <strong class="badge bg-primary">
           Yesterday's Orders
         </strong>
-        <span class="badge bg-dark">
+        <span class="badge bg-primary">
           {{ $yesterdayOrders->count() }}
         </span>
         </div>
@@ -50,6 +50,46 @@
     <div class="card-footer text-center bg-white">
       <strong>
         {{$yesterdayOrders->sum('total')}}
+      </strong>
+    </div>
+  </div>
+</div>
+{{-- 3rd card --}}
+<div class="col-md-6 mb-2">
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <div class="d-flex justify-content-between">
+        <strong class="badge bg-danger">
+          This Month Orders
+        </strong>
+        <span class="badge bg-danger">
+          {{ $monthOrders->count() }}
+        </span>
+        </div>
+    </div>
+    <div class="card-footer text-center bg-white">
+      <strong>
+        {{ $monthOrders->sum('total')}}
+      </strong>
+    </div>
+  </div>
+</div>
+{{-- 4th card --}}
+<div class="col-md-6 mb-2">
+  <div class="card shadow-sm">
+    <div class="card-header bg-white">
+      <div class="d-flex justify-content-between">
+        <strong class="badge bg-success">
+          This Year Orders
+        </strong>
+        <span class="badge bg-success">
+          {{ $yearOrders->count() }}
+        </span>
+        </div>
+    </div>
+    <div class="card-footer text-center bg-white">
+      <strong>
+        {{ $yearOrders->sum('total')}}
       </strong>
     </div>
   </div>
