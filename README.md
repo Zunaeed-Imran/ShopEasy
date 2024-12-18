@@ -55,3 +55,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than index blade file @extends admin layout app page added.
 - than add a js file in public js file.
 - than in app file set asset for css and js file.
+- than setup the dashboard frontend.
+- than set the logout form and route.
