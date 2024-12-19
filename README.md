@@ -60,3 +60,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - #### than we work on 'color' 
 - we make controller `php artisan make:controller \ColorController --model=Color`
 - than edit ColorController and added some function.
+- than make request `php artisan make:request AddColorRequest`
+- than added some more function and request in colorController.
+- 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddColorRequest;
 use App\Models\Color;
 use Illuminate\Http\Request;
 
@@ -30,9 +31,15 @@ class ColorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddColorRequest $request)
     {
         //
+        if($request->validated()){
+            Color::create($request->validated());
+            return redirect()->route('admin.colors.index')->with([
+                'success' => 'Color has been added successfully'
+            ]);
+        }
     }
 
     /**
