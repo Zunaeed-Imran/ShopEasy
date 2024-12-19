@@ -68,3 +68,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - than we set route for the colors.
 - make it true in AddColorRequest and set return name unique.
 - added some condation in updateColor controller using this to overwrite the require.
+- working on making blade file for colors.
+- for optimizing command in laravel 11 `php artisan optimize`
+- 
