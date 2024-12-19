@@ -64,3 +64,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than added some more function and request in colorController, updaten, show, store etc function.
 - than make update request `php artisan make:request UpdateColorRequest`
 - than set update request in the color controller in update function.
+- than we see the lsit of route `php artisan route:list`
+- than we set route for the colors.
