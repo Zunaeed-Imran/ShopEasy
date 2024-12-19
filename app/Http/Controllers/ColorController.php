@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddColorRequest;
+use App\Http\Requests\UpdateColorRequest;
 use App\Models\Color;
 use Illuminate\Http\Request;
 
@@ -48,6 +49,7 @@ class ColorController extends Controller
     public function show(Color $color)
     {
         //
+        abort(404);
     }
 
     /**
@@ -56,14 +58,23 @@ class ColorController extends Controller
     public function edit(Color $color)
     {
         //
+        return view('admin.colors.edit')->with([
+            'color' => $color
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Color $color)
+    public function update(UpdateColorRequest $request, Color $color)
     {
         //
+        if($request->validated()){
+            $color->update($request->validated());
+            return redirect()->route('admin.colors.index')->with([
+                'success' => 'Color has been updated sucessfully'
+            ]);
+        }
     }
 
     /**
@@ -72,5 +83,10 @@ class ColorController extends Controller
     public function destroy(Color $color)
     {
         //
+        $color->delete();
+        return redirect()->route('admin.colors.index')->with([
+            'success' => 'Color has been deleted sucessfully'
+        ]);
+
     }
 }

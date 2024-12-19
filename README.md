@@ -61,5 +61,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - we make controller `php artisan make:controller \ColorController --model=Color`
 - than edit ColorController and added some function.
 - than make request `php artisan make:request AddColorRequest`
-- than added some more function and request in colorController.
-- 
+- than added some more function and request in colorController, updaten, show, store etc function.
+- than make update request `php artisan make:request UpdateColorRequest`
+- than set update request in the color controller in update function.
