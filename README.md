@@ -57,3 +57,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - than in app.blade file set asset for css and js file.
 - than setup the dashboard frontend in index.blade file.
 - than set the logout form in sidebar.blade and route in web file.
+- #### than we work on 'color' 
+- we make controller `php artisan make:controller \ColorController --model=Color`
+- than edit ColorController and added some function.
