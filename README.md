@@ -70,4 +70,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - added some condation in updateColor controller using this to overwrite the require.
 - working on making blade file for colors.
 - for optimizing command in laravel 11 `php artisan optimize`
-- 
+- using prefix() in route.
