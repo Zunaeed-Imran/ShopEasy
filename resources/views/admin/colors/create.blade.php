@@ -14,6 +14,9 @@
                     <h1 class="mt-2">Colors Dashboard</h1>
                     <hr>
                 </div>
+                <div>
+                  
+                </div>
             </div>
         </div>
     </div>
