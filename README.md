@@ -66,3 +66,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than set update request in the color controller in update function.
 - than we see the lsit of route `php artisan route:list`
 - than we set route for the colors.
+- make it true in AddColorRequest and set return name unique.
+- added some condation in updateColor controller using this to overwrite the require.

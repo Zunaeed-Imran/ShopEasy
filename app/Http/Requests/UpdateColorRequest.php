@@ -11,7 +11,7 @@ class UpdateColorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,7 @@ class UpdateColorRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|max:255|unique:colors,name'.$this->color->id,
         ];
     }
 }
