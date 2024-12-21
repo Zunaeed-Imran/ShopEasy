@@ -73,4 +73,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - using prefix() in route.
 - i make mistake i don't migrate everything in the video with this command migrate the specific table `php artisan make:migration name_i_want` (but i don't use this command for now)
 - add those migration i need and i mistalekly was not added those table [users, colors, size, coupons, product, review, orders.]
-- (video-26:00 sec)
+- than i run `php artisan migrate:refresh` and then run `php artisan db:seed` and it all working currectly.
+- 
