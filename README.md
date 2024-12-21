@@ -72,3 +72,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - for optimizing command in laravel 11 `php artisan optimize`
 - using prefix() in route.
 - i make mistake i don't migrate everything in the video with this command migrate the specific table `php artisan make:migration name_i_want`
+- (video-26:00 sec)
