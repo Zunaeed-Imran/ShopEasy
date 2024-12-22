@@ -28,9 +28,9 @@ Add new color
               </tr>
             </thead>
             <tbody>
-              @foreach ($colors as $color)
+              @foreach ($colors as $key => $color)
               <tr>
-                <th scope="row">{{$color->id}}</th>
+                <th scope="row">{{$key += 1}}</th>
                 <td>{{$color->name}}</td>
                 <td>
                   <a href="{{route('admin.colors.edit', $color->id)}}" class="btn btn-sm btn-warning">
