@@ -79,3 +79,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - set foreach for id even if delete one.
 - fix the error of the edit colors (UpdateColorRequest.php)
 - #### working on Create update and delete on Size.
+- we make controller `php artisan make:controller \SizeController --model=Size`
+- than make request `php artisan make:request AddSizeRequest`
+- than make update request `php artisan make:request UpdateSizeRequest`
