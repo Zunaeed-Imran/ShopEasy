@@ -39,7 +39,7 @@ Add new color
                   <a href="#" onclick="deleteItem({{$color->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
                   </a>
-                  <form id="{{$color->id}}" action="{{('admin.colors.destroy', $color->id)}}" method="post">
+                  <form id="{{$color->id}}" action="{{route('admin.colors.destroy', $color->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                   </form>
