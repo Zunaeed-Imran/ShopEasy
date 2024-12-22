@@ -23,7 +23,7 @@ Add new color
                   <label for="name" class="form-label">Color</label>
                   <input type="name" class="form-control @error('name')
                                                       is-invalid
-                                                    @enderror" id="name" name="name" placeholder="Enter Name">
+                                                    @enderror" id="name" name="name" placeholder="Enter Name" value="{{old('name')}}">
                   @error('name')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
