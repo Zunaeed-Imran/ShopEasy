@@ -29,7 +29,7 @@ Edit Color
                       id="name" 
                       name="name" 
                       placeholder="Enter Name"
-                      value="{{old('name', $color->name)}}">
+                      value="{{$color->name, old('name')}}">
                     @error('name')
                       <span class="invalid-feedback">
                         <strong>{{ $message }}</strong>
