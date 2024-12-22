@@ -77,3 +77,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - working on displaying the colors.
 - working on color delete and facing error was 'route' not write in form.
 - set foreach for id even if delete one.
+- fix the error of the edit colors (UpdateColorRequest.php)
+- #### working on Create update and delete on Size.
