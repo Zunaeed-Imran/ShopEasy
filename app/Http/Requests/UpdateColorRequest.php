@@ -23,7 +23,7 @@ class UpdateColorRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|max:255|unique:colors,name'.$this->color->id,
+            'name' => 'required|max:255|unique:colors,name,'.$this->color->id, // If name of tge color is same as before
         ];
     }
 }
