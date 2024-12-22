@@ -75,4 +75,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - add those migration i need and i mistalekly was not added those table [users, colors, size, coupons, product, review, orders.]
 - than i run `php artisan migrate:refresh` and then run `php artisan db:seed` and it all working currectly.
 - working on displaying the colors.
-- 30:00
+- working on color delete and facing error was 'route' not write in form.
+- set foreach for id even if delete one.
