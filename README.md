@@ -82,3 +82,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - we make controller `php artisan make:controller \SizeController --model=Size`
 - than make request `php artisan make:request AddSizeRequest`
 - than make update request `php artisan make:request UpdateSizeRequest`
+- size controller added function.
+- 05:07 sec.

@@ -16,7 +16,7 @@
               {{session('error')}}
             </div>
         @endsession
-  <h1 class="text-center mb-4">Admin Login Page</h1>
+  <h1 class="text-center mb-4">ShopEasy Admin Login Page</h1>
         <form action="{{route('admin.auth')}}" method="post">
           @csrf
             <div class="form-group mb-3">

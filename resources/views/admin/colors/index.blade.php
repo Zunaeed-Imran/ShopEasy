@@ -24,7 +24,7 @@ Add new color
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Option</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
