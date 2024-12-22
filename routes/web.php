@@ -24,7 +24,7 @@ Route::middleware('admin')->group(function () {
                 'create' => 'admin.colors.create',
                 'store' => 'admin.colors.store',
                 'edit' => 'admin.colors.edit',
-                'update' => 'admin.colors.edit',
+                'update' => 'admin.colors.update',
                 'destroy' => 'admin.colors.destroy'
             ]
         ]);
