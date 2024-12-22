@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Add new color
+Edit Color
 @endsection
 
 @section('content')
@@ -22,14 +22,14 @@ Add new color
                 @method('PUT')
                 <div class="form-group mb-3">
                   <label for="name" class="form-label">Edit Name</label>
-                  <input type="name" class="form-control 
+                  <input type="text" class="form-control 
                     @error('name')
                       is-invalid
                     @enderror" 
                       id="name" 
                       name="name" 
                       placeholder="Enter Name"
-                      value="{{$color->name, old('name')}}">
+                      value="{{old('name', $color->name)}}">
                     @error('name')
                       <span class="invalid-feedback">
                         <strong>{{ $message }}</strong>
