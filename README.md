@@ -86,3 +86,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - adding all function we need in request and updaterequest.
 - added blade file for sizes.
 - also added sweet alert in app.blade file for update and added a new.
+- #### working on create update and delete on Coupons.
+- 
