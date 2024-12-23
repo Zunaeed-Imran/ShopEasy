@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateCouponRequest;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,9 @@ class CouponController extends Controller
     public function index()
     {
         //
+        return view('admin.coupons.index')->with([
+            'coupons' => Coupon::latest()->get()
+        ]);
     }
 
     /**
@@ -21,6 +25,7 @@ class CouponController extends Controller
     public function create()
     {
         //
+        return view('admin.coupons.create');
     }
 
     /**
@@ -29,6 +34,12 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         //
+        if ($request->validated()) {
+            Coupon::create($request->validated());
+            return redirect()->route('admin.coupons.index')->with([
+                'success' => 'Coupon has been added successfully'
+            ]);
+        }
     }
 
     /**
@@ -37,6 +48,7 @@ class CouponController extends Controller
     public function show(Coupon $coupon)
     {
         //
+        abort(404);
     }
 
     /**
@@ -45,14 +57,23 @@ class CouponController extends Controller
     public function edit(Coupon $coupon)
     {
         //
+        return view('admin.coupons.edit')->with([
+            'coupon' => $coupon
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Coupon $coupon)
+    public function update(UpdateCouponRequest $request, Coupon $coupon)
     {
         //
+        if ($request->validated()) {
+            $coupon->update($request->validated());
+            return redirect()->route('admin.coupons.index')->with([
+                'success' => 'Coupon has been updated sucessfully'
+            ]);
+        }
     }
 
     /**
@@ -61,5 +82,9 @@ class CouponController extends Controller
     public function destroy(Coupon $coupon)
     {
         //
+        $coupon->delete();
+        return redirect()->route('admin.coupons.index')->with([
+            'success' => 'Coupon has been deleted sucessfully'
+        ]);
     }
 }
