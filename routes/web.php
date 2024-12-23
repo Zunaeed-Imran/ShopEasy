@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\SizeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -26,6 +27,17 @@ Route::middleware('admin')->group(function () {
                 'edit' => 'admin.colors.edit',
                 'update' => 'admin.colors.update',
                 'destroy' => 'admin.colors.destroy'
+            ]
+        ]);
+        // sizes route
+        Route::resource('sizes', SizeController::class, [
+            'names' => [
+                'index' => 'admin.sizes.index',
+                'create' => 'admin.sizes.create',
+                'store' => 'admin.sizes.store',
+                'edit' => 'admin.sizes.edit',
+                'update' => 'admin.sizes.update',
+                'destroy' => 'admin.sizes.destroy'
             ]
         ]);
     });
