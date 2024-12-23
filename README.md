@@ -83,4 +83,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make request `php artisan make:request AddSizeRequest`
 - than make update request `php artisan make:request UpdateSizeRequest`
 - size controller added function.
-- 05:07 sec.
+- adding all function we need in request and updaterequest.
+- added blade file for sizes.
+- also added sweet alert in app.blade file for update and added a new.
