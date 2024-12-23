@@ -11,7 +11,7 @@ class UpdateSizeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,7 @@ class UpdateSizeRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|max:255|unique:sizes,name,' . $this->size->id, // If name of tge color is same as before
         ];
     }
 }
