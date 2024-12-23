@@ -87,4 +87,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - added blade file for sizes.
 - also added sweet alert in app.blade file for update and added a new.
 - #### working on create update and delete on Coupons.
-- 
+- make controller `php artisan make:controller \CouponController --model=Coupon`
+- make request `php artisan make:request AddCouponRequest`
+- make UpdateRequerst `php artisan make:request UpdateCouponRequest`
