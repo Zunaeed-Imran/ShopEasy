@@ -90,4 +90,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - make controller `php artisan make:controller \CouponController --model=Coupon`
 - make request `php artisan make:request AddCouponRequest`
 - make UpdateRequerst `php artisan make:request UpdateCouponRequest`
-- 4:40 sec coupon
+- controller, request, updateRequest added custom function and messages.
+- making route for the coupons.
