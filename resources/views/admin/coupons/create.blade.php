@@ -21,9 +21,10 @@ Add new coupon
                 @csrf
                 <div class="form-group mb-3">
                   <label for="name" class="form-label">Coupon</label>
-                  <input type="name" class="form-control @error('name')
-                                                      is-invalid
-                                                    @enderror" id="name" name="name" placeholder="Enter Coupon" value="{{old('name')}}">
+                  <input type="name" class="form-control 
+                  @error('name')
+                      is-invalid
+                    @enderror" id="name" name="name" placeholder="Enter Coupon" value="{{old('name')}}">
                   @error('name')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
@@ -33,9 +34,10 @@ Add new coupon
                 {{-- Discount --}}
                 <div class="form-group mb-3">
                   <label for="name" class="form-label">Discount</label>
-                  <input type="name" class="form-control @error('discount')
-                                                      is-invalid
-                                                    @enderror" id="discount" name="discount" placeholder="Discount" value="{{old('discount')}}">
+                  <input type="name" class="form-control 
+                  @error('discount')
+                    is-invalid
+                  @enderror" id="discount" name="discount" placeholder="Discount" value="{{old('discount')}}">
                   @error('discount')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
