@@ -50,9 +50,9 @@ Add new coupon
                     @enderror" 
                     id="valid_until" 
                     name="valid_until" 
-                    min="{{\Carbon\Carbon::now()->addDays(1)}}"
                     {{-- set validity only can select today date. --}}
-                    value="{{\Carbon\Carbon::now()->format('Y-m-d\Th:i:s')}}"
+                    min="{{ \Carbon\Carbon::now()->addDays(1)->format('Y-m-d\TH:i') }}"
+                    value="{{\Carbon\Carbon::now()->format('y-m-d\Th:i:')}}"
                     placeholder="Validity">
                   @error('valid_until')
                   <span class="invalid-feedback">
