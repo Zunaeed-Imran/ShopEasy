@@ -35,7 +35,18 @@
                 <th scope="row">{{$key += 1}}</th>
                 <td>{{$coupon->name}}</td>
                 <td>{{$coupon->discount}}</td>
-                <td>{{$coupon->valid_until}}</td>
+                {{-- <td>{{$coupon->valid_until}}</td> --}}
+                <td>
+                  @if($coupon->checkIfValid())
+                    <span class="bg-success border border-dark p-1 text-white">
+                      Valid until {{\Carbon\Carbon::parse($coupon->valid_until)->diffForHumans()}}
+                    </span>
+                  @else
+                    <span class="bg-danger border border-dark p-1 text-white">
+                      Expired
+                    </span>
+                  @endif
+                </td>
                 <td>
                   <a href="{{route('admin.coupons.edit', $coupon->id)}}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
