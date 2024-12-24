@@ -96,3 +96,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - making create.blade page add validity set for only can start from after today.
 - in model->coupon set the value to uppercase so that input value can store in upperCase.
 - set validation condation in index page.
+- 22:49
