@@ -92,3 +92,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - make UpdateRequerst `php artisan make:request UpdateCouponRequest`
 - controller, request, updateRequest added custom function and messages.
 - making route for the coupons.
+- making idnex.blade page for coupon.
+- making create.blade page add validity set for only can start from after today.
