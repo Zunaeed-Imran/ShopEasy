@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title')
-  Sizes
+  Coupons
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
     <div class="row mt-2">
       <div class="col-md-12">
         <div class="card-header bg-white d-flex justify-content-between align-items-center">
-          <h1 class="mt-2">Sizes ({{$sizes->count()}})</h1>
-          <a href="{{route('admin.sizes.create')}}" class="btn btn-sm btn-primary">
+          <h1 class="mt-2">Coupons ({{$coupons->count()}})</h1>
+          <a href="{{route('admin.coupons.create')}}" class="btn btn-sm btn-primary">
             <i class="fas fa-plus"></i>
           </a>
         </div>
@@ -24,22 +24,26 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Validity</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($sizes as $key => $size)
+              @foreach ($coupons as $key => $coupon)
               <tr>
                 <th scope="row">{{$key += 1}}</th>
-                <td>{{$size->name}}</td>
+                <td>{{$coupon->name}}</td>
+                <td>{{$coupon->discount}}</td>
+                <td>{{$coupon->valid_until}}</td>
                 <td>
-                  <a href="{{route('admin.sizes.edit', $size->id)}}" class="btn btn-sm btn-warning">
+                  <a href="{{route('admin.coupons.edit', $coupon->id)}}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
                   </a>
-                  <a href="#" onclick="deleteItem({{$size->id}})" class="btn btn-sm btn-danger">
+                  <a href="#" onclick="deleteItem({{$coupon->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
                   </a>
-                  <form id="{{$size->id}}" action="{{route('admin.sizes.destroy', $size->id)}}" method="post">
+                  <form id="{{$coupon->id}}" action="{{route('admin.coupons.destroy', $coupon->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                   </form>
