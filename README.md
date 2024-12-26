@@ -98,4 +98,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - set validation condation in index page.
 - in edit coupon i have facing problem in 'updateCouponrequest' and i added a rule function form Chat GPT, and then it worked.
 - #### working on create update and delete product part 1.
--  
+- make controller `php artisan make:controller \ProductController --model=Product`
+- make request `php artisan make:request AddProductRequest`
+- make UpdateRequerst `php artisan make:request UpdateProductRequest`
