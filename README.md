@@ -104,4 +104,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - set route for products.
 - in controller in store function set the image if empty also can added.
 - in controller making fucntion (create, store, edit, update, delete).
-- 
+- 23:28

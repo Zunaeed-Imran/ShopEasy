@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -158,5 +159,18 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with([
                 'success' => 'Product has been deleted successfully'
             ]);
+    }
+    // Save image in the storage.
+    public function saveImage($file){
+        $image_name = time().'_'.$file->getClientOriginalName();
+        $file->storeAs('images/products', $image_name, 'public');
+        return 'storage/images/products'.$image_name;
+    }
+    // remove product image from storage.
+    public function removeProductImageFromStorage($file){
+        $path = public_path('storage/images/products'.$file);
+        if(File::exists($path)){
+            File::delete($path);
+        };
     }
 }
