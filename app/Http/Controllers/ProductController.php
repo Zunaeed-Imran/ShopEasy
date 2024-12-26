@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Size;
+use App\Models\Color;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\AddProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -13,6 +18,9 @@ class ProductController extends Controller
     public function index()
     {
         //
+        return view('admin.products.index')->with([
+            'coupons' => Product::with(['colors', 'sizes'])->latest()->get()
+        ]);
     }
 
     /**
@@ -21,14 +29,45 @@ class ProductController extends Controller
     public function create()
     {
         //
+        $colors = Color::all();
+        $sizes = Size::all();
+        return view('admin.products.create')->with([
+            'colors' => $colors,
+            'sizes' => $sizes
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddProductRequest $request)
     {
         //
+        if ($request->validated()) {
+            $data = $request->all();
+            $data['thumbnail'] = $this->saveImage($request->file('thumbnail'));
+        // Check if admin upload first image
+            if($request->has('first_image')){
+                $data['first_image'] = $this->saveImage($request->file('first_image'));
+            }
+        // Check if admin upload second image    
+            if($request->has('second_image')){
+                $data['second_image'] = $this->saveImage($request->file('second_image'));
+            }
+        // Check if admin upload third image
+            if($request->has('third_image')){
+                $data['third_image'] = $this->saveImage($request->file('third_image'));
+            }
+        // add the slug
+            $data['slug'] = Str::slug($request->name);
+            $product = Product::create($data);
+            $product->colors()->sync($request->color_id);
+            $product->sizes()->sync($request->size_id);
+
+            return redirect()->route('admin.products.index')->with([
+                'success' => 'Product has been added successfully'
+            ]);
+        }
     }
 
     /**
@@ -37,6 +76,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        abort(404);
     }
 
     /**
@@ -45,14 +85,61 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         //
+        //
+        $colors = Color::all();
+        $sizes = Size::all();
+        return view('admin.products.create')->with([
+            'colors' => $colors,
+            'sizes' => $sizes,
+            'product' => $product
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product)
     {
         //
+        if ($request->validated()) {
+            $data = $request->all();
+            if ($request->has('first_image')) {
+                // remove the old thumbnail
+                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                // sotre the new thumbnail
+                $data['thumbnail'] = $this->saveImage($request->file('thumbnail'));
+            }
+            // Check if admin upload first image
+            if ($request->has('first_image')) {
+                // remove the old first_image
+                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                // sotre the new first_image
+                $data['first_image'] = $this->saveImage($request->file('first_image'));
+            }
+            // Check if admin upload second image    
+            if ($request->has('second_image')) {
+                // remove the old second_image
+                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                // sotre the new second_image
+                $data['second_image'] = $this->saveImage($request->file('second_image'));
+            }
+            // Check if admin upload third image
+            if ($request->has('third_image')) {
+                // remove the old third_image
+                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                // sotre the new third_image
+                $data['third_image'] = $this->saveImage($request->file('third_image'));
+            }
+            // add the slug
+            $data['slug'] = Str::slug($request->name);
+            $product->update($data);
+            $product->colors()->sync($request->color_id);
+            $product->sizes()->sync($request->size_id);
+
+            return redirect()->route('admin.products.index')->with([
+                'success' => 'Product has been updated successfully'
+            ]);
+        }
     }
 
     /**

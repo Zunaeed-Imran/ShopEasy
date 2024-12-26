@@ -102,3 +102,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - make request `php artisan make:request AddProductRequest`
 - make UpdateRequerst `php artisan make:request UpdateProductRequest`
 - set route for products.
+- in controller in store function set the image if empty also can added.
+- in controller making fucntion (create, store, edit, update, delete).
+- 
