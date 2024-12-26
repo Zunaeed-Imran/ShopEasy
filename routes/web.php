@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 
 // Route::get('/', function () {
@@ -50,6 +51,17 @@ Route::middleware('admin')->group(function () {
                 'edit' => 'admin.coupons.edit',
                 'update' => 'admin.coupons.update',
                 'destroy' => 'admin.coupons.destroy'
+            ]
+        ]);
+        // products route
+        Route::resource('products', ProductController::class, [
+            'names' => [
+                'index' => 'admin.products.index',
+                'create' => 'admin.products.create',
+                'store' => 'admin.products.store',
+                'edit' => 'admin.products.edit',
+                'update' => 'admin.products.update',
+                'destroy' => 'admin.products.destroy'
             ]
         ]);
     });

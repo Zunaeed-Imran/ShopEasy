@@ -101,3 +101,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - make controller `php artisan make:controller \ProductController --model=Product`
 - make request `php artisan make:request AddProductRequest`
 - make UpdateRequerst `php artisan make:request UpdateProductRequest`
+- set route for products.
