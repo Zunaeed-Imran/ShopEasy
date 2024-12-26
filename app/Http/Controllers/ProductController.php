@@ -147,6 +147,16 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        // remove product images
+        $this->removeProductImageFromStorage($product->thumbnail);
+        $this->removeProductImageFromStorage($product->first_image);
+        $this->removeProductImageFromStorage($product->second_image);
+        $this->removeProductImageFromStorage($product->third_image);
+        // delete product
+        $product->delete();
+
+        return redirect()->route('admin.products.index')->with([
+                'success' => 'Product has been deleted successfully'
+            ]);
     }
 }
