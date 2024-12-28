@@ -82,6 +82,107 @@ Add new Product
                       @enderror
                   </select>
                 </div>
+                {{-- for size id --}}
+                <div class="form-group mb-3">
+                  <label for="color_id" class="my-2">Choose a size</label>
+                  <select 
+                    name="size_id[]" 
+                    id="size_id" 
+                    class="form-control 
+                      @error('size_id')
+                        is-invalid
+                      @enderror"
+                    multiple
+                    >
+                      @foreach ($sizes as $size)
+                          <option @if(collect(old('size_id'))->contains($size->id)) selected @endif
+                            value="{{$size->id}}">
+                            {{$size->name}}
+                          </option>
+                      @endforeach
+                      @error('size_id')
+                        <span class="invalid-feedback">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                  </select>
+                </div>
+                {{-- for description --}}
+                 <div class="form-group mb-3">
+                  <label class="form-label">Description</label>
+                  <textarea 
+                  rows="10" 
+                  type="text" 
+                  class="form-control 
+                  summernote
+                  @error('desc')
+                    is-invalid
+                  @enderror" id="desc" name="desc" placeholder="Description"
+                  >
+                  {{old('desc')}}
+                  </textarea>
+                  @error('desc')
+                  <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                {{-- for thumbnail image --}}
+                <div class="form-group mb-3">
+                  <label class="form-label">Thumbnail</label>
+                  <input type="file" class="form-control 
+                  @error('thumbnail')
+                    is-invalid
+                  @enderror" id="thumbnail" name="thumbnail"
+                  >
+                  @error('thumbnail')
+                  <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                {{-- for first image --}}
+                <div class="form-group mb-3">
+                  <label class="form-label">First Image</label>
+                  <input type="file" class="form-control 
+                  @error('first_image')
+                    is-invalid
+                  @enderror" id="first_image" name="first_image"
+                  >
+                  @error('first_image')
+                  <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                {{-- for second image --}}
+                <div class="form-group mb-3">
+                  <label class="form-label">Second Image</label>
+                  <input type="file" class="form-control 
+                  @error('second_image')
+                    is-invalid
+                  @enderror" id="second_image" name="second_image"
+                  >
+                  @error('second_image')
+                  <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                {{-- for third image --}}
+                <div class="form-group mb-3">
+                  <label class="form-label">Third Image</label>
+                  <input type="file" class="form-control 
+                  @error('third_image')
+                    is-invalid
+                  @enderror" id="third_image" name="third_image"
+                  >
+                  @error('third_image')
+                  <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
                 <button type="submit" class="btn btn-dark d-block mx-auto">Submit</button>
               </form>
             </div>
