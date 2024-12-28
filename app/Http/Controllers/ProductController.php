@@ -6,7 +6,6 @@ use App\Models\Size;
 use App\Models\Color;
 use App\Models\Product;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Requests\AddProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\File;
@@ -20,7 +19,7 @@ class ProductController extends Controller
     {
         //
         return view('admin.products.index')->with([
-            'coupons' => Product::with(['colors', 'sizes'])->latest()->get()
+            'products' => Product::with(['colors', 'sizes'])->latest()->get()
         ]);
     }
 
