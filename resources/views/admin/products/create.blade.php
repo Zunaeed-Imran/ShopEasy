@@ -141,6 +141,15 @@ Add new Product
                   </span>
                   @enderror
                 </div>
+                <div class="mt-2">
+                  <img 
+                  src="#" 
+                  id="thumbnail_preview" 
+                  class="d-none img-fluid rounded mb-2"
+                  width="100"
+                  height="100"
+                  alt="thumbnailImage">
+                </div>
                 {{-- for first image --}}
                 <div class="form-group mb-3">
                   <label class="form-label">First Image</label>
