@@ -108,3 +108,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - making the blade file.
 - set input form for images
 - making some function for handleImageInputChange for image in app.blade file in the layout folder.
+- in the form set enctype for image input.
+- also after create a product i need link the image to show `php artisan storage:link`

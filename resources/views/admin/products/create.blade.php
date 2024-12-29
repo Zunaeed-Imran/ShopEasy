@@ -17,7 +17,7 @@ Add new Product
         <div class="card-body">
           <div class="row">
             <div class="col-md-6 mx-auto">
-              <form action="{{ route('admin.products.store') }}" method="post">
+              <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3">
                   <label for="name" class="form-label">Product</label>
