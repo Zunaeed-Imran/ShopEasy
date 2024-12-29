@@ -54,32 +54,34 @@
                 </td>
                 <td>{{$product->qty}}</td>
                 <td>{{$product->price}}</td>
-                <td>
+                <div class="d-flex flex-column">
+                  <td>
                   <img 
                     src="{{asset($product->thumbnail)}}" 
                     alt="{{$product->name}}" 
-                    class="img-fluid rounded"
-                    width="60"
-                    height="60">
+                    class="img-fluid rounded mb-1"
+                    width="30"
+                    height="30">
                   <img 
                     src="{{asset($product->first_image)}}" 
                     alt="{{$product->name}}" 
-                    class="img-fluid rounded"
-                    width="60"
-                    height="60">
+                    class="img-fluid rounded mb-1"
+                    width="30"
+                    height="30">
                   <img 
                     src="{{asset($product->second_image)}}" 
                     alt="{{$product->name}}" 
-                    class="img-fluid rounded"
-                    width="60"
-                    height="60">
+                    class="img-fluid rounded mb-1"
+                    width="30"
+                    height="30">
                   <img 
                     src="{{asset($product->third_image)}}" 
                     alt="{{$product->name}}" 
-                    class="img-fluid rounded"
-                    width="60"
-                    height="60">
+                    class="img-fluid rounded mb-1"
+                    width="30"
+                    height="30">
                 </td>
+                </div>
                 <td>
                   @if ($product->status)
                       <span class="badge bg-success p-2">
