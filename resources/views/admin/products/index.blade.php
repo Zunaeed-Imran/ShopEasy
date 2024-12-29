@@ -61,6 +61,24 @@
                     class="img-fluid rounded"
                     width="60"
                     height="60">
+                  <img 
+                    src="{{asset($product->first_image)}}" 
+                    alt="{{$product->name}}" 
+                    class="img-fluid rounded"
+                    width="60"
+                    height="60">
+                  <img 
+                    src="{{asset($product->second_image)}}" 
+                    alt="{{$product->name}}" 
+                    class="img-fluid rounded"
+                    width="60"
+                    height="60">
+                  <img 
+                    src="{{asset($product->third_image)}}" 
+                    alt="{{$product->name}}" 
+                    class="img-fluid rounded"
+                    width="60"
+                    height="60">
                 </td>
                 <td>
                   @if ($product->status)
