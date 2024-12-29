@@ -144,7 +144,7 @@ Edit Product
                 </div>
                 <div class="mt-2">
                   <img 
-                  src="#" 
+                  src="{{asset($product->thumbnail)}}" 
                   id="thumbnail_preview" 
                   class="d-none img-fluid rounded mb-2"
                   width="100"
@@ -167,9 +167,9 @@ Edit Product
                 </div>
                 <div class="mt-2">
                   <img 
-                  src="#" 
+                  src="{{asset($product->first_image)}}" 
                   id="first_image_preview" 
-                  class="d-none img-fluid rounded mb-2"
+                  class="@if($product->first_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="firstImage">
@@ -190,9 +190,9 @@ Edit Product
                 </div>
                 <div class="mt-2">
                   <img 
-                  src="#" 
+                  src="{{asset($product->second_image)}}" 
                   id="second_image_preview" 
-                  class="d-none img-fluid rounded mb-2"
+                  class="@if($product->second_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="secondImage">
@@ -213,9 +213,9 @@ Edit Product
                 </div>
                 <div class="mt-2">
                   <img 
-                  src="#" 
+                  src="{{asset($product->third_image)}}" 
                   id="third_image_preview" 
-                  class="d-none img-fluid rounded mb-2"
+                  class="@if($product->third_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="thirdlImage">
