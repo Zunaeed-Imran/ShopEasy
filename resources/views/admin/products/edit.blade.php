@@ -17,7 +17,7 @@ Edit Product
         <div class="card-body">
           <div class="row">
             <div class="col-md-6 mx-auto">
-              <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('admin.products.update', $product->slug) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group mb-3">
