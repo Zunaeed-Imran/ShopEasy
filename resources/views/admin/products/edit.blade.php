@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title')
-Add new Product
+Edit Product
 @endsection
 
 @section('content')
@@ -11,20 +11,21 @@ Add new Product
     <div class="row mt-2">
       <div class="col-md-12">
         <div class="card-header bg-white">
-          <h1 class="mt-2">Add Product</h1>
+          <h1 class="mt-2">Edit Product</h1>
           <hr>
         </div>
         <div class="card-body">
           <div class="row">
             <div class="col-md-6 mx-auto">
-              <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="form-group mb-3">
                   <label for="name" class="form-label">Product</label>
                   <input type="text" class="form-control 
                   @error('name')
                     is-invalid
-                  @enderror" id="name" name="name" placeholder="Enter Name" value="{{old('name')}}">
+                  @enderror" id="name" name="name" placeholder="Enter Name" value="{{$product->name, old('name')}}">
                   @error('name')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
@@ -37,7 +38,7 @@ Add new Product
                   <input type="number" class="form-control 
                   @error('qty')
                     is-invalid
-                  @enderror" id="qty" name="qty" placeholder="Enter qty" value="{{old('qty')}}">
+                  @enderror" id="qty" name="qty" placeholder="Enter qty" value="{{$product->qty, old('qty')}}">
                   @error('qty')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
@@ -50,7 +51,7 @@ Add new Product
                   <input type="number" class="form-control 
                   @error('price')
                     is-invalid
-                  @enderror" id="price" name="price" placeholder="Enter Price" value="{{old('price')}}">
+                  @enderror" id="price" name="price" placeholder="Enter Price" value="{{$product->price, old('price')}}">
                   @error('price')
                   <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>
@@ -70,7 +71,7 @@ Add new Product
                     multiple
                     >
                       @foreach ($colors as $color)
-                          <option @if(collect(old('color_id'))->contains($color->id)) selected @endif
+                          <option @if(collect(old('color_id'))->contains($color->id) || $product->colors()->contains($color->id)) selected @endif
                             value="{{$color->id}}">
                             {{$color->name}}
                           </option>
@@ -95,7 +96,7 @@ Add new Product
                     multiple
                     >
                       @foreach ($sizes as $size)
-                          <option @if(collect(old('size_id'))->contains($size->id)) selected @endif
+                          <option @if(collect(old('size_id'))->contains($size->id) || $product->sizes()->contains($size->id)) selected @endif
                             value="{{$size->id}}">
                             {{$size->name}}
                           </option>
@@ -119,7 +120,7 @@ Add new Product
                     is-invalid
                   @enderror" id="desc" name="desc" placeholder="Description"
                   >
-                  {{old('desc')}}
+                  {{$product->desc, old('desc')}}
                   </textarea>
                   @error('desc')
                   <span class="invalid-feedback">
