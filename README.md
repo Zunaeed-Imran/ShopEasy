@@ -107,4 +107,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - #### working on create update and delete product part 2.
 - making the blade file.
 - set input form for images
-- 33:00
+- making some function for handleImageInputChange for image in app.blade file in the layout folder.

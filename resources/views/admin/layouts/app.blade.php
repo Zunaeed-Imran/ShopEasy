@@ -138,6 +138,16 @@
           reader.readAsDataURL(input.files[0]);
         }
       }
-      function 
+
+      function handleImageInputChanged(input, image){
+        document.getElementById(input).addEventListener('change', function(){
+          readUrl(this, image);
+        });
+      }
+
+      handleImageInputChanged('thumbnail', 'thumbnail_preview');
+      handleImageInputChanged('first_image', 'first_image_preview');
+      handleImageInputChanged('second_image', 'second_image_preview');
+      handleImageInputChanged('third_image', 'third_image_preview');
     </script>
 </html>
