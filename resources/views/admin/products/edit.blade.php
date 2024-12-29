@@ -96,7 +96,7 @@ Edit Product
                     multiple
                     >
                       @foreach ($sizes as $size)
-                          <option @if(collect(old('size_id'))->contains($size->id) || $product->sizes()->contains($size->id)) selected @endif
+                          <option @if(collect(old('size_id'))->contains($size->id) || $product->sizes->contains($size->id)) selected @endif
                             value="{{$size->id}}">
                             {{$size->name}}
                           </option>
