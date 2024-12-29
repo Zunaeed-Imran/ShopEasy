@@ -164,6 +164,15 @@ Add new Product
                   </span>
                   @enderror
                 </div>
+                <div class="mt-2">
+                  <img 
+                  src="#" 
+                  id="first_image_preview" 
+                  class="d-none img-fluid rounded mb-2"
+                  width="100"
+                  height="100"
+                  alt="firstImage">
+                </div>
                 {{-- for second image --}}
                 <div class="form-group mb-3">
                   <label class="form-label">Second Image</label>
@@ -178,6 +187,15 @@ Add new Product
                   </span>
                   @enderror
                 </div>
+                <div class="mt-2">
+                  <img 
+                  src="#" 
+                  id="second_image_preview" 
+                  class="d-none img-fluid rounded mb-2"
+                  width="100"
+                  height="100"
+                  alt="secondImage">
+                </div>
                 {{-- for third image --}}
                 <div class="form-group mb-3">
                   <label class="form-label">Third Image</label>
@@ -191,6 +209,15 @@ Add new Product
                     <strong>{{ $message }}</strong>
                   </span>
                   @enderror
+                </div>
+                <div class="mt-2">
+                  <img 
+                  src="#" 
+                  id="third_image_preview" 
+                  class="d-none img-fluid rounded mb-2"
+                  width="100"
+                  height="100"
+                  alt="thirdlImage">
                 </div>
                 <button type="submit" class="btn btn-dark d-block mx-auto">Submit</button>
               </form>

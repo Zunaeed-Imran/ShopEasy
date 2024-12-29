@@ -132,7 +132,7 @@
         if(input.files && input.files[0]){
           var reader = new FileReader();
           reader.onload = function(e){
-            document.getElementById(image).classList.remove('d-note');
+            document.getElementById(image).classList.remove('d-none');
             document.getElementById(image).setAttribute.remove('src', e.target.result);
           }
           reader.readAsDataURL(input.files[0]);
