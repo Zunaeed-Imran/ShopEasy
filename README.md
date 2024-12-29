@@ -112,3 +112,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - also after create a product i need link the image to show `php artisan storage:link`
 - #### working on create update and delete product part 3.
 - making the edit.blade file for product.
+- 17:00
