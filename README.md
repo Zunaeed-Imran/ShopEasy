@@ -116,5 +116,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - in index.balde page set condation in 1st, 2nd, 3rd image 
 - also delete wasn't working fix in the index.balde in product file
 - #### working on API Product Controller and Routes.
-- we make controller `php artisan make:controller \Api\ProductController`
+- we make controller `php artisan make:controller Api/ProductController`
 - we make resource `php artisan make:resource ProductResource`
