@@ -62,24 +62,30 @@
                     class="img-fluid rounded mb-1"
                     width="30"
                     height="30">
+                @if($product->first_image)
                   <img 
                     src="{{asset($product->first_image)}}" 
                     alt="{{$product->name}}" 
                     class="img-fluid rounded mb-1"
                     width="30"
                     height="30">
+                @endif
+                @if($product->second_image)
                   <img 
                     src="{{asset($product->second_image)}}" 
                     alt="{{$product->name}}" 
                     class="img-fluid rounded mb-1"
                     width="30"
                     height="30">
+                @endif    
+                @if($product->third_image)    
                   <img 
                     src="{{asset($product->third_image)}}" 
                     alt="{{$product->name}}" 
                     class="img-fluid rounded mb-1"
                     width="30"
                     height="30">
+                @endif    
                 </td>
                 </div>
                 <td>
