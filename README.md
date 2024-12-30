@@ -118,4 +118,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - #### working on API Product Controller and Routes.
 - we make controller `php artisan make:controller Api/ProductController`
 - we make resource `php artisan make:resource ProductResource`
-- 
+- make some custon function in API Product controller.
+- make api file `php artisan install:api` it want to migrate i have to write yes.
+- after that i have to import 'HasApiTokens' in the User.php file.
