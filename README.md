@@ -121,3 +121,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - make some custon function in API Product controller.
 - make api file `php artisan install:api` it want to migrate i have to write yes.
 - after that i have to import 'HasApiTokens' in the User.php file.
+- than make the first api route, then make the frontend.
