@@ -126,3 +126,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - first setup the project with react vite `npm create vite@latest`
 - than cd and then install npm.
 - `npm i bootstrap bootstrap-icons react-router-dom axios react-toastify`
+- some basic setup in the main.jsx file.
+- make some component file.
