@@ -36,7 +36,7 @@ Edit Size
                       </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-dark d-block mx-auto">Edit</button>
+                <button type="submit" class="btn btn-dark d-block mx-auto">Update</button>
               </form>
             </div>
           </div>
