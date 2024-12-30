@@ -113,4 +113,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - #### working on create update and delete product part 3.
 - making the edit.blade file for product.
 - in index.balde page set condation in 1st, 2nd, 3rd image 
-- 17:00
+- also delete wasn't working fix in the index.balde in product file
+- 
