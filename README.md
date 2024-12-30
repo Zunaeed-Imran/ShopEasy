@@ -1,7 +1,7 @@
 # ShopEasy
 i will make a frontend and bacaend project. with laravel and react.
 
-## project setup process.
+## project setup process with Laravel backend.
 - `composer create-project laravel/laravel your-project-name`
 - than run it `php artisan serve`
 - if download from git-hub i should `composer update` than `composer i` than `npm i` than i can run it.
@@ -122,3 +122,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - make api file `php artisan install:api` it want to migrate i have to write yes.
 - after that i have to import 'HasApiTokens' in the User.php file.
 - than make the first api route, then make the frontend.
+## project setup process with React frontend.
+- first setup the project with react vite `npm create vite@latest`
+- than cd and then install npm.
