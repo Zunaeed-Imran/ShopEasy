@@ -104,10 +104,10 @@
                   <a href="{{route('admin.products.edit', $product->slug)}}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
                   </a>
-                  <a href="#" onclick="deleteItem({{$product->slug}})" class="btn btn-sm btn-danger my-1">
+                  <a href="#" onclick="deleteItem({{$product->id}})" class="btn btn-sm btn-danger my-1">
                     <i class="fas fa-trash"></i>
                   </a>
-                  <form id="{{$product->slug}}" action="{{route('admin.products.destroy', $product->slug)}}" method="post">
+                  <form id="{{$product->id}}" action="{{route('admin.products.destroy', $product->slug)}}" method="post">
                     @csrf
                     @method('DELETE')
                   </form>
