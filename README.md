@@ -118,3 +118,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - #### working on API Product Controller and Routes.
 - we make controller `php artisan make:controller Api/ProductController`
 - we make resource `php artisan make:resource ProductResource`
+- 
