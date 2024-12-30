@@ -9,7 +9,9 @@ export default function Home() {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await axios.get('')
+        const response = await axios.get(
+          'http://127.0.0.1:8000/admin/products'
+        );
         console.log(response.data)
       } catch (error) {
         console.log(error)
