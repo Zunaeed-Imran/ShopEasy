@@ -103,6 +103,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make UpdateRequerst `php artisan make:request UpdateProductRequest`
 - set route for products.
 - in controller in store function set the image if empty also can added.
+- controller have a problem with update need to fix.
 - in controller making fucntion (create, store, edit, update, delete).
 - #### working on create update and delete product part 2.
 - making the blade file.
@@ -114,4 +115,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - making the edit.blade file for product.
 - in index.balde page set condation in 1st, 2nd, 3rd image 
 - also delete wasn't working fix in the index.balde in product file
-- 
+- #### working on API Product Controller and Routes.
