@@ -131,3 +131,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - using axios and show data form backend server.
 - also make config.js file for base url using axios.
 - than work on ProductResource.php
+- 08:44 display all product.
