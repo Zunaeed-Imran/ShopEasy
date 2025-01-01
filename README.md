@@ -128,4 +128,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - `npm i bootstrap bootstrap-icons react-router-dom axios react-toastify`
 - some basic setup in the main.jsx file.
 - make some component file.
-- 13:23
+- using axios and show data form backend server.
+- also make config.js file for base url using axios.
