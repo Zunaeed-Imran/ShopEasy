@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -10,7 +11,7 @@ export default function Home() {
     const fetchAllProducts = async () => {
       try {
         const response = await axios.get(
-          'http://127.0.0.1:8000/admin/products'
+          'http://127.0.0.1:8000/api/products'
         );
         console.log(response.data)
       } catch (error) {
