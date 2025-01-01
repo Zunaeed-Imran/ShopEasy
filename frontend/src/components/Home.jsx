@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import ProductsList from "./products/ProductsList"
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -13,6 +14,9 @@ export default function Home() {
         const response = await axios.get(
           'http://127.0.0.1:8000/api/products'
         );
+        setProducts(response.data.data)
+        setColors(response.data.colors)
+        setSizes(response.data.sizes);
         console.log(response.data)
       } catch (error) {
         console.log(error)
@@ -23,7 +27,7 @@ export default function Home() {
 
   return (
     <div>
-      Home
+      <ProductsList products={products} />
     </div>
   )
 }
