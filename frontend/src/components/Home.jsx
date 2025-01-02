@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 import ProductsList from "./products/ProductsList"
 import { axiosRequest } from "../helper/config"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'react-toastify/dist/ReactToastify.css'
+import '../index.css'
 
 export default function Home() {
   const [products, setProducts] = useState([])
