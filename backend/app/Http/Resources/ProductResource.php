@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'colors' => $this->colors,
             'sizes' => $this->sizes,
             'reviews' => $this->reviews,
+            'status' => $this->status,
             'thumbnail' => asset($this->thumbnail),
             'first_image' => $this->first_image ? asset($this->first_image) : null,
             'second_image' => $this->second_image ? asset($this->second_image) : null,
