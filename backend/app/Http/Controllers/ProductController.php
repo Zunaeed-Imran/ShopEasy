@@ -88,7 +88,7 @@ class ProductController extends Controller
         //
         $colors = Color::all();
         $sizes = Size::all();
-        return view('admin.products.create')->with([
+        return view('admin.products.edit')->with([
             'colors' => $colors,
             'sizes' => $sizes,
             'product' => $product
