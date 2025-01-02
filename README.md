@@ -131,6 +131,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - using axios and show data form backend server.
 - also make config.js file for base url using axios.
 - than work on ProductResource.php
-
 - set condation fro instock and out of stock.(edit.blade->set radioButton, productListItem.jsx set condation = 1, productController set status)
 - 
