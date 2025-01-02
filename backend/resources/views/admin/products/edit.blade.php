@@ -220,6 +220,30 @@ Edit Product
                   height="100"
                   alt="thirdlImage">
                 </div>
+                <div class="mb-2">
+                  <div class="form-check">
+                    <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="status" 
+                    id="status"
+                    value="1" @checked($product->status)>
+                    <label class="form-check-label" for="status">
+                      In Stock
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="status" 
+                    id="status"
+                    value="0" @checked($product->status)>
+                    <label class="form-check-label" for="status">
+                      Out of Stock
+                    </label>
+                  </div>
+                </div>
                 <button type="submit" class="btn btn-dark d-block mx-auto">Submit</button>
               </form>
             </div>

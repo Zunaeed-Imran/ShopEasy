@@ -28,7 +28,7 @@ export default function ProductListItem({product}) {
                 ))}
               </div>
               <div>
-                {product.status ? (
+                {product.status == 1 ? (
                   <span className="badge bg-success p-2">In Stock</span>
                 ) : (
                   <span className="badge bg-danger p-2">Out of Stock</span>
