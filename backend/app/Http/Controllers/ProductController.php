@@ -163,7 +163,7 @@ class ProductController extends Controller
     public function saveImage($file){
         $image_name = time().'_'.$file->getClientOriginalName();
         $file->storeAs('images/products', $image_name, 'public');
-        return 'storage/images/products'.$image_name;
+        return 'storage/images/products/'.$image_name;
     }
     // remove product image from storage.
     public function removeProductImageFromStorage($file){
