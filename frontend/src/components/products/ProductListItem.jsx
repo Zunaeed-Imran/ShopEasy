@@ -9,7 +9,8 @@ export default function ProductListItem({product}) {
           <img
             src={product.thumbnail}
             alt={product.name}
-            className="card-img-top" />
+            className="card-img-top"
+          />
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <h5 className="text-dark">{product.name}</h5>
@@ -17,30 +18,41 @@ export default function ProductListItem({product}) {
             </div>
             <div className="d-flex justify-content-between">
               <div className="d-flex justify-content-start align-items-center mb-3">
-                {
-                  product.sizes?.map(size => (
-                    <span key={size.id} className="bg-light text-dark me-2 p-1 fw-bold">
-                      <small>{size.name}</small>
-                    </span>
-                  ))
-                }
+                {product.sizes?.map(size => (
+                  <span
+                    key={size.id}
+                    className="bg-light text-dark me-2 p-1 fw-bold"
+                  >
+                    <small>{size.name}</small>
+                  </span>
+                ))}
               </div>
               <div>
-                {
-                  product.status ?
-                    <span className="badge bg-success p-2">
-                      In Stock
-                    </span>
-                    :
-                    <span className="badge bg-danger p-2">
-                      Out of Stock
-                    </span>
-                }
+                {product.status ? (
+                  <span className="badge bg-success p-2">In Stock</span>
+                ) : (
+                  <span className="badge bg-danger p-2">Out of Stock</span>
+                )}
+              </div>
+              <div className="d-flex justify-content-start align-items-center mb-3">
+                {product.colors?.map(color => (
+                  <div
+                    key={color.id}
+                    className="me-1 border border-scondary border-2"
+                    style={{
+                      backgroundColor: color.name.toLowerCase(),
+                      height: '20px',
+                      width: '20px'
+                    }}
+                  >
+                    
+                  </div>
+                ))}
               </div>
             </div>
-            </div>
+          </div>
         </div>
       </Link>
     </div>
-  )
+  );
 }
