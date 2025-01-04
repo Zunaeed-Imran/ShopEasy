@@ -2,7 +2,7 @@
 export default function Header() {
   return (
     <div>
-      Header
+      <h1 className="text-3xl">Welcome to ShopEasy</h1>
     </div>
   )
 }
