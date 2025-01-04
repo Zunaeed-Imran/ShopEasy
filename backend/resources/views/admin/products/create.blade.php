@@ -148,7 +148,7 @@ Add new Product
                   class="d-none img-fluid rounded mb-2"
                   width="100"
                   height="100"
-                  alt="thumbnailImage">
+                  >
                 </div>
                 {{-- for first image --}}
                 <div class="form-group mb-3">
@@ -171,7 +171,7 @@ Add new Product
                   class="d-none img-fluid rounded mb-2"
                   width="100"
                   height="100"
-                  alt="firstImage">
+                  >
                 </div>
                 {{-- for second image --}}
                 <div class="form-group mb-3">
@@ -194,7 +194,7 @@ Add new Product
                   class="d-none img-fluid rounded mb-2"
                   width="100"
                   height="100"
-                  alt="secondImage">
+                  >
                 </div>
                 {{-- for third image --}}
                 <div class="form-group mb-3">
@@ -217,7 +217,7 @@ Add new Product
                   class="d-none img-fluid rounded mb-2"
                   width="100"
                   height="100"
-                  alt="thirdlImage">
+                  >
                 </div>
                 <button type="submit" class="btn btn-dark d-block mx-auto">Submit</button>
               </form>
