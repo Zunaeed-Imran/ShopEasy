@@ -101,9 +101,10 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         //
-        if ($request->validated()) {
+        if ($request->validated())
+        {
             $data = $request->all();
-            if ($request->has('first_image')) {
+            if ($request->has('thumbnail')) {
                 // remove the old thumbnail
                 $this->removeProductImageFromStorage($request->file('thumbnail'));
                 // sotre the new thumbnail
@@ -112,21 +113,21 @@ class ProductController extends Controller
             // Check if admin upload first image
             if ($request->has('first_image')) {
                 // remove the old first_image
-                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                $this->removeProductImageFromStorage($request->file('first_image'));
                 // sotre the new first_image
                 $data['first_image'] = $this->saveImage($request->file('first_image'));
             }
             // Check if admin upload second image    
             if ($request->has('second_image')) {
                 // remove the old second_image
-                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                $this->removeProductImageFromStorage($request->file('second_image'));
                 // sotre the new second_image
                 $data['second_image'] = $this->saveImage($request->file('second_image'));
             }
             // Check if admin upload third image
             if ($request->has('third_image')) {
                 // remove the old third_image
-                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                $this->removeProductImageFromStorage($request->file('third_image'));
                 // sotre the new third_image
                 $data['third_image'] = $this->saveImage($request->file('third_image'));
             }
@@ -161,9 +162,10 @@ class ProductController extends Controller
             ]);
     }
     // Save image in the storage.
-    public function saveImage($file){
+    public function saveImage($file)
+    {
         $image_name = time().'_'.$file->getClientOriginalName();
-        $file->storeAs('images/products', $image_name, 'public');
+        $file->storeAs('images/products/', $image_name, 'public');
         return 'storage/images/products/'.$image_name;
     }
     // remove product image from storage.
