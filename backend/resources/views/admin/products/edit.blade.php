@@ -169,7 +169,7 @@ Edit Product
                   <img 
                   src="{{asset($product->first_image)}}" 
                   id="first_image_preview" 
-                  class="@if($product->first_image) d-none @endif img-fluid rounded mb-2"
+                  class="@if(!$product->first_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="firstImage">
@@ -192,7 +192,7 @@ Edit Product
                   <img 
                   src="{{asset($product->second_image)}}" 
                   id="second_image_preview" 
-                  class="@if($product->second_image) d-none @endif img-fluid rounded mb-2"
+                  class="@if(!$product->second_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="secondImage">
@@ -215,7 +215,7 @@ Edit Product
                   <img 
                   src="{{asset($product->third_image)}}" 
                   id="third_image_preview" 
-                  class="@if($product->third_image) d-none @endif img-fluid rounded mb-2"
+                  class="@if(!$product->third_image) d-none @endif img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="thirdlImage">

@@ -135,3 +135,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - fix public function save image give / in the product controller and image name in update file.
 - fix the edit page. the problem was i use () in foreachloop in blade file.
 - fix the thumbnail preview when edit.
+- fix the 1st, 2nd, 3rd image preview. (it was in the condation class !)
