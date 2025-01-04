@@ -133,3 +133,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than work on ProductResource.php
 - set condation fro instock and out of stock.(edit.blade->set radioButton, productListItem.jsx set condation = 1, productController set status)
 - fix public function save image give / in the product controller and image name in update file.
+- fix the edit page. the problem was i use () in foreachloop in blade file.

@@ -71,7 +71,7 @@ Edit Product
                     multiple
                     >
                       @foreach ($colors as $color)
-                          <option @if(collect(old('color_id'))->contains($color->id) || $product->colors()->contains($color->id)) selected @endif
+                          <option @if(collect(old('color_id'))->contains($color->id) || $product->colors->contains($color->id)) selected @endif
                             value="{{$color->id}}">
                             {{$color->name}}
                           </option>
