@@ -133,7 +133,7 @@
           var reader = new FileReader();
           reader.onload = function(e){
             document.getElementById(image).classList.remove('d-none');
-            document.getElementById(image).setAttribute.remove('src', e.target.result);
+            document.getElementById(image).setAttribute('src', e.target.result);
           }
           reader.readAsDataURL(input.files[0]);
         }

@@ -136,3 +136,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - fix the edit page. the problem was i use () in foreachloop in blade file.
 - fix the thumbnail preview when edit.
 - fix the 1st, 2nd, 3rd image preview. (it was in the condation class !)
+- finally found the problem of preview of create products (it was app.blade file after setAttribute i was give remove and for error it wasn't preview the image.)
+- 
