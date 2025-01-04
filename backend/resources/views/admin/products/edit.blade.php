@@ -146,7 +146,7 @@ Edit Product
                   <img 
                   src="{{asset($product->thumbnail)}}" 
                   id="thumbnail_preview" 
-                  class="d-none img-fluid rounded mb-2"
+                  class="img-fluid rounded mb-2"
                   width="100"
                   height="100"
                   alt="thumbnailImage">
