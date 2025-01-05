@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function ProductListItem({product}) {
-  console.log(product);
+  // console.log(product);
   return (
     <div className="col-md-4 md-3 py-2">
       <Link to={''} className="text-decoration-none text-dark">

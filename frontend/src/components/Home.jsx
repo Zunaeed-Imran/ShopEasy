@@ -37,21 +37,32 @@ export default function Home() {
       try {
         if (selectedColor) {
           const response = await axiosRequest.get(`products/${selectedColor}/color`);
-          setProducts(response.data.data);
-          setColors(response.data.colors);
-          setSizes(response.data.sizes);
+          setProducts(response.data.data)
+          setColors(response.data.colors)
+          setSizes(response.data.sizes)
         } else if (selectedSize) {
           const response = await axiosRequest.get(
             `products/${selectedSize}/size`
           );
-          setProducts(response.data.data);
-          setColors(response.data.colors);
-          setSizes(response.data.sizes);
+          setProducts(response.data.data)
+          setColors(response.data.colors)
+          setSizes(response.data.sizes)
+        } else if (searchTerm) {
+          const response = await axiosRequest.get(
+            `products/${searchTerm}/size`
+          );
+          if (response.data.data.length > 0) {
+            setProducts(response.data.data)
+            setColors(response.data.colors)
+            setSizes(response.data.sizes)
+          } else {
+            setMessage('No Product Found')
+          }
         } else {
           const response = await axiosRequest.get('products');
-          setProducts(response.data.data);
-          setColors(response.data.colors);
-          setSizes(response.data.sizes);
+          setProducts(response.data.data)
+          setColors(response.data.colors)
+          setSizes(response.data.sizes)
         }
       } catch (error) {
         console.log(error)
@@ -136,7 +147,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {
+          message ? 
+            <div className="alert alert-info">
+              {message}
+            </div>
+            :
         <ProductsList products={products} />
+        }
       </div>
     </div>
   );
