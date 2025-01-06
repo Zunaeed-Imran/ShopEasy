@@ -6,6 +6,8 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'react-toastify/dist/ReactToastify.css'
 import '../index.css'
+import { useDebounce } from 'use-debounce';
+
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -16,6 +18,7 @@ export default function Home() {
   const [selectedSize, setSelectedSize] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [message, setMessage] = useState('')
+  const debouncedSearchTerm = useDebounce(searchTerm, 500)
 
   const handleColorSelectBox = (e) => {
     setSelectedSize('')
@@ -34,6 +37,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchAllProducts = async () => {
+      setMessage()
       try {
         if (selectedColor) {
           const response = await axiosRequest.get(`products/${selectedColor}/color`);
@@ -47,22 +51,23 @@ export default function Home() {
           setProducts(response.data.data)
           setColors(response.data.colors)
           setSizes(response.data.sizes)
-        } else if (searchTerm) {
+        } else if (debouncedSearchTerm[0]) {
+          console.log(debouncedSearchTerm[0])
           const response = await axiosRequest.get(
             `products/${searchTerm}/size`
           );
           if (response.data.data.length > 0) {
-            setProducts(response.data.data)
-            setColors(response.data.colors)
-            setSizes(response.data.sizes)
+            setProducts(response.data.data);
+            setColors(response.data.colors);
+            setSizes(response.data.sizes);
           } else {
-            setMessage('No Product Found')
+            setMessage('No Product Found');
           }
         } else {
           const response = await axiosRequest.get('products');
-          setProducts(response.data.data)
-          setColors(response.data.colors)
-          setSizes(response.data.sizes)
+          setProducts(response.data.data);
+          setColors(response.data.colors);
+          setSizes(response.data.sizes);
         }
       } catch (error) {
         console.log(error)
