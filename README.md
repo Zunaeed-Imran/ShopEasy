@@ -139,4 +139,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - finally found the problem of preview of create products (it was app.blade file after setAttribute i was give remove and for error it wasn't preview the image.)
 - set the filtering option in home.jsx page.
 - than install in frontend `npm i use-debounce` for using text field in search field.
-- 
+- than we install `npm install react-loader-spinner --save` for page load show.
