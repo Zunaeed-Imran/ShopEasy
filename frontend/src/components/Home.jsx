@@ -39,12 +39,14 @@ export default function Home() {
   useEffect(() => {
     const fetchAllProducts = async () => {
       setMessage()
+      setLoading(true)
       try {
         if (selectedColor) {
           const response = await axiosRequest.get(`products/${selectedColor}/color`);
           setProducts(response.data.data)
           setColors(response.data.colors)
           setSizes(response.data.sizes)
+          setLoading(false)
         } else if (selectedSize) {
           const response = await axiosRequest.get(
             `products/${selectedSize}/size`

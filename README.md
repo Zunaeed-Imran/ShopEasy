@@ -140,3 +140,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - set the filtering option in home.jsx page.
 - than install in frontend `npm i use-debounce` for using text field in search field.
 - than we install `npm install react-loader-spinner --save` for page load show.
+- 39:00 
