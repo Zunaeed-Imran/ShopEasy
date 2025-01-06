@@ -7,6 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'react-toastify/dist/ReactToastify.css'
 import '../index.css'
 import { useDebounce } from 'use-debounce';
+import Alert from "./layouts/Alert"
 
 
 export default function Home() {
@@ -52,7 +53,7 @@ export default function Home() {
           setColors(response.data.colors)
           setSizes(response.data.sizes)
         } else if (debouncedSearchTerm[0]) {
-          console.log(debouncedSearchTerm[0])
+          console.log(debouncedSearchTerm)
           const response = await axiosRequest.get(
             `products/${searchTerm}/size`
           );
@@ -74,7 +75,7 @@ export default function Home() {
       }
     }
     fetchAllProducts()
-  }, [selectedColor, selectedSize, searchTerm])
+  }, [selectedColor, selectedSize, debouncedSearchTerm[0]])
 
   return (
     <div className="row my-5">
@@ -154,9 +155,7 @@ export default function Home() {
         </div>
         {
           message ? 
-            <div className="alert alert-info">
-              {message}
-            </div>
+            <Alert type={'primary'} content={'No Product Found'} />
             :
         <ProductsList products={products} />
         }
