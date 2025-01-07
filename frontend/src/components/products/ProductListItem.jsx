@@ -4,7 +4,7 @@ export default function ProductListItem({product}) {
   // console.log(product);
   return (
     <div className="col-md-4 md-3 py-2">
-      <Link to={''} className="text-decoration-none text-dark">
+      <Link to={`/product/${product.slug}`} className="text-decoration-none text-dark">
         <div className="card shadow-sm h-100">
           <img
             src={product.thumbnail}
@@ -38,7 +38,7 @@ export default function ProductListItem({product}) {
                 {product.colors?.map(color => (
                   <div
                     key={color.id}
-                    className="me-1 border border-scondary border-2"
+                    className="me-1 border border-light-subtle border-2"
                     style={{
                       backgroundColor: color.name.toLowerCase(),
                       height: '20px',
