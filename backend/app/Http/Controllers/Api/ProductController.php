@@ -20,9 +20,13 @@ class ProductController extends Controller
         ]);
     }
     // Get product by slug
-    public function show(Product $product){
+    public function show(Product $product)
+    {
+        if(!$product){
+            abort(404);
+        }
         return ProductResource::make(
-            $product->load('colors', 'sizes', 'reviews')
+            $product->load(['colors', 'sizes', 'reviews'])
         );
     }
     // filter Product by color

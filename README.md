@@ -142,3 +142,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than we install `npm install react-loader-spinner --save` for page load show.
 - set condation inProductList.jsx only can show 5 items.
 - set load more button in productsList.jsx page.
+- making single page view.
+- 07:00
