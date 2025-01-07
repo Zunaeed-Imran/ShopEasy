@@ -141,3 +141,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than install in frontend `npm i use-debounce` for using text field in search field.
 - than we install `npm install react-loader-spinner --save` for page load show.
 - set condation inProductList.jsx only can show 5 items.
+- set load more button in productsList.jsx page.
