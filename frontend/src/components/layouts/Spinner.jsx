@@ -1,4 +1,3 @@
-import React from 'react'
 import { Bars } from 'react-loader-spinner';
 
 export default function Spinner() {

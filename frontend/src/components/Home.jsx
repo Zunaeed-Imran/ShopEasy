@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import '../index.css'
 import { useDebounce } from 'use-debounce';
 import Alert from "./layouts/Alert"
+import Spinner from "./layouts/Spinner"
 
 
 export default function Home() {
@@ -54,26 +55,31 @@ export default function Home() {
           setProducts(response.data.data)
           setColors(response.data.colors)
           setSizes(response.data.sizes)
+          setLoading(false);
         } else if (debouncedSearchTerm[0]) {
           console.log(debouncedSearchTerm)
           const response = await axiosRequest.get(
             `products/${searchTerm}/size`
           );
           if (response.data.data.length > 0) {
-            setProducts(response.data.data);
-            setColors(response.data.colors);
-            setSizes(response.data.sizes);
+            setProducts(response.data.data)
+            setColors(response.data.colors)
+            setSizes(response.data.sizes)
+            setLoading(false);
           } else {
-            setMessage('No Product Found');
+            setMessage('No Product Found')
+            setLoading(false);
           }
         } else {
           const response = await axiosRequest.get('products');
-          setProducts(response.data.data);
-          setColors(response.data.colors);
-          setSizes(response.data.sizes);
+          setProducts(response.data.data)
+          setColors(response.data.colors)
+          setSizes(response.data.sizes)
+          setLoading(false)
         }
       } catch (error) {
         console.log(error)
+        setLoading(false)
       }
     }
     fetchAllProducts()
@@ -159,6 +165,10 @@ export default function Home() {
           message ? 
             <Alert type={'primary'} content={'No Product Found'} />
             :
+            loading
+            ?
+              <Spinner />
+            :  
         <ProductsList products={products} />
         }
       </div>
