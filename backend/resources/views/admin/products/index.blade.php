@@ -30,7 +30,6 @@
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
                 <th scope="col">Status</th>
-                <th scope="col">Description</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -100,7 +99,6 @@
                       </span>
                   @endif
                 </td>
-                <td>{{$product->name}}</td>
                 <td>
                   <a href="{{route('admin.products.edit', $product->slug)}}" class="btn btn-sm btn-warning">
                     <i class="fas fa-edit"></i>
