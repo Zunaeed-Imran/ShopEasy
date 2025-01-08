@@ -7,11 +7,11 @@ import Slider from './images/Slider';
 
 export default function Product() {
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState([]);
-  const [selectedColor, setSelectedColor] = useState([]);
-  const [selectedSize, setSelectedSize] = useState([]);
-  const [qty, setQty] = useState([]);
-  const [error, setError] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [qty, setQty] = useState(1);
+  const [error, setError] = useState('');
   const { slug } = useParams();
 
   useEffect(() => {
