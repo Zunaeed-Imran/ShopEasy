@@ -4,6 +4,7 @@ import { axiosRequest } from '../../helper/config';
 import Alert from '../layouts/Alert';
 import Spinner from '../layouts/Spinner';
 import Slider from './images/Slider';
+import {Parser} from 'html-to-react'
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -51,7 +52,9 @@ export default function Product() {
                   <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
               </div>
-              <div className="my-3">{product?.desc}</div>
+                  <div className="my-3">
+                    {Parser().parse(product?.desc)}
+                  </div>
               <div className="d-flex justify-content-between">
                 <div className="d-flex justify-content-start align-items-center mb-3">
                   {product.sizes?.map(size => (
@@ -63,7 +66,7 @@ export default function Product() {
                     </span>
                   ))}
                 </div>
-                <div>
+                <div className='me-2'>
                   {product.status == 1 ? (
                     <span className="badge bg-success p-2">In Stock</span>
                   ) : (
