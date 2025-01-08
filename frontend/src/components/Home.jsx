@@ -9,6 +9,7 @@ import '../index.css'
 import { useDebounce } from 'use-debounce';
 import Alert from "./layouts/Alert"
 import Spinner from "./layouts/Spinner"
+import "react-image-gallery/styles/css/image-gallery.css";
 
 
 export default function Home() {
