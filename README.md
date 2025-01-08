@@ -146,4 +146,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - also install `npm i html-to-react` for showing description styled description.
 - also install `npm i react-image-gallery`
 - working on add to card.
+- install redux toolkit `npm install @reduxjs/toolkit`
+- also install `npm install react-redux`
+- than install `npm i redux-persist` for not go away data after refresh
 - 13:00 redux
