@@ -146,4 +146,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - also install `npm i html-to-react` for showing description styled description.
 - also install `npm i react-image-gallery`
 - working on add to card.
-- 
+- 13:00 redux

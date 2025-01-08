@@ -84,7 +84,7 @@ export default function Product() {
                       onClick={() => setSelectedColor(color)}
                       className={`me-1 ${
                         selectedColor?.id == color.id
-                          ? 'border border-light-subtle border-2'
+                          ? 'border border-dark-subtle border-2'
                           : ''
                       }`}
                       style={{
