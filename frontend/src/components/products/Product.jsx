@@ -43,7 +43,7 @@ export default function Product() {
         <>
           <div className="row g-0">
             <div className="col-md-4 p-2">
-              <Slider product={product}/>
+              <Slider product={product} />
             </div>
             <div className="col-md-8">
               <div className="card-body">
@@ -52,21 +52,25 @@ export default function Product() {
                   <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
               </div>
-                  <div className="my-3">
-                    {Parser().parse(product?.desc)}
-                  </div>
+              <div className="my-3">{Parser().parse(product?.desc)}</div>
               <div className="d-flex justify-content-between">
                 <div className="d-flex justify-content-start align-items-center mb-3">
                   {product.sizes?.map(size => (
                     <span
                       key={size.id}
-                      className="bg-light text-dark me-2 p-1 fw-bold"
+                      onClick={() => setSelectedSize(size)}
+                      style={{ cursor: 'pointer' }}
+                      className={`bg-light text-dark me-2 p-1 fw-bold ${
+                        selectedSize?.id == size.id
+                          ? 'border border-dark-subtle border-2'
+                          : ''
+                      }`}
                     >
                       <small>{size.name}</small>
                     </span>
                   ))}
                 </div>
-                <div className='me-2'>
+                <div className="me-2">
                   {product.status == 1 ? (
                     <span className="badge bg-success p-2">In Stock</span>
                   ) : (
@@ -77,14 +81,46 @@ export default function Product() {
                   {product.colors?.map(color => (
                     <div
                       key={color.id}
-                      className="me-1 border border-light-subtle border-2"
+                      onClick={() => setSelectedColor(color)}
+                      className={`me-1 ${
+                        selectedColor?.id == color.id
+                          ? 'border border-light-subtle border-2'
+                          : ''
+                      }`}
                       style={{
                         backgroundColor: color.name.toLowerCase(),
                         height: '20px',
                         width: '20px',
+                        cursor: 'pointer',
                       }}
                     ></div>
                   ))}
+                </div>
+              </div>
+              <div className="row mt-5">
+                <div className="col-md-6 mx-auto">
+                  <div className="mb-4">
+                    <input
+                      type="number"
+                      className="from-control"
+                      placeholder="Qty"
+                      value={qty}
+                      onChange={e => setQty(e.target.value)}
+                      min={1}
+                      max={product?.qty > 1 ? product?.qty : 1}
+                    />
+                  </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                  <button
+                    className="btn btn-dark"
+                    disabled={
+                      !selectedColor || !selectedSize || product?.qty == 0
+                    }
+                  >
+                    <i className="bi bi-cart-plus-fill"></i>
+                    Add To Cart
+                  </button>
                 </div>
               </div>
             </div>
