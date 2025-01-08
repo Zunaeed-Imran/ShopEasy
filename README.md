@@ -152,3 +152,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - make redux store file.
 - make cart slice file.
 - in main.jsx file add Provider and PersistGate fro redux.
+- 24:00
