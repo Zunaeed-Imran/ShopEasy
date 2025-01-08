@@ -149,4 +149,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - install redux toolkit `npm install @reduxjs/toolkit`
 - also install `npm install react-redux`
 - than install `npm i redux-persist` for not go away data after refresh
-- 13:00 redux
+- make redux store file.
+- make cart slice file.
