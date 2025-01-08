@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 
 export default function Slider({ product }) {

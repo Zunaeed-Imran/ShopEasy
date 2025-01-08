@@ -43,7 +43,7 @@ export default function Product() {
         <>
           <div className="row g-0">
             <div className="col-md-4 p-2">
-              <div>Product images</div>
+              <Slider product={product}/>
             </div>
             <div className="col-md-8">
               <div className="card-body">
