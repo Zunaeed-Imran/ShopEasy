@@ -143,4 +143,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - set condation inProductList.jsx only can show 5 items.
 - set load more button in productsList.jsx page.
 - making single page view.
+- also install `npm i html-to-react`
+- also install `npm i react-image-gallery`
 - 07:00
