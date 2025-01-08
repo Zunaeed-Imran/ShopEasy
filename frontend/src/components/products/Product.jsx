@@ -19,7 +19,7 @@ export default function Product() {
       setLoading(true);
       try {
         const response = await axiosRequest.get(`product/${slug}/show`);
-        setProducts(response.data.data);
+        setProduct(response.data.data);
         setLoading(false);
       } catch (error) {
         if (error?.response?.status === 404) {
