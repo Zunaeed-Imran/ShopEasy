@@ -6,10 +6,10 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'react-toastify/dist/ReactToastify.css'
 import '../index.css'
-import { useDebounce } from 'use-debounce';
+import { useDebounce } from 'use-debounce'
 import Alert from "./layouts/Alert"
 import Spinner from "./layouts/Spinner"
-import "react-image-gallery/styles/css/image-gallery.css";
+import "react-image-gallery/styles/css/image-gallery.css"
 
 
 export default function Home() {
