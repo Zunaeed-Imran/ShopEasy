@@ -151,3 +151,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than install `npm i redux-persist` for not go away data after refresh
 - make redux store file.
 - make cart slice file.
+- in main.jsx file add Provider and PersistGate fro redux.
