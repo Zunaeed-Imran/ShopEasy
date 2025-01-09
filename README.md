@@ -154,4 +154,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - make cart slice file.
 - in main.jsx file add Provider and PersistGate fro redux.
 - make the condation for add to cart in cartSlice.js file.
+- than useDispatch() in product addTocart Button.
 - 24:00

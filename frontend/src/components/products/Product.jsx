@@ -5,6 +5,8 @@ import Alert from '../layouts/Alert';
 import Spinner from '../layouts/Spinner';
 import Slider from './images/Slider';
 import {Parser} from 'html-to-react'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -14,6 +16,7 @@ export default function Product() {
   const [qty, setQty] = useState(1);
   const [error, setError] = useState('');
   const { slug } = useParams();
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const fetchProductBySlug = async () => {
@@ -117,6 +120,24 @@ export default function Product() {
                     disabled={
                       !selectedColor || !selectedSize || product?.qty == 0
                     }
+                        onClick={() => {
+                          dispatch(
+                            addToCart({
+                              product_id: product.id,
+                              slug: product.slug,
+                              qty: parseInt(product.qty),
+                              price: parseInt(product.price),
+                              color: selectedColor,
+                              size: selectedSize,
+                              maxQty: parseInt(product.qty),
+                              image: product.thumbnail,
+                              coupon_id: null,
+                            })
+                          );
+                          setSelectedColor(null)
+                          setSelectedSize(null)
+                          setQty(1)
+                        }}
                   >
                     <i className="bi bi-cart-plus-fill"></i>
                     Add To Cart
