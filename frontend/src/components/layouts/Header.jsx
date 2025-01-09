@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div>
       <h1 className="text-3xl">Welcome to ShopEasy</h1>
-      <p>cart {cartItems.length}</p>
+      <p>Added cart {cartItems.length}</p>
     </div>
   )
 }

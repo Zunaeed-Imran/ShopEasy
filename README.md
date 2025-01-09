@@ -155,4 +155,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - in main.jsx file add Provider and PersistGate fro redux.
 - make the condation for add to cart in cartSlice.js file.
 - than useDispatch() in product addTocart Button.
+- set to redux only color.name and size.name.
 - 24:00
