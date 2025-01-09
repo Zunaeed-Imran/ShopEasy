@@ -157,4 +157,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than useDispatch() in product addTocart Button.
 - set to redux only color.name and size.name.
 - making cart file
-- 24:00
+- 14:00
