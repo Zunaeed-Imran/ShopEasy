@@ -1,11 +1,42 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const {cartItems} = useSelector(state => state.cart)
   return (
-    <div>
-      <h1 className="text-3xl">Welcome to ShopEasy</h1>
-      <p>Added cart {cartItems.length}</p>
-    </div>
-  )
+    <nav className="navbar navbar-expand-lg">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to={'/'}>
+          <i className="bi bi-shop h1"></i>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to={'/'}>
+                <i className="bi bi-house"></i>
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={'/cart'}>
+                <i className="bi bi-bag"></i>
+                Cart ({cartItems.length})
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
