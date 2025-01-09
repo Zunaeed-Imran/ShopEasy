@@ -21,7 +21,7 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to={'/'}>
                 <i className="bi bi-house"></i>
