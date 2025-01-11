@@ -158,6 +158,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - set to redux only color.name and size.name.
 - making cart file
 - make condation for increment, decrement, remove cart in cartSlice.js file 
--  `{JSON.stringify(item.size)}` with json srtingfy we can see the object data, when we debug.
+- `{JSON.stringify(item.size)}` with json srtingfy we can see the object data, when we debug.
 - `{item.size?.name}` also can be show like that
 - 32:30
