@@ -101,7 +101,7 @@ export default function Home() {
                   id="color_id"
                   defaultValue={''}
                   onChange={e => handleColorSelectBox(e)}
-                  disabled={selectedColor || searchTerm}
+                  disabled={selectedSize || searchTerm}
                   className="form-select"
                 >
                   <option
@@ -127,7 +127,7 @@ export default function Home() {
                   id="size_id"
                   defaultValue={''}
                   onChange={e => handleSizeSelectBox(e)}
-                  disabled={selectedSize || searchTerm}
+                  disabled={selectedColor || searchTerm}
                   className="form-select"
                 >
                   <option
@@ -153,7 +153,7 @@ export default function Home() {
                     type="search"
                     className="form-control me-2"
                     value={searchTerm}
-                    // disabled={selectedColor || selectedSize}
+                    disabled={selectedColor || selectedSize}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search"
                   />
