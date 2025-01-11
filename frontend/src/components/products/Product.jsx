@@ -124,8 +124,9 @@ export default function Product() {
                           dispatch(
                             addToCart({
                               product_id: product.id,
+                              name: product.name,
                               slug: product.slug,
-                              qty: parseInt(product.qty),
+                              qty: parseInt(qty),
                               price: parseInt(product.price),
                               color: selectedColor.name,
                               size: selectedSize.size,
