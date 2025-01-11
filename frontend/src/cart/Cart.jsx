@@ -62,7 +62,7 @@ export default function Cart() {
                         </td>
                         <td>
                           <span className="bg-light text-dark me-2 p-1 fw-bold">
-                            <small>{JSON.stringify(item.size)}</small>
+                            <small>{item.size?.name}</small>
                           </span>
                         </td>
                         <td>${item.qty * item.price}</td>
