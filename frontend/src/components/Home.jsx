@@ -60,7 +60,7 @@ export default function Home() {
         } else if (debouncedSearchTerm[0]) {
           console.log(debouncedSearchTerm)
           const response = await axiosRequest.get(
-            `products/${searchTerm}/size`
+            `products/${searchTerm}/find`
           );
           if (response.data.data.length > 0) {
             setProducts(response.data.data)
