@@ -157,4 +157,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than useDispatch() in product addTocart Button.
 - set to redux only color.name and size.name.
 - making cart file
-- 14:00
+- make condation for increment, decrement, remove cart in cartSlice.js file 
+- 32:30

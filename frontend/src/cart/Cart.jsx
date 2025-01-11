@@ -38,7 +38,17 @@ export default function Cart() {
                           />
                         </td>
                         <td>{item.name}</td>
-                        <td>{item.qty}</td>
+                        <td>
+                          <i
+                            className="bi bi-caret-up"
+                            style={{ cursor: 'pointer' }}
+                          ></i>
+                          <span className="mx-2">{item.qty}</span>
+                          <i
+                            className="bi bi-caret-down"
+                            style={{ cursor: 'pointer' }}
+                          ></i>
+                        </td>
                         <td>${item.price}</td>
                         <td>
                           <div
@@ -50,7 +60,11 @@ export default function Cart() {
                             }}
                           ></div>
                         </td>
-                        <td>{item.size}</td>
+                        <td>
+                          <span className="bg-light text-dark me-2 p-1 fw-bold">
+                            <small>{item.size}</small>
+                          </span>
+                        </td>
                         <td>${item.qty * item.price}</td>
                         <td></td>
                       </tr>

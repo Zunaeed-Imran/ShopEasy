@@ -24,12 +24,38 @@ export const cartSlice = createSlice({
         state.cartItems = [item, ...state.cartItems]
         toast.success('Product added to your cart')
       }
+    },
+    incrementQ(state, action) {
+      const item = action.payload
+      let productItem = state.cartItems.find(product => product.product_id === item.product_id 
+        && product.color === item.color && product.size === item.size
+      )
+      if (productItem.qty === productItem.maxQty ) {
+        toast.info(`Only ${productItem.maxQty} available`)
+      } else {
+        productItem.qty += 1
+      }
+    },
+    decrementQ(state, action) {
+      const item = action.payload
+      let productItem = state.cartItems.find(product => product.product_id === item.product_id 
+        && product.color === item.color && product.size === item.size
+      )
+      productItem.qty -= 1
+      if (productItem.qty === 0 ) {
+        state.cartItems = state.cartItems.filter(product => product.product_id !== item.product_id)
+      }
+    },
+    removeFromCart(state, action) {
+      const item = action.payload
+      state.cartItems = state.cartItems.filter(product => product.product_id !== item.product_id)
+      toast.warning('Product Remove From Your cart')
     }
   }
 })
 
 const cartReducer = cartSlice.reducer
 
-export const {addToCart} = cartSlice.actions
+export const {addToCart, incrementQ, decrementQ, removeFromCart} = cartSlice.actions
 
 export default cartReducer
