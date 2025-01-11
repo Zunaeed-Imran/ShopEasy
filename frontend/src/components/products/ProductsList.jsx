@@ -1,5 +1,7 @@
 import { useState } from "react";
 import ProductListItem from "./ProductListItem"
+// import prop validation
+import PropTypes from 'prop-types'
 
 export default function ProductsList({ products }) {
   // console.log(products);
@@ -34,3 +36,9 @@ export default function ProductsList({ products }) {
     </div>
   );
 }
+
+
+// prop defining
+ProductsList.propTypes = {
+  products: PropTypes.string,
+};

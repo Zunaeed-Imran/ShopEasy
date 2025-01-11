@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import ImageGallery from 'react-image-gallery';
+// import proptype
+import PropTypes from 'prop-types';
 
 export default function Slider({ product }) {
   const [images, setImages] = useState([]);
@@ -63,3 +65,9 @@ export default function Slider({ product }) {
     />
   );
 }
+
+
+// prop defining
+Slider.propTypes = {
+  product: PropTypes.string,
+};

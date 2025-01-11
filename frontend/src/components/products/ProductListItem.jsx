@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// import proptypes.
+import PropTypes from 'prop-types';
 
 export default function ProductListItem({product}) {
   // console.log(product);
@@ -56,3 +58,9 @@ export default function ProductListItem({product}) {
     </div>
   );
 }
+
+
+// prop defining.
+ProductListItem.propTypes = {
+  product: PropTypes.string,
+};
