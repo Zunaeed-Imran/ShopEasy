@@ -54,7 +54,7 @@ export default function Cart() {
                           <div
                             className="border border-light-subtle border-2"
                             style={{
-                              backgroundColor: item.color.toLowerCase(),
+                              backgroundColor: item.color.toLowerCase?.(),
                               height: '20px',
                               width: '20px',
                             }}
@@ -62,7 +62,7 @@ export default function Cart() {
                         </td>
                         <td>
                           <span className="bg-light text-dark me-2 p-1 fw-bold">
-                            <small>{item.size}</small>
+                            <small>{JSON.stringify(item.size)}</small>
                           </span>
                         </td>
                         <td>${item.qty * item.price}</td>
