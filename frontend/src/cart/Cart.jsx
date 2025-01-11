@@ -13,15 +13,17 @@ export default function Cart() {
               <>
                 <table className="table">
                   <thead>
-                    <th>#</th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Subtitle</th>
-                    <th></th>
+                    <tr>
+                      <th>#</th>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Color</th>
+                      <th>Size</th>
+                      <th>Subtitle</th>
+                      <th></th>
+                    </tr>
                   </thead>
                   <tbody>
                     {cartItems.map((item, index) => (
@@ -42,7 +44,7 @@ export default function Cart() {
                           <div
                             className="border border-light-subtle border-2"
                             style={{
-                              backgroundColor: item.color.name.toLowerCase(),
+                              backgroundColor: item.color.toLowerCase(),
                               height: '20px',
                               width: '20px',
                             }}
