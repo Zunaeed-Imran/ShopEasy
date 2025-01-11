@@ -58,10 +58,10 @@ export default function Home() {
           setSizes(response.data.sizes)
           setLoading(false);
         } else if (debouncedSearchTerm[0]) {
-          console.log(debouncedSearchTerm)
+          // console.log(debouncedSearchTerm)
           const response = await axiosRequest.get(
             `products/${searchTerm}/find`
-          );
+          )
           if (response.data.data.length > 0) {
             setProducts(response.data.data)
             setColors(response.data.colors)
