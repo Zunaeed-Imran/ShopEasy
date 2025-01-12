@@ -1,9 +1,12 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import Alert from "../components/layouts/Alert"
+import { decrementQ, incrementQ } from "../redux/slices/cartSlice";
 
 
 export default function Cart() {
-  const {cartItems} = useSelector(state => state.cart)
+  const { cartItems } = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+
   return (
     <div className="row my-4">
       <div className="col-md-12">
@@ -40,11 +43,13 @@ export default function Cart() {
                         <td>{item.name}</td>
                         <td>
                           <i
+                            onClick={() => dispatch(incrementQ(item))}
                             className="bi bi-caret-up"
                             style={{ cursor: 'pointer' }}
                           ></i>
                           <span className="mx-2">{item.qty}</span>
                           <i
+                            onClick={() => dispatch(decrementQ(item))}
                             className="bi bi-caret-down"
                             style={{ cursor: 'pointer' }}
                           ></i>
