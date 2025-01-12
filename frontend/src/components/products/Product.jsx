@@ -34,7 +34,20 @@ export default function Product() {
       }
     };
     fetchProductBySlug();
-  }, [slug]);
+  }, [slug])
+
+  const makeUniqueId = (length) => {
+    let result = ''
+    const characters = 'ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    const charactersLength = characters.length
+    let counter = 0
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength))
+      counter += 1
+    }
+    return result
+
+  }
 
   return (
     <div>
@@ -124,6 +137,7 @@ export default function Product() {
                           dispatch(
                             addToCart({
                               product_id: product.id,
+                              ref: makeUniqueId(10),
                               name: product.name,
                               slug: product.slug,
                               qty: parseInt(qty),
