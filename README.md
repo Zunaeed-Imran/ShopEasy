@@ -160,4 +160,35 @@ i will make a frontend and bacaend project. with laravel and react.
 - make condation for increment, decrement, remove cart in cartSlice.js file 
 - `{JSON.stringify(item.size)}` with json srtingfy we can see the object data, when we debug.
 - `{item.size?.name}` also can be show like that
-- 32:30
+- [this week work
+  {
+    filter color size search.
+  },
+  {
+    Page loading package added,
+  },
+  {
+    give condation only show 5 item in one time,
+    load more button click will show more 5 items,
+  },
+  {
+    single product view page.
+    summer note show description,
+    also shown video, and image link show, 
+  },
+  {
+    added selected color show and select size before add to cart,
+  },
+  {
+    add to cart a product,
+    set toast message after added a product,
+    if product added will show you have added,
+    added navbar button in react frontend and set route,
+  },
+  {
+    prop validate the code jsx code.
+    add to card page show all add cart,
+    incremnet decrement cart,
+    remove cart.
+  }
+]
