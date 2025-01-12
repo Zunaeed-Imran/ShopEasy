@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import Alert from "../components/layouts/Alert"
-import { decrementQ, incrementQ } from "../redux/slices/cartSlice";
+import { decrementQ, incrementQ, removeFromCart } from "../redux/slices/cartSlice";
 
 
 export default function Cart() {
@@ -71,7 +71,13 @@ export default function Cart() {
                           </span>
                         </td>
                         <td>${item.qty * item.price}</td>
-                        <td></td>
+                        <td>
+                          <i
+                            className="bi bi-cart-x"
+                            onClick={() => dispatch(removeFromCart(item))}
+                            style={{ cursor: 'pointer' }}
+                          ></i>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
