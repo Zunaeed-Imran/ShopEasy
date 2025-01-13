@@ -46,11 +46,13 @@ class ProductController extends Controller
             ]);
     }
     // search for products by terms
-    public function findProductsByTerm($searchTerm){
+    public function findProductsByTerm($searchTerm)
+    {
         return ProductResource::collection(
             Product::where('name', 'LIKE', '%'.$searchTerm.'%')
-            ->with(['colors', 'sizes', 'review'])
-            ->latest()->get())->additional([
+            ->with(['colors', 'sizes', 'reviews'])
+            ->latest()->get())
+            ->additional([
                 'colors' => Color::has('products')->get(),
                 'sizes' => Size::has('products')->get(),
             ]);
