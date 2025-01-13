@@ -40,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchAllProducts = async () => {
-      setMessage()
+      setMessage('')
       setLoading(true)
       try {
         if (selectedColor) {
