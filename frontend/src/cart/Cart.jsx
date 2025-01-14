@@ -25,7 +25,7 @@ export default function Cart() {
                       <th>Color</th>
                       <th>Size</th>
                       <th>Subtitle</th>
-                      <th></th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -75,7 +75,7 @@ export default function Cart() {
                           <i
                             className="bi bi-cart-x"
                             onClick={() => dispatch(removeFromCart(item))}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer', color: 'red' }}
                           ></i>
                         </td>
                       </tr>
