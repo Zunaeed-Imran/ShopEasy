@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Header from './components/layouts/Header'
 import Product from './components/products/Product'
 import Cart from './cart/Cart'
+import Checkout from './components/checkout/Checkout'
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/cart" element={<Cart/>} />
-        <Route path="/product/:slug" element={<Product/>} />
+        <Route path="/product/:slug" element={<Product />} />
+        <Route path='/checkout' element={<Checkout/>} />
       </Routes>
     </BrowserRouter>
   )
