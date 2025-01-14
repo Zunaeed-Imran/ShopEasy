@@ -4,7 +4,7 @@ export default function Checkout() {
   const {cartItems} = useSelector(state => state.cart)
 
   return (
-    <div className="card">
+    <div className="card mb-4">
       <div className="card-body">
         <div className="row my-5">
           <div className="col-md-7">{/* User information */}</div>
