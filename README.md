@@ -162,7 +162,8 @@ i will make a frontend and bacaend project. with laravel and react.
 - `{item.size?.name}` also can be show like that
 - added remove cart option in Cart.jsx
 - use 'accumulator' to see the total cart price.
-- than we make controller `php artisan make:controller Api/UserController`
-- than make request `php artisan make:request StoreUserRequest`
+- than we make UserController `php artisan make:controller Api/UserController`
+- than make StoreUserRequest `php artisan make:request StoreUserRequest`
 - also make auth user request `php artisan make:request AuthUserRequest`
 - than make userResource `php artisan make:resource UserResource`
+- 

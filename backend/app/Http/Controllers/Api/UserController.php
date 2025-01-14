@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -22,6 +23,7 @@ class UserController extends Controller
             ]);
         }
     }
+
     //Auth login user
     public function auth(AuthUserRequest $request)
     {
@@ -39,4 +41,62 @@ class UserController extends Controller
             }
         }
     }
+
+    // Logout user
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'message' => 'Logged out successful'
+        ]);
+    }
+
+        //Update user info 
+    public function UpdateUserProfile(Request $request)
+    {
+        $request->validate([
+            'profile_image' => 'image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
+        if($request->has('profile_image')){
+
+            // Check if the old image exist remove it.
+            if (File::exists(asset($request->user()->profile_image))) {
+                File::delete(asset($request->user()->profile_image));
+            }
+
+            // get and store the new image file.
+            $file = $request->file('profile_image');
+            $profile_image_name = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('images/users/', $profile_image_name, 'public');
+
+            // update the user image
+            $request->user()->update([
+                'profile_image' => 'storage/images/users/'.$profile_image_name
+            ]);
+
+            // return the response
+            return response()->json([
+                'message' => 'Profile Image Updated Successful',
+                'user' => UserResource::make($request->user())
+            ]);
+        }else{
+            // update the user info
+            $request->user()->update([
+                'country' => $request->country,
+                'city' => $request->city,
+                'address' => $request->address,
+                'zip_code' => $request->zip_code,
+                'phone_number' => $request->phone_number,
+                'profile_completed' => 1
+            ]);
+
+            // return the response
+            return response()->json([
+                'message' => 'Profile Updated Successfully',
+                'user' => UserResource::make($request->user())
+            ]);
+        }
+    }
+
 }
