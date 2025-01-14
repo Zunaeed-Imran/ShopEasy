@@ -165,4 +165,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than we make controller `php artisan make:controller Api/UserController`
 - than make request `php artisan make:request StoreUserRequest`
 - also make auth user request `php artisan make:request AuthUserRequest`
-- 
+- than make userResource `php artisan make:resource UserResource`
