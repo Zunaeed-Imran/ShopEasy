@@ -6,6 +6,7 @@ import { decrementQ, incrementQ, removeFromCart } from "../redux/slices/cartSlic
 export default function Cart() {
   const { cartItems } = useSelector(state => state.cart)
   const dispatch = useDispatch()
+  const total = cartItems.reduce((acc, item) => acc += item.price * item.qty, 0)
 
   return (
     <div className="row my-4">
@@ -82,9 +83,16 @@ export default function Cart() {
                     ))}
                   </tbody>
                 </table>
+                <div className="d-flex justify-content-center">
+                  <div className="border border-dark border-3 fw-bold p-2 rounded">
+                    Total: ${total}
+                  </div>
+                </div>
               </>
             ) : (
-              <Alert content={'Your cart is empty'} type={'primary'} />
+                <Alert
+                  content={'Your cart is empty'}
+                  type={'primary'} />
             )}
           </div>
         </div>
