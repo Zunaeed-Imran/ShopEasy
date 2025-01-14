@@ -166,4 +166,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make StoreUserRequest `php artisan make:request StoreUserRequest`
 - also make auth user request `php artisan make:request AuthUserRequest`
 - than make userResource `php artisan make:resource UserResource`
-- 
+- set the api routes for users.
