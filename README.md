@@ -167,3 +167,6 @@ i will make a frontend and bacaend project. with laravel and react.
 - also make auth user request `php artisan make:request AuthUserRequest`
 - than make userResource `php artisan make:resource UserResource`
 - set the api routes for users.
+- also change all those new making file as needed.
+- than work on the frontend users, make some file in component->user
+- 

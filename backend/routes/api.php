@@ -27,5 +27,5 @@ Route::get('products/{searchTerm}/find', [ProductController::class, 'findProduct
 Route::get('product/{product}/show', [ProductController::class, 'show']);
 
 // User routes
-Route::get('user/register', [UserController::class, 'store']);
-Route::get('user/login', [UserController::class, 'auth']);
+Route::post('user/register', [UserController::class, 'store']);
+Route::post('user/login', [UserController::class, 'auth']);

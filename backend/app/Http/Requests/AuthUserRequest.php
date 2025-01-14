@@ -11,7 +11,7 @@ class AuthUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,8 @@ class AuthUserRequest extends FormRequest
     {
         return [
             //
+            'email' => 'required|email|max:255',
+            'password' => 'required|min:6|max:255'
         ];
     }
 }
