@@ -149,7 +149,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - install redux toolkit `npm install @reduxjs/toolkit`
 - also install `npm install react-redux`
 - than install `npm i redux-persist` for not go away data after refresh.
-- redux is a state management library that `allow to have global state`.
+- redux is a state management library that "allow to have global state".
 - make redux store file.
 - make cart slice file.
 - in main.jsx file add Provider and PersistGate fro redux.
