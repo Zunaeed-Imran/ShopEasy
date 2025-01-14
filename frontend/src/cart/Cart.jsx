@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import Alert from "../components/layouts/Alert"
 import { decrementQ, incrementQ, removeFromCart } from "../redux/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 
 export default function Cart() {
@@ -94,6 +95,17 @@ export default function Cart() {
                   content={'Your cart is empty'}
                   type={'primary'} />
             )}
+          </div>
+          <div className="my-3 d-flex justify-content-end">
+            <Link to={'/'} className="btn btn-dark rounded-0 mx-2">
+              Continue Shopping
+            </Link>
+            {
+              cartItems.length > 0 &&
+              <Link to={'/checkout'} className="btn btn-danger rounded-0 mx-2">
+                Checkout 
+              </Link>
+            }
           </div>
         </div>
       </div>
