@@ -169,4 +169,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - set the api routes for users.
 - also change all those new making file as needed.
 - than work on the frontend users, make some file in component->user
+- Registration and login page work in react.
 - 
