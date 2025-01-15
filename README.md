@@ -172,3 +172,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - Registration and login page work in react.
 - than make validation for react in custom folder.
 - than make 'userSlice.js'.
+- 08:00

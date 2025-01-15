@@ -4,6 +4,8 @@ import { axiosRequest } from "../../helper/config";
 import { toast } from "react-toastify";
 import Spinner from "../layouts/Spinner";
 import useValidations from "../custom/useValidations";
+import { useDispatch } from "react-redux";
+import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
 
 export default function Login() {
 
@@ -11,9 +13,11 @@ export default function Login() {
       email: '',
       password: ''
     })
-    const [validationErrors, setValidationErrors] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    const [validationErrors, setValidationErrors] = useState([])
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+  
     const loginUser = async e => {
       e.preventDefault();
       setValidationErrors([])
@@ -24,6 +28,9 @@ export default function Login() {
         if (response.data.error) {
           toast.error(response.data.error)
         } else {
+          dispatch(setCurrentUser(response.data.user))
+          dispatch(setToken(response.data.access_token))
+          dispatch(setLogInOut(true))
           toast.success(response.data.message)
           navigate('/');
         }
