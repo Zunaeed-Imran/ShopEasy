@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 
 const initialState = {
   isLoggidIn: false,
@@ -12,27 +11,20 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    addToCart(state, action) {
-      const item = action.payload;
-      let productItem = state.cartItems.find(
-        product =>
-          product.product_id === item.product_id &&
-          product.color === item.color &&
-          product.size === item.size
-      );
-      if (productItem) {
-        toast.info('Product already added to your cart');
-      } else {
-        state.cartItems = [item, ...state.cartItems];
-        toast.success('Product added to your cart');
-      }
+    setCurrentUser(state, action) {
+      state.user = action.payload
+    },
+    setLogInOut(state, action) {
+      state.isLoggidIn = action.payload;
+    },
+    setToken(state, action) {
+      state.token = action.payload
     }
-  },
+  }
 });
 
-const cartReducer = cartSlice.reducer;
+const userReducer = userSlice.reducer;
 
-export const { addToCart, incrementQ, decrementQ, removeFromCart } =
-  cartSlice.actions;
+export const { setCurrentUser, setLogInOut, setToken } = userSlice.actions;
 
-export default cartReducer;
+export default userReducer;

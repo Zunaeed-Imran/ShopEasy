@@ -11,12 +11,14 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import userReducer from '../slices/userSlice';
 
 
 
 
 const rootReducer = combineReducers({
-    cart: cartReducer
+  cart: cartReducer,
+  user: userReducer
 })
 
 const persistConfig = {
