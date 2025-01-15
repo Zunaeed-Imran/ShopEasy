@@ -18,6 +18,7 @@ export default function Register() {
 
   const registerNewUser = async (e) => {
     e.preventDefault()
+    setValidationErrors([])
     setLoading(true);
     try {
       const response = await axiosRequest.post('user/register', user)
