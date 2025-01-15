@@ -29,6 +29,18 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to={'/register'}>
+                <i className="bi bi-house"></i>
+                Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to={'/login'}>
+                <i className="bi bi-house"></i>
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to={'/cart'}>
                 <i className="bi bi-bag"></i>
                 Cart ({cartItems.length})
