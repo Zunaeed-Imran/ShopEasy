@@ -19,7 +19,7 @@ export default function Login() {
         const response = await axiosRequest.post('user/login', user);
         setLoading(false);
         if (response.data.error) {
-          toast.error(response.data.message)
+          toast.error(response.data.error)
         } else {
           toast.success(response.data.message)
           navigate('/');

@@ -18,6 +18,7 @@ export default function Register() {
     setLoading(true);
     try {
       const response = await axiosRequest.post('user/register', user)
+      setLoading(false)
       toast.success(response.data.message)
       navigate('/login')
     } catch (error) {
