@@ -17,8 +17,13 @@ export default function Login() {
       setLoading(true);
       try {
         const response = await axiosRequest.post('user/login', user);
-        toast.success(response.data.message);
-        navigate('/');
+        setLoading(false);
+        if (response.data.error) {
+          toast.error(response.data.message)
+        } else {
+          toast.success(response.data.message)
+          navigate('/');
+        }
       } catch (error) {
         console.log(error);
         setLoading(false);
