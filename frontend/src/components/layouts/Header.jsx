@@ -26,6 +26,16 @@ export default function Header() {
       if(token) getLoggedInUser()
     }, [token])
 
+      const LogoutUser = async () => {
+        try {
+          const response = await axiosRequest.post('user/logout', null,  getConfig(token))
+            dispatch(setCurrentUser(null))
+            dispatch(setToken(''))
+            dispatch(setLogInOut(false))
+        } catch (error) {
+          console.log(error);
+        }
+      }
   
   return (
     <nav className="navbar navbar-expand-lg">
@@ -68,7 +78,8 @@ export default function Header() {
                   <Link
                     className="nav-link active"
                     aria-current="page"
-                    to={'/login'}
+                    to="#"
+                    onClick={() => LogoutUser()}
                   >
                     <i className="bi bi-person-fill-down"></i>
                     Logout
