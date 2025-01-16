@@ -1,8 +1,32 @@
-import { useSelector } from "react-redux"
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom";
+import { axiosRequest, getConfig } from "../../helper/config";
+import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
 
 export default function Header() {
-  const {cartItems} = useSelector(state => state.cart)
+  const { isLoggedIn, token, user } = useSelector(state => state.user)
+  const { cartItems } = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+
+    useEffect(() => {
+      const getLoggedInUser = async () => {
+        try {
+          const response = await axiosRequest.get('user', getConfig(token))
+          dispatch(setCurrentUser(response.data.user))
+        } catch (error) {
+          if (error?.response?.status === 401) {
+            dispatch(setCurrentUser(null))
+            dispatch(setToken(''))
+            dispatch(setLogInOut(false))
+          }
+          console.log(error);
+        }
+      };
+      if(token) getLoggedInUser()
+    }, [token])
+
+  
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
