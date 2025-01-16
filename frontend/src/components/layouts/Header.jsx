@@ -52,18 +52,53 @@ export default function Header() {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to={'/register'}>
-                <i className="bi bi-house"></i>
-                Register
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to={'/login'}>
-                <i className="bi bi-house"></i>
-                Login
-              </Link>
-            </li>
+            {isLoggedIn ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to={'/register'}
+                  >
+                    <i className="bi bi-person"></i>
+                    {user.name}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to={'/login'}
+                  >
+                    <i className="bi bi-person-fill-down"></i>
+                    Logout
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to={'/register'}
+                  >
+                    <i className="bi bi-person-add"></i>
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to={'/login'}
+                  >
+                    <i className="bi bi-person-fill-down"></i>
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
             <li className="nav-item">
               <Link className="nav-link" to={'/cart'}>
                 <i className="bi bi-bag"></i>
