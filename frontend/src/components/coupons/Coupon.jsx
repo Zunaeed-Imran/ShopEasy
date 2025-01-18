@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { axiosRequest, getConfig } from "../../helper/config"
 import { toast } from "react-toastify"
-import { setValidCoupon } from "../../redux/slices/cartSlice"
+import { addCouponIdToCartItem, setValidCoupon } from "../../redux/slices/cartSlice"
 
 export default function Coupon() {
 
@@ -23,6 +23,11 @@ export default function Coupon() {
         })
       } else {
         dispatch(setValidCoupon(response.data.coupon))
+        dispatch(addCouponIdToCartItem(response.data.coupon.id))
+        setCoupon({
+          name: ''
+        })
+        toast.success(response.data.message)
       }
     } catch (error) {
       console.log(error)
