@@ -2,8 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Coupon from "../coupons/Coupon";
 import { setValidCoupon } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import Alert from "../layouts/Alert";
 
 export default function Checkout() {
+  const { user } = useSelector(state => state.user)
   const { cartItems, validCoupon } = useSelector(state => state.cart)
   const dispatch = useDispatch()
   const totalOfCartItems = cartItems.reduce((acc, item) => acc += item.price * item.qty, 0)
@@ -82,6 +85,14 @@ export default function Checkout() {
                 </span>
               </li>
             </ul>
+            <div className="my-3">
+              {
+                user?.completed_profile ? 
+                  <Link to={'/'} className="btn btn-primary rounded-0" />
+                  :
+                  <Alert content={'Add your billing details'} type={'warning'}/>
+              }
+            </div>
           </div>
         </div>
       </div>
