@@ -35,8 +35,29 @@ export default function Coupon() {
   }
 
   return (
-    <div>
-      
+    <div className="row md-3">
+      <div className="col-md-12">
+        <div className="d-flex">
+          <input
+            type="text"
+            value={coupon.name}
+            name=""
+            id=""
+            onChange={(e) => setCoupon({
+              ...coupon, name: e.target.value
+            })}
+            className="form-control rounded-0"
+            placeholder="Enter a promo code "
+          />
+          <button
+            className="btn btn-primary rounded-0"
+            disabled={!coupon.name}
+            onClick={() => applyCoupon()}
+          >
+            Apply
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

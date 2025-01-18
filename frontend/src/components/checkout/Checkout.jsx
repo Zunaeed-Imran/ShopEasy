@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import Coupon from "../coupons/Coupon";
 
 export default function Checkout() {
   const {cartItems} = useSelector(state => state.cart)
@@ -9,6 +10,7 @@ export default function Checkout() {
         <div className="row my-5">
           <div className="col-md-7">{/* User information */}</div>
           <div className="col-md-5">
+            <Coupon />
             <ul className="list-group">
               {cartItems.map(item => (
                 <li key={item.ref} className="list-group-item d-flex">
