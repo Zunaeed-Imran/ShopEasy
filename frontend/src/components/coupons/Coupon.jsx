@@ -25,7 +25,7 @@ export default function Coupon() {
         dispatch(setValidCoupon(response.data.coupon))
       }
     } catch (error) {
-      
+      console.log(error)
     }
   }
 
