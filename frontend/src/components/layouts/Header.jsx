@@ -92,7 +92,7 @@ export default function Header() {
               <>
                 <li className="nav-item">
                   <Link
-                    className="nav-link active"
+                    className={`nav-link ${location.pathname === '/register' && 'active'}`}
                     aria-current="page"
                     to={'/register'}
                   >
@@ -102,7 +102,7 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link active"
+                    className={`nav-link ${location.pathname === '/login' && 'active'}`}
                     aria-current="page"
                     to={'/login'}
                   >
@@ -113,7 +113,9 @@ export default function Header() {
               </>
             )}
             <li className="nav-item">
-              <Link className="nav-link" to={'/cart'}>
+              <Link
+                className={`nav-link ${location.pathname === '/cart' && 'active'}`}
+                to={'/cart'}>
                 <i className="bi bi-bag"></i>
                 Cart ({cartItems.length})
               </Link>
