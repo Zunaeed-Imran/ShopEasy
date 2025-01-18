@@ -70,7 +70,7 @@ export default function Header() {
                   <Link
                     className={`nav-link ${location.pathname === '/profile' && 'active'}`}
                     aria-current="page"
-                    to={'/register'}
+                    to={'/profile'}
                   >
                     <i className="bi bi-person"></i>
                     {user.name}
