@@ -58,15 +58,17 @@ export default function Checkout() {
               ))}
               <li className="list-group-item d-flex justify-content-between">
                 <span className="fw-bold">Discount {validCoupon?.discount}%</span>
-                <span className="fw-normal text-danger">
-                  {validCoupon?.name}<i
-                    className="bi bi-trash"
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => removeCoupon()}
-                  >
-                  
-                  </i>
-                </span>
+                {
+                  validCoupon?.name && 
+                    <span className="fw-normal text-danger">
+                    {validCoupon?.name}<i
+                      className="bi bi-trash"
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => removeCoupon()}
+                    >
+                    </i>
+                  </span>
+                }
                 <span className="fw-bold text-danger">
                   ${calculateDiscount}
                 </span>
