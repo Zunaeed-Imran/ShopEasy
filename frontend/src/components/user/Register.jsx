@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { axiosRequest } from "../../helper/config"
 import { toast } from "react-toastify"
 import Spinner from "../layouts/Spinner"
 import useValidations from "../custom/useValidations"
+import { useSelector } from "react-redux"
 
 export default function Register() {
 
+  
+  const { isLoggedIn} = useSelector(state => state.user)
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -15,6 +18,10 @@ export default function Register() {
   const [validationErrors, setValidationErrors] = useState([])
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if(isLoggedIn) navigate('/')
+  }, [isLoggedIn])
 
   const registerNewUser = async (e) => {
     e.preventDefault()
