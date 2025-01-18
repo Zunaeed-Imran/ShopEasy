@@ -1,6 +1,13 @@
 # ShopEasy
 i will make a frontend and bacaend project. with laravel and react.
 
+### Laravel Project clone process
+- composer update
+- composer install
+- setup the myql with .env file
+- php artisan migrate
+- php artisan db:seed
+
 ## project setup process with Laravel backend.
 - `composer create-project laravel/laravel your-project-name`
 - than run it `php artisan serve`
