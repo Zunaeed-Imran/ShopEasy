@@ -173,5 +173,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make validation for react in custom folder.
 - than make 'userSlice.js'.
 - than working on the header link button set active or inActive button logic setup.
-- have got some error when user logged in not showing the user.
-- 
+- have got some error when user logged in not showing the user(skip it for now).
+- than make it in api folder `php artisan make:controller Api/CouponController`
