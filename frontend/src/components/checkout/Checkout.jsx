@@ -1,14 +1,25 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Coupon from "../coupons/Coupon";
+import { setValidCoupon } from "../../redux/slices/cartSlice";
+import { toast } from "react-toastify";
 
 export default function Checkout() {
-  const { cartItems, validCoupon } = useSelector(state => state.cart);
+  const { cartItems, validCoupon } = useSelector(state => state.cart)
+  const dispatch = useDispatch()
   const totalOfCartItems = cartItems.reduce((acc, item) => acc += item.price * item.qty, 0)
   const calculateDiscount = () => {
     return validCoupon?.discount && totalOfCartItems * validCoupon?.discount / 100
   }
   const totalAfterDiscount = () => {
     return totalOfCartItems - calculateDiscount()
+  }
+
+  const removeCoupon = () => {
+    dispatch(setValidCoupon({
+      name: '',
+      discount: 0
+    }))
+    toast.success('Coupon Removed')
   }
 
   return (
@@ -48,7 +59,13 @@ export default function Checkout() {
               <li className="list-group-item d-flex justify-content-between">
                 <span className="fw-bold">Discount {validCoupon?.discount}%</span>
                 <span className="fw-normal text-danger">
-                  {validCoupon?.name}<i className="bi bi-trash"></i>
+                  {validCoupon?.name}<i
+                    className="bi bi-trash"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => removeCoupon()}
+                  >
+                  
+                  </i>
                 </span>
                 <span className="fw-bold text-danger">
                   ${calculateDiscount}
