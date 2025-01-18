@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { axiosRequest, getConfig } from "../../helper/config";
 import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
 
@@ -8,6 +8,8 @@ export default function Header() {
   const { isLoggedIn, token, user } = useSelector(state => state.user)
   const { cartItems } = useSelector(state => state.cart)
   const dispatch = useDispatch()
+  const location = useLocation()
+
 
     useEffect(() => {
       const getLoggedInUser = async () => {
@@ -26,7 +28,7 @@ export default function Header() {
       if(token) getLoggedInUser()
     }, [token])
 
-      const LogoutUser = async () => {
+      const logoutUser = async () => {
         try {
           const response = await axiosRequest.post('user/logout', null,  getConfig(token))
             dispatch(setCurrentUser(null))
@@ -57,7 +59,7 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to={'/'}>
+              <Link className={`nav-link ${location.pathname === '/' && 'active'}`} aria-current="page" to={'/'}>
                 <i className="bi bi-house"></i>
                 Home
               </Link>
@@ -79,7 +81,7 @@ export default function Header() {
                     className="nav-link active"
                     aria-current="page"
                     to="#"
-                    onClick={() => LogoutUser()}
+                    onClick={() => logoutUser()}
                   >
                     <i className="bi bi-person-fill-down"></i>
                     Logout
