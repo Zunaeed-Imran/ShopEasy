@@ -2,7 +2,14 @@ import { useSelector } from "react-redux";
 import Coupon from "../coupons/Coupon";
 
 export default function Checkout() {
-  const {cartItems} = useSelector(state => state.cart)
+  const { cartItems, validCoupon } = useSelector(state => state.cart);
+  const totalOfCartItems = cartItems.reduce((acc, item) => acc += item.price * item.qty, 0)
+  const calculateDiscount = () => {
+    return validCoupon?.discount && totalOfCartItems * validCoupon?.discount / 100
+  }
+  const totalAfterDiscount = () => {
+    return totalOfCartItems - calculateDiscount()
+  }
 
   return (
     <div className="card mb-4">
@@ -39,18 +46,20 @@ export default function Checkout() {
                 </li>
               ))}
               <li className="list-group-item d-flex justify-content-between">
-                <span className="fw-bold">Discount (10)%</span>
+                <span className="fw-bold">Discount {validCoupon?.discount}%</span>
                 <span className="fw-normal text-danger">
-                  SUMMER VIBES <i className="bi bi-trash"></i>
+                  {validCoupon?.name}<i className="bi bi-trash"></i>
                 </span>
-                <span className="fw-bold text-danger">-$32</span>
+                <span className="fw-bold text-danger">
+                  ${calculateDiscount}
+                </span>
               </li>
               <li className="list-group-item d-flex justify-content-between">
                 <span className="fw-bold">
                   Total: 
                 </span>
                 <span className="fw-bold">
-                  $200 
+                  ${totalAfterDiscount}
                 </span>
               </li>
             </ul>

@@ -177,4 +177,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make it in api folder `php artisan make:controller Api/CouponController`
 - working on the component->coupon->Coupon.jsx
 - 
-- 11:15
+- 23:25
