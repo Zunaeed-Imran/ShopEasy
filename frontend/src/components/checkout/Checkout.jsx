@@ -59,7 +59,7 @@ export default function Checkout() {
                   Total: 
                 </span>
                 <span className="fw-bold">
-                  ${totalAfterDiscount}
+                  ${totalAfterDiscount()}
                 </span>
               </li>
             </ul>
