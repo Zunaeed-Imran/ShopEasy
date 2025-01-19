@@ -1,5 +1,6 @@
 import { use } from "react"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 
 export default function ProfileSidebar() {
@@ -19,6 +20,21 @@ export default function ProfileSidebar() {
           />
         </div>
       </div>
+      <ul className="list-group w-100 text-center mt-2">
+        <li className="list-list-group-item">
+          <i className="bi bi-person"></i> {user?.name}
+        </li>
+        <li className="list-group-item">
+          <i className="bi bi-envelope-at-fill"></i> {user?.email}
+        </li>
+        <li className="list-group-item">
+          <Link
+            to={'/user/orders'}
+            className="text-decoration-none text-dark">
+            <i className="bi bi-bag-check-fill"></i> Orders
+          </Link>
+        </li>
+      </ul>
     </div>
   )
 }
