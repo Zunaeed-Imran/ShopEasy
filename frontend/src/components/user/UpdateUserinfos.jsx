@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { axiosRequest, getConfig } from '../../helper/config';
 import { toast } from 'react-toastify';
 import Spinner from '../layouts/Spinner';
@@ -16,7 +16,7 @@ export default function Register() {
     zip_code: user?.zip_code
   });
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
 
 
@@ -65,41 +65,66 @@ export default function Register() {
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">Email address*</label>
+                <label className="form-label">Address*</label>
                 <input
-                  type="email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  value={user.email}
+                  type="text"
+                  id="address"
+                  value={userInfos.address || ''}
                   onChange={e =>
-                    setUser({
-                      ...user,
-                      email: e.target.value,
+                    setUserInfos({
+                      ...userInfos,
+                      address: e.target.value,
                     })
                   }
+                  className="form-control"
                 />
-                <div id="emailHelp" className="form-text">
-                  Well never share your email with anyone else.
-                </div>
-                {useValidations(validationErrors, 'email')}
               </div>
               <div className="mb-3">
-                <label className="form-label">Password*</label>
+                <label className="form-label">City*</label>
                 <input
-                  type="password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                  value={user.password}
+                  type="text"
+                  id="city"
+                  value={userInfos.city || ''}
                   onChange={e =>
-                    setUser({
-                      ...user,
-                      password: e.target.value,
+                    setUserInfos({
+                      ...userInfos,
+                      city: e.target.value,
                     })
                   }
+                  className="form-control"
                 />
-                {useValidations(validationErrors, 'password')}
               </div>
+              <div className="mb-3">
+                <label className="form-label">Country*</label>
+                <input
+                  type="text"
+                  id="country"
+                  value={userInfos.country || ''}
+                  onChange={e =>
+                    setUserInfos({
+                      ...userInfos,
+                      country: e.target.value,
+                    })
+                  }
+                  className="form-control"
+                />
+              </div>
+              <div className="mb-3">
+                <label className="form-label">zip code*</label>
+                <input
+                  type="text"
+                  id="zip_code"
+                  value={userInfos.zip_code || ''}
+                  onChange={e =>
+                    setUserInfos({
+                      ...userInfos,
+                      zip_code: e.target.value,
+                    })
+                  }
+                  className="form-control"
+                />
+              </div>
+
               {loading ? (
                 <Spinner />
               ) : (
