@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Spinner from '../layouts/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentUser } from '../../redux/slices/userSlice';
+import PropTypes from 'prop-types'
 
 export default function UserUpdateinfos({profile}) {
   const { user, token } = useSelector(state => state.user);
@@ -140,4 +141,9 @@ export default function UserUpdateinfos({profile}) {
       </div>
     </div>
   );
+}
+
+
+UserUpdateinfos.propTypes = {
+  profile: PropTypes.any
 }
