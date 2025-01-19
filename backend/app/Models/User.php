@@ -62,7 +62,7 @@ class User extends Authenticatable
     public function image_path()
     {
         if ($this->profile_image) {
-            return asset('storage/image/users' . $this->profile_image);
+            return asset($this->profile_image);
         } else {
             return 'https://pixabay.com/illustrations/bot-colorful-robot-helper-friendly-4877998/';
         }

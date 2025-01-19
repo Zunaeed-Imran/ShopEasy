@@ -184,4 +184,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make it in api folder `php artisan make:controller Api/CouponController`
 - working on the component->coupon->Coupon.jsx
 - make profile.jsx in user and working on it.
-- 27:51 
+- useref() use in ProfileSidebar.jsx to use empty string after upload image.
