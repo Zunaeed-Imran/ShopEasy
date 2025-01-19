@@ -17,14 +17,14 @@ export default function ProfileSidebar() {
 
   const updateProfileImage = async () => {
     setValidationErrors([])
-    setLoading(false)
+    setLoading(true)
 
     const formData = new FormData()
     formData.append('profile_image', image)
     formData.append('_method', 'PUT')
 
     try {
-      const response = await axiosRequest.put('user/profile/update',
+      const response = await axiosRequest.post('user/profile/update',
         formData, getConfig(token, 'multipart/from-data'))
       dispatch(setCurrentUser(response.data.user))
       setImage('')
