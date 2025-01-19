@@ -37,7 +37,7 @@ export default function Register() {
 
   return (
    
-  <div className="col-md-6 mx-auto">
+  <div className="col-md-8">
     <div className="card shadow-sm">
       <div className="card-header bg-white">
         <h5 className="text-center mt-2">User Details</h5>
