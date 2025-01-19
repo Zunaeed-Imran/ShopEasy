@@ -36,106 +36,105 @@ export default function Register() {
   };
 
   return (
-    <div className="row my-5">
-      <div className="col-md-6 mx-auto">
-        <div className="card shadow-sm">
-          <div className="card-header bg-white">
-            <h5 className="text-center mt-2">User Details</h5>
+   
+  <div className="col-md-6 mx-auto">
+    <div className="card shadow-sm">
+      <div className="card-header bg-white">
+        <h5 className="text-center mt-2">User Details</h5>
+      </div>
+      <div className="card-body">
+        <form
+          action=""
+          method="post"
+          className="mt-5"
+          onSubmit={e => UpdateUserInfos(e)}
+        >
+          <div className="mb-3">
+            <label className="form-label">Phone Number*</label>
+            <input
+              type="text"
+              id="phone_number"
+              value={userInfos.phone_number || ''}
+              onChange={e =>
+                setUserInfos({
+                  ...userInfos,
+                  phone_number: e.target.value,
+                })
+              }
+              className="form-control"
+            />
           </div>
-          <div className="card-body">
-            <form
-              action=""
-              method="post"
-              className="mt-5"
-              onSubmit={e => UpdateUserInfos(e)}
-            >
-              <div className="mb-3">
-                <label className="form-label">Phone Number*</label>
-                <input
-                  type="text"
-                  id="phone_number"
-                  value={userInfos.phone_number || ''}
-                  onChange={e =>
-                    setUserInfos({
-                      ...userInfos,
-                      phone_number: e.target.value,
-                    })
-                  }
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Address*</label>
-                <input
-                  type="text"
-                  id="address"
-                  value={userInfos.address || ''}
-                  onChange={e =>
-                    setUserInfos({
-                      ...userInfos,
-                      address: e.target.value,
-                    })
-                  }
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">City*</label>
-                <input
-                  type="text"
-                  id="city"
-                  value={userInfos.city || ''}
-                  onChange={e =>
-                    setUserInfos({
-                      ...userInfos,
-                      city: e.target.value,
-                    })
-                  }
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Country*</label>
-                <input
-                  type="text"
-                  id="country"
-                  value={userInfos.country || ''}
-                  onChange={e =>
-                    setUserInfos({
-                      ...userInfos,
-                      country: e.target.value,
-                    })
-                  }
-                  className="form-control"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">zip code*</label>
-                <input
-                  type="text"
-                  id="zip_code"
-                  value={userInfos.zip_code || ''}
-                  onChange={e =>
-                    setUserInfos({
-                      ...userInfos,
-                      zip_code: e.target.value,
-                    })
-                  }
-                  className="form-control"
-                />
-              </div>
+          <div className="mb-3">
+            <label className="form-label">Address*</label>
+            <input
+              type="text"
+              id="address"
+              value={userInfos.address || ''}
+              onChange={e =>
+                setUserInfos({
+                  ...userInfos,
+                  address: e.target.value,
+                })
+              }
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">City*</label>
+            <input
+              type="text"
+              id="city"
+              value={userInfos.city || ''}
+              onChange={e =>
+                setUserInfos({
+                  ...userInfos,
+                  city: e.target.value,
+                })
+              }
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Country*</label>
+            <input
+              type="text"
+              id="country"
+              value={userInfos.country || ''}
+              onChange={e =>
+                setUserInfos({
+                  ...userInfos,
+                  country: e.target.value,
+                })
+              }
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">zip code*</label>
+            <input
+              type="text"
+              id="zip_code"
+              value={userInfos.zip_code || ''}
+              onChange={e =>
+                setUserInfos({
+                  ...userInfos,
+                  zip_code: e.target.value,
+                })
+              }
+              className="form-control"
+            />
+          </div>
 
-              {loading ? (
-                <Spinner />
-              ) : (
-                <button type="submit" className="btn btn-dark btn-sm">
-                  Submit
-                </button>
-              )}
-            </form>
-          </div>
-        </div>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <button type="submit" className="btn btn-dark btn-sm">
+              Submit
+            </button>
+          )}
+        </form>
       </div>
     </div>
+  </div>
   );
 }
