@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <div className="row my-5">
       <ProfileSidebar />
-      <UpdateUserinfos />
+      <UpdateUserinfos profile={true} />
     </div>
   )
 }

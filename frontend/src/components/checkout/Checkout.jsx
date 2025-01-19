@@ -31,7 +31,7 @@ export default function Checkout() {
       <div className="card-body">
         <div className="row my-5">
           <div className="col-md-8">
-            <UserUpdateinfos />
+            <UserUpdateinfos profile={false} />
           </div>
           <div className="col-md-4">
             <Coupon />
