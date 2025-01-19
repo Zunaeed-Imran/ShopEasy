@@ -8,8 +8,10 @@ export const axiosRequest = axios.create({
 
 export const getConfig = (token, contentType) => {
   const config = {
-    "Content-type": contentType || "application/json",
-    "Authorization": `Bearer ${token}`
+    headers: { 
+      "Content-type": contentType || "application/json",
+      "Authorization": `Bearer ${token}`
+    }
   }
   return config
 }

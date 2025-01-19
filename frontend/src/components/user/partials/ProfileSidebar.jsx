@@ -1,11 +1,44 @@
-import { use } from "react"
-import { useSelector } from "react-redux"
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import useValidations from "../../custom/useValidations"
+import { axiosRequest, getConfig } from "../../../helper/config"
+import { setCurrentUser } from "../../../redux/slices/userSlice"
+import { toast } from "react-toastify"
 
 
 export default function ProfileSidebar() {
 
-  const {user, token} = useSelector(state => state.user)
+  const { user, token } = useSelector(state => state.user)
+  const [image, setImage] = useState('')
+  const [validationErrors, setValidationErrors] = useState([])
+  const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch()
+
+  const updateProfileImage = async () => {
+    setValidationErrors([])
+    setLoading(false)
+
+    const formData = new FormData()
+    formData.append('profile_image', image)
+    formData.append('_method', 'PUT')
+
+    try {
+      const response = await axiosRequest.put('user/profile/update',
+        formData, getConfig(token, 'multipart/from-data'))
+      dispatch(setCurrentUser(response.data.user))
+      setImage('')
+      setLoading(false)
+      toast.success(response.data.message)
+    } catch (error) {
+      if (error?.response?.status === 422) {
+        setValidationErrors(error.response.data.errors);
+      }
+      console.log(error);
+      setLoading(false);
+    }
+  }
+
 
   return (
     <div className="col-md-4">
@@ -18,6 +51,29 @@ export default function ProfileSidebar() {
             height={150}
             className="rounded-circle"
           />
+          <div className="input-group my-3">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImage(e.target.files[0])}
+              className="form-control"
+            />
+            {useValidations(validationErrors, 'profile_image')}
+            {
+              loading ?
+                <span className="text-danger fw-bold mx-1 mt-1">
+                  uploading...
+                </span>
+                :
+                <button
+                  className="btn btn-sm btn-primary"
+                  disabled={!image}
+                  onClick={() => updateProfileImage()}
+                >
+                  Upload
+                </button>
+            }
+          </div>
         </div>
       </div>
       <ul className="list-group w-100 text-center mt-2">
