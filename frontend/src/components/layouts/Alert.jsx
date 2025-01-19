@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function Alert({type, content}) {
   return (
@@ -14,3 +14,9 @@ export default function Alert({type, content}) {
     </div>
   )
 }
+
+// prop defining.
+Alert.propTypes = {
+  type: PropTypes.any,
+  content:PropTypes.string
+};

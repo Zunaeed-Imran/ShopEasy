@@ -87,8 +87,10 @@ export default function Checkout() {
             </ul>
             <div className="my-3">
               {
-                user?.completed_profile ? 
-                  <Link to={'/'} className="btn btn-primary rounded-0" />
+                user?.profile_completed ? 
+                  <Link to={'/'} className="btn btn-primary rounded-0">
+                    Proceed to payment
+                  </Link>
                   :
                   <Alert content={'Add your billing details'} type={'warning'}/>
               }
