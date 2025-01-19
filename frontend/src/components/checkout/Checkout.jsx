@@ -4,6 +4,7 @@ import { setValidCoupon } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import Alert from "../layouts/Alert";
+import UserUpdateinfos from '../user/UpdateUserinfos';
 
 export default function Checkout() {
   const { user } = useSelector(state => state.user)
@@ -29,8 +30,10 @@ export default function Checkout() {
     <div className="card mb-4">
       <div className="card-body">
         <div className="row my-5">
-          <div className="col-md-7">{/* User information */}</div>
-          <div className="col-md-5">
+          <div className="col-md-8">
+            <UserUpdateinfos />
+          </div>
+          <div className="col-md-4">
             <Coupon />
             <ul className="list-group">
               {cartItems.map(item => (
