@@ -23,7 +23,7 @@ class UserResource extends JsonResource
             'city' => $this->city,
             'country' => $this->country,
             'phone_number' => $this->phone_number,
-            'profile_image' => $this->profile_image,
+            'profile_image' => $this->image_path(),
             'profile_completed' => $this->profile_completed,
             'orders' => $this->orders,
         ];
