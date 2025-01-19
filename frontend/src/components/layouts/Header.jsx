@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link, useLocation } from "react-router-dom";
 import { axiosRequest, getConfig } from "../../helper/config";
 import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
+import { toast } from "react-toastify";
 
 export default function Header() {
   const { isLoggedIn, token, user } = useSelector(state => state.user)
@@ -34,6 +35,7 @@ export default function Header() {
             dispatch(setCurrentUser(null))
             dispatch(setToken(''))
             dispatch(setLogInOut(false))
+            toast.success(response.data.message)
         } catch (error) {
           console.log(error);
         }
