@@ -66,21 +66,21 @@ export default function Header() {
                 Home
               </Link>
             </li>
-            {isLoggedIn ? (
+            {isLoggedIn ? 
               <>
                 <li className="nav-item">
                   <Link
                     className={`nav-link ${location.pathname === '/profile' && 'active'}`}
                     aria-current="page"
-                    to={'/register'}
+                    to={'/profile'}
                   >
                     <i className="bi bi-person"></i>
-                    {user.name}
+                    {user?.name}
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link active"
+                    className="nav-link"
                     aria-current="page"
                     to="#"
                     onClick={() => logoutUser()}
@@ -90,7 +90,7 @@ export default function Header() {
                   </Link>
                 </li>
               </>
-            ) : (
+             : 
               <>
                 <li className="nav-item">
                   <Link
@@ -113,7 +113,7 @@ export default function Header() {
                   </Link>
                 </li>
               </>
-            )}
+            }
             <li className="nav-item">
               <Link
                 className={`nav-link ${location.pathname === '/cart' && 'active'}`}
