@@ -15,7 +15,7 @@ export const userSlice = createSlice({
       state.user = action.payload
     },
     setLoggedInOut(state, action) {
-      state.isLoggidIn = action.payload
+      state.isLoggedIn = action.payload;
     },
     setToken(state, action) {
       state.token = action.payload
