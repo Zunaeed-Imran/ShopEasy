@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useLocation } from "react-router-dom";
 import { axiosRequest, getConfig } from "../../helper/config";
-import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
+import { setCurrentUser, setLoggedInOut, setToken } from "../../redux/slices/userSlice";
 import { toast } from "react-toastify";
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
           if (error?.response?.status === 401) {
             dispatch(setCurrentUser(null))
             dispatch(setToken(''))
-            dispatch(setLogInOut(false))
+            dispatch(setLoggedInOut(false))
           }
           console.log(error);
         }
@@ -34,7 +34,7 @@ export default function Header() {
           const response = await axiosRequest.post('user/logout', null,  getConfig(token))
             dispatch(setCurrentUser(null))
             dispatch(setToken(''))
-            dispatch(setLogInOut(false))
+            dispatch(setLoggedInOut(false))
             toast.success(response.data.message)
         } catch (error) {
           console.log(error);

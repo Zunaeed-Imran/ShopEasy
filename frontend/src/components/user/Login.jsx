@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import Spinner from "../layouts/Spinner";
 import useValidations from "../custom/useValidations";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentUser, setLogInOut, setToken } from "../../redux/slices/userSlice";
+import { setCurrentUser, setLoggedInOut, setToken } from "../../redux/slices/userSlice";
 
 export default function Login() {
 
@@ -35,7 +35,7 @@ export default function Login() {
         } else {
           dispatch(setCurrentUser(response.data.user))
           dispatch(setToken(response.data.access_token))
-          dispatch(setLogInOut(true))
+          dispatch(setLoggedInOut(true))
           toast.success(response.data.message)
           navigate('/');
         }
