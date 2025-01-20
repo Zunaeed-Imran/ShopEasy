@@ -186,4 +186,5 @@ i will make a frontend and bacaend project. with laravel and react.
 - make profile.jsx in user and working on it.
 - useref() use in ProfileSidebar.jsx to use empty string after upload image.
 - working on update userInfo file.
-- 16:32
+- set condation if user logout it redirect to login page (in profile and checkout page).
+- 
