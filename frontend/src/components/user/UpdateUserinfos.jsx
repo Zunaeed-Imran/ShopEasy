@@ -65,6 +65,7 @@ export default function UserUpdateinfos({profile}) {
                     phone_number: e.target.value,
                   })
                 }
+                required
                 className="form-control"
               />
             </div>
@@ -80,6 +81,7 @@ export default function UserUpdateinfos({profile}) {
                     address: e.target.value,
                   })
                 }
+                required
                 className="form-control"
               />
             </div>
@@ -95,6 +97,7 @@ export default function UserUpdateinfos({profile}) {
                     city: e.target.value,
                   })
                 }
+                required
                 className="form-control"
               />
             </div>
@@ -110,6 +113,7 @@ export default function UserUpdateinfos({profile}) {
                     country: e.target.value,
                   })
                 }
+                required
                 className="form-control"
               />
             </div>
@@ -125,6 +129,7 @@ export default function UserUpdateinfos({profile}) {
                     zip_code: e.target.value,
                   })
                 }
+                required
                 className="form-control"
               />
             </div>
