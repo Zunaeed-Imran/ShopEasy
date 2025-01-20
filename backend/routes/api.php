@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function(){
 
-  Route::get('/user', function (Request $request) {
+  Route::get('user', function (Request $request) {
       return [
         'user' => UserResource::make($request->user()),
         'access_token' => $request->bearerToken()
