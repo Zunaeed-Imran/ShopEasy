@@ -136,11 +136,13 @@ export default function UserUpdateinfos({profile}) {
 
             {loading ? (
               <Spinner />
-            ) : (
-              <button type="submit" className="btn btn-dark btn-sm">
+            ) : 
+              !user?.profile_completed ?
+                <button type="submit" className="btn btn-dark btn-sm">
                 Submit
-              </button>
-            )}
+                </button>
+                : ''
+            }
           </form>
         </div>
       </div>
