@@ -188,7 +188,13 @@ i will make a frontend and bacaend project. with laravel and react.
 - working on update userInfo file.
 - set condation if user logout it redirect to login page (in profile and checkout page).
 - make orderController `php artisan make:controller Api/OrderController`
+### Payment Process.
 - install Stripe for Payment Process. `composer require stripe/stripe-php`
 - than make function for payment in the 'OrderController'
 - than make acount in `stripe and also use API sECRET key in .env` file in my project
+- from doc we have to install for //for the frontend 
+- `npm install --save @stripe/react-stripe-js @stripe/stripe-js`
+- than pest the provided code in CheckForm.jsx
 - 
+- //for the backend
+- `composer require stripe/stripe-php`
