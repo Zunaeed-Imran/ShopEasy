@@ -195,6 +195,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - from doc we have to install for //for the frontend 
 - `npm install --save @stripe/react-stripe-js @stripe/stripe-js`
 - than pest the provided code in CheckForm.jsx
+- also pest the provided code in Stripe.jsx
 - 
 - //for the backend
 - `composer require stripe/stripe-php`
