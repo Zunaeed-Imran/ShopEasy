@@ -187,4 +187,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - useref() use in ProfileSidebar.jsx to use empty string after upload image.
 - working on update userInfo file.
 - set condation if user logout it redirect to login page (in profile and checkout page).
-- problem (header, login, userSlice)
+- make orderController `php artisan make:controller Api/OrderController`
