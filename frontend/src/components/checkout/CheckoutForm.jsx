@@ -1,13 +1,45 @@
 import { PaymentElement } from '@stripe/react-stripe-js'
 import { useState } from 'react'
 import { useStripe, useElements } from '@stripe/react-stripe-js'
+import { axiosRequest, getConfig } from '../../helper/config'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { clearCartItems, setValidCoupon } from '../../redux/slices/cartSlice';
+import { setCurrentUser } from '../../redux/slices/userSlice';
+import { toast } from 'react-toastify';
 
 export default function CheckoutForm() {
+  const { cartItems } = useSelector(state => state.cart)
+  const { token } = useSelector(state => state.user)
   const stripe = useStripe()
   const elements = useElements()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState(null)
   const [isProcessing, setIsProcessing] = useState(false)
+
+      const storeOrder = async () => {
+        try {
+          const response = await axiosRequest.post('store/order', {
+            products: cartItems
+          }, getConfig(token))
+
+          dispatch(clearCartItems())
+          dispatch(setValidCoupon({
+            name: '',
+            discount: 0
+          }))
+          dispatch(setCurrentUser(response.data.user))
+          setIsProcessing(false)
+          toast.success('Payment done successfully')
+          navigate('/user/orders')
+
+        } catch (error) {
+          console.log(error)
+          setIsProcessing(false)
+        }
+      }
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -35,6 +67,7 @@ export default function CheckoutForm() {
       setMessage(response.error.message);
     } else if (response.paymentIntent.id) {
       //display success message or redirect user
+      storeOrder()
     }
 
     setIsProcessing(false);
