@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import CheckoutForm from './CheckoutForm'
-import axios from 'axios'
-import { BASE_URL } from '../../Helpers/Url'
+import { axiosRequest, getConfig } from '../../helper/config'
+import { useSelector } from 'react-redux'
 
-export default function Stripe({ total }) {
-  const stripePromise = loadStripe('Your Publishable Key')
+export default function Stripe() {
+  const stripePromise = loadStripe(
+    'pk_test_51QjbU2Ko3om26zX4zcJsKLBzuXZ1oeQG9d63vGubOmhlJ1C2NP5TG1x5q1pyAn6aBXCen66GwXNzWxitCTHqEdaK00vFUUjxxr'
+  );
   const [clientSecret, setClientSecret] = useState('')
-  const items = [{ amount: total }]
+  const {token} = useSelector(state => state.user)
+  const {cartItems} = useSelector(state => state.cart)
 
   useEffect(() => {
     fetchClientSecret()
@@ -16,9 +19,9 @@ export default function Stripe({ total }) {
 
   const fetchClientSecret = async () => {
     try {
-      const response = await axios.post(`${BASE_URL}order/pay`, {
-        items,
-      })
+      const response = await axiosRequest.post('pay/order', {
+        cartItems,
+      }, getConfig(token));
       setClientSecret(response.data.clientSecret);
     } catch (error) {
       console.log(error)
