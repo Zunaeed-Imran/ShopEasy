@@ -70,40 +70,36 @@ export default function Checkout() {
                 </li>
               ))}
               <li className="list-group-item d-flex justify-content-between">
-                <span className="fw-bold">Discount {validCoupon?.discount}%</span>
-                {
-                  validCoupon?.name && 
-                    <span className="fw-normal text-danger">
-                    {validCoupon?.name}<i
+                <span className="fw-bold">
+                  Discount {validCoupon?.discount}%
+                </span>
+                {validCoupon?.name && (
+                  <span className="fw-normal text-danger">
+                    {validCoupon?.name}
+                    <i
                       className="bi bi-trash"
                       style={{ cursor: 'pointer' }}
                       onClick={() => removeCoupon()}
-                    >
-                    </i>
+                    ></i>
                   </span>
-                }
+                )}
                 <span className="fw-bold text-danger">
                   ${calculateDiscount}
                 </span>
               </li>
               <li className="list-group-item d-flex justify-content-between">
-                <span className="fw-bold">
-                  Total: 
-                </span>
-                <span className="fw-bold">
-                  ${totalAfterDiscount()}
-                </span>
+                <span className="fw-bold">Total:</span>
+                <span className="fw-bold">${totalAfterDiscount()}</span>
               </li>
             </ul>
             <div className="my-3">
-              {
-                user?.profile_completed ? 
-                  <Link to={'/'} className="btn btn-primary rounded-0">
-                    Proceed to payment
-                  </Link>
-                  :
-                  <Alert content={'Add your billing details'} type={'warning'}/>
-              }
+              {user?.profile_completed ? (
+                <Link to={'/pay/order'} className="btn btn-primary rounded-0">
+                  Proceed to payment
+                </Link>
+              ) : (
+                <Alert content={'Add your billing details'} type={'warning'} />
+              )}
             </div>
           </div>
         </div>
