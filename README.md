@@ -188,3 +188,4 @@ i will make a frontend and bacaend project. with laravel and react.
 - working on update userInfo file.
 - set condation if user logout it redirect to login page (in profile and checkout page).
 - make orderController `php artisan make:controller Api/OrderController`
+- install Stripe for Payment Process. `composer require stripe/stripe-php`
