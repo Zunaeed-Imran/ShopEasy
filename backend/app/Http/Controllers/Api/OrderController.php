@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Models\Coupon;
 use App\Models\Order;
 use ErrorException;
 use Illuminate\Http\Request;
-use Stripe\Coupon;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 
@@ -33,7 +33,7 @@ class OrderController extends Controller
     // Pay Order using stripe
     public function payOrderByStripe(Request $request)
     {
-      Stripe::setApiKey(env('STRIPE_KEY'));
+      Stripe::setApiKey("sk_test_51QjbU2Ko3om26zX4ZTdhyXKdMYSiu2kn56aqWlXdqkruJP44LHf4BgWsy1R5U4vs7Oe0YUzJoBKfufvbLmqih2nK00zDxL6H36");
       try{
         $paymentIntent = PaymentIntent::create([
           'amount' => $this->calculateOrderTotal($request->cartItems),
@@ -54,7 +54,7 @@ class OrderController extends Controller
     }
 
     // Calculate total order.
-    public function calculateOrderTotal($item)
+    public function calculateOrderTotal($items)
     {
       $total = 0;
       foreach ($items as $item) {
@@ -64,7 +64,7 @@ class OrderController extends Controller
     }
 
   // total calculate
-  public function calculateTotal($item)
+  public function calculateTotal($price, $qty, $coupon_id)
   {
     $total = 0;
     $total = $price * $qty;
