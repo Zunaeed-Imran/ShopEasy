@@ -202,7 +202,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make resource `php artisan make:resource OrderResource`
 - make necessary function in controller.
 - working on backend API.
-- 
+- make Orders blade index file.
 
 - //for the backend
 - `composer require stripe/stripe-php`
