@@ -60,7 +60,7 @@
                   </div>
                 </td>
                 <td scope="col">
-                  @if($order->coupon->name)
+                  @if($order->coupon()->exists())
                     <span class="badge bg-success">
                       {{$order->coupon->name}}
                     </span>
@@ -83,7 +83,7 @@
                     </span>
                   @else  
                     <a href="{{route('admin.orders.update', $order->id)}}">
-                      <i class="fas fa-pencil-mx-2"></i>
+                      <i class="fas fa-pencil mx-2"></i>
                     </a>
                   @endif
                 </td>
@@ -91,7 +91,7 @@
                   <a href="#" onclick="deleteItem({{$order->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
                   </a>
-                  <form id="{{$order->id}}" action="{{route('admin.orders.destroy', $order->id)}}" method="post">
+                  <form id="{{$order->id}}" action="{{route('admin.orders.delete', $order->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                   </form>

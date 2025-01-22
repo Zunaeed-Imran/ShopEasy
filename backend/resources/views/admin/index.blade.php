@@ -31,7 +31,7 @@
 </div>
   <div class="card-footer text-center bg-white">
     <strong>
-      {{$todayOrders->sum('total')}}
+      ${{$todayOrders->sum('total')}}
     </strong>
   </div>
 </div>
@@ -51,7 +51,7 @@
     </div>
     <div class="card-footer text-center bg-white">
       <strong>
-        {{$yesterdayOrders->sum('total')}}
+        ${{$yesterdayOrders->sum('total')}}
       </strong>
     </div>
   </div>
@@ -71,7 +71,7 @@
     </div>
     <div class="card-footer text-center bg-white">
       <strong>
-        {{ $monthOrders->sum('total')}}
+        ${{ $monthOrders->sum('total')}}
       </strong>
     </div>
   </div>
@@ -91,7 +91,7 @@
     </div>
     <div class="card-footer text-center bg-white">
       <strong>
-        {{ $yearOrders->sum('total')}}
+        ${{ $yearOrders->sum('total')}}
       </strong>
     </div>
   </div>
