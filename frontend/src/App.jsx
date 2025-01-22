@@ -9,6 +9,7 @@ import Login from './components/user/Login'
 import Register from './components/user/Register'
 import Profile from './components/user/Profile'
 import PayByStripe from './components/checkout/PayByStripe'
+import UserOrders from './components/user/UserOrders'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/pay/order' element={<PayByStripe />} />
+        <Route path='/user/orders' element={<UserOrders />} />
       </Routes>
     </BrowserRouter>
   )
