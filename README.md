@@ -200,5 +200,8 @@ i will make a frontend and bacaend project. with laravel and react.
 ### Again working on backend.
 - make controller in admin file, `php artisan make:controller Admin/OrderController`
 - make resource `php artisan make:resource OrderResource`
+- make necessary function in controller.
+- 
+
 - //for the backend
 - `composer require stripe/stripe-php`
