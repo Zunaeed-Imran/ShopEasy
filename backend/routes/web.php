@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
@@ -20,6 +21,7 @@ Route::middleware('admin')->group(function () {
     Route::prefix('admin')->group(function(){
         Route::get('dashboard', [AdminController::class, 'index'])->name('admin.index');
         Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
+
         // colors route
         Route::resource('colors', ColorController::class, [
             'names' => [
@@ -31,6 +33,7 @@ Route::middleware('admin')->group(function () {
                 'destroy' => 'admin.colors.destroy'
             ]
         ]);
+
         // sizes route
         Route::resource('sizes', SizeController::class, [
             'names' => [
@@ -42,6 +45,7 @@ Route::middleware('admin')->group(function () {
                 'destroy' => 'admin.sizes.destroy'
             ]
         ]);
+
         // coupons route
         Route::resource('coupons', CouponController::class, [
             'names' => [
@@ -53,6 +57,7 @@ Route::middleware('admin')->group(function () {
                 'destroy' => 'admin.coupons.destroy'
             ]
         ]);
+
         // products route
         Route::resource('products', ProductController::class, [
             'names' => [
@@ -64,5 +69,10 @@ Route::middleware('admin')->group(function () {
                 'destroy' => 'admin.products.destroy'
             ]
         ]);
+        
+        // Orders route
+        Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
+        Route::get('update/{order}/order', [OrderController::class, 'updateDeliveredAtDate'])->name('admin.orders.update');
+        Route::get('delete/{order}/order', [OrderController::class, 'delete'])->name('admin.orders.delete');
     });
 });

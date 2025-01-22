@@ -201,6 +201,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make controller in admin file, `php artisan make:controller Admin/OrderController`
 - make resource `php artisan make:resource OrderResource`
 - make necessary function in controller.
+- working on backend API.
 - 
 
 - //for the backend
