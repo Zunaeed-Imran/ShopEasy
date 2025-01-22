@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { ReviewContext } from "./context/reviewContext"
+import AddUpdateReview from "./AddUpdateReview"
 
 export default function Reviews({product, setLoading}) {
 
@@ -26,7 +27,10 @@ export default function Reviews({product, setLoading}) {
     <ReviewContext.Provider
       value={{ product, review, setReview, setLoading, handleRating }}
     >
-
+      {
+        isLoggidIn && 
+      <AddUpdateReview/>
+      }
     </ReviewContext.Provider>
   )
 }

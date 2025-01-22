@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useSelector } from "react-redux";
 import { axiosRequest, getConfig } from "../../helper/config";
 import { ReviewContext } from "./context/reviewContext";
-import Rating from 'react-simple-star-rating'
+import {Rating} from 'react-simple-star-rating'
 
 export default function AddUpdateReview() {
 
