@@ -22,7 +22,7 @@ class OrderResource extends JsonResource
             'coupon' => $this->coupon,
             'total' => $this->total,
             'qty' => $this->qty,
-            'created_at' => $this->created_at->diffForHumans(),
+            'created_at' => $this->created_at,
             'delivered_at' => $this->delivered_at ? Carbon::parse($this->delivered_at)->diffForHumans()
                                                   : null
         ];
