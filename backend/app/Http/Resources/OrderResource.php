@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -14,6 +15,16 @@ class OrderResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'user' => $this->user,
+            'products' => $this->products,
+            'coupon' => $this->coupon,
+            'total' => $this->total,
+            'qty' => $this->qty,
+            'created_at' => $this->created_at->diffForHumans(),
+            'delivered_at' => $this->delivered_at ? Carbon::parse($this->delivered_at)->diffForHumans()
+                                                  : null
+        ];
     }
 }
