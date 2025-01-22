@@ -24,7 +24,7 @@ export default function AddUpdateReview() {
   
   return (
         <div className="row my-5">
-          <div className="col-md-6 mx-auto">
+          <div className="col-md-8 mx-auto">
             <div className="card shadow-sm">
               <div className="card-header bg-white">
                 <h5 className="text-center mt-2">Add Review</h5>
@@ -53,7 +53,7 @@ export default function AddUpdateReview() {
                       />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Body*</label>
+                    <label className="form-label">Review*</label>
                     <textarea
                       name="body" value={review.body}
                       rows={30} id="body"

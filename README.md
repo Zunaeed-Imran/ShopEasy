@@ -208,7 +208,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make review folder and review component and use it in product.jsx file.
 - install react rating package in frontend `npm i react-simple-star-rating`
 - we use useContext() react in review.
-- 
+- 22:38
 
 - //for the backend
 - `composer require stripe/stripe-php`
