@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import ProfileSidebar from "./partials/ProfileSidebar"
+import Alert from '../layouts/Alert'
 
 export default function UserOrders() {
 
@@ -39,8 +40,11 @@ export default function UserOrders() {
               </tr>
             </thead>
             <tbody>
-              {user?.orders?.slice(0, ordersToShow).map((order, index) => (
-                <tr key={order}>
+              {
+                user?.orders.length > 0
+                  ?
+                                  user?.orders?.slice(0, ordersToShow).map((order, index) => (
+                <tr>
                   <th>{index + 1}</th>
                   <th>
                     <div className="d-flex flex-column">
@@ -77,7 +81,10 @@ export default function UserOrders() {
                     )}
                   </th>
                 </tr>
-              ))}
+                ))
+                  :
+                  <Alert content="No Orders Yet" type="primary" />
+              }
             </tbody>
             </table>
             {ordersToShow < user?.order?.length && (
