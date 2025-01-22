@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import { ReviewContext } from "./context/reviewContext"
 
-export default function Reviews() {
+export default function Reviews({product, setLoading}) {
 
   const { user, isLoggidIn } = useSelector(state => state.user)
   const [review, setReview] = useState({
@@ -12,9 +13,20 @@ export default function Reviews() {
     rating: 0,
   })
 
+  // Catch Rating value
+  const handleRating = (rating) => {
+    setReview({
+      ...review, rating
+    })
+    
+  }
+
+
   return (
-    <div>
-      Review Component
-    </div>
+    <ReviewContext.Provider
+      value={{ product, review, setReview, setLoading, handleRating }}
+    >
+
+    </ReviewContext.Provider>
   )
 }
