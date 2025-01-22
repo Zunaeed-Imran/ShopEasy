@@ -197,6 +197,8 @@ i will make a frontend and bacaend project. with laravel and react.
 - than pest the provided code in CheckForm.jsx
 - also pest the provided code in Stripe.jsx
 - than set "publish" key from my own stripe account, in (Stripe.jsx) file
-- 44.00
+### Again working on backend.
+- make controller in admin file, `php artisan make:controller Admin/OrderController`
+- make resource `php artisan make:resource OrderResource`
 - //for the backend
 - `composer require stripe/stripe-php`
