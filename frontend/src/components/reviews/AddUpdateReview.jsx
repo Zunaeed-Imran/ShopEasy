@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { useSelector } from "react-redux";
 import { axiosRequest, getConfig } from "../../helper/config";
-import { toast } from "react-toastify";
 import { ReviewContext } from "./context/reviewContext";
-
+import Rating from 'react-simple-star-rating'
 
 export default function AddUpdateReview() {
 
@@ -54,48 +53,29 @@ export default function AddUpdateReview() {
                       />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Email address*</label>
-                    <input
-                      type="email"
+                    <label className="form-label">Body*</label>
+                    <textarea
+                      name="body" value={review.body}
+                      rows={30} id="body"
+                      onChange={(e) => setReview({
+                        ...review, body: e.target.value
+                      })}
                       className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      value={user.email}
-                      onChange={e =>
-                        setUser({
-                          ...user,
-                          email: e.target.value,
-                        })
-                      }
-                    />
-                    <div id="emailHelp" className="form-text">
-                      Well never share your email with anyone else.
-                    </div>
-                    {useValidations(validationErrors, 'email')}
+                      placeholder="Review"
+                    >
+                          
+                    </textarea>
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Password*</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="exampleInputPassword1"
-                      value={user.password}
-                      onChange={e =>
-                        setUser({
-                          ...user,
-                          password: e.target.value,
-                        })
-                      }
-                      />
-                      {useValidations(validationErrors, 'password')}
+                    <Rating
+                      initialValue={review.rating}
+                      onClick={handleRating}
+                      size={32}
+                    />
                   </div>
-                  {loading ? (
-                    <Spinner />
-                  ) : (
                     <button type="submit" className="btn btn-dark btn-sm">
                       Submit
                     </button>
-                  )}
                 </form>
               </div>
             </div>
