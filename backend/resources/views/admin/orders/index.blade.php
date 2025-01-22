@@ -74,7 +74,7 @@
                       {{$order->user->name}}
                 </td>
                 <td scope="col">
-                  {{ $order->created_at->diffForHumans() }}
+                  {{ $order->created_at }}
                 </td>
                 <td scope="col">
                   @if($order->delivered_at)
