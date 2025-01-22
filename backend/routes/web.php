@@ -73,6 +73,6 @@ Route::middleware('admin')->group(function () {
         // Orders route
         Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
         Route::get('update/{order}/order', [OrderController::class, 'updateDeliveredAtDate'])->name('admin.orders.update');
-        Route::get('delete/{order}/order', [OrderController::class, 'delete'])->name('admin.orders.delete');
+        Route::delete('delete/{order}/order', [OrderController::class, 'delete'])->name('admin.orders.delete');
     });
 });
