@@ -1,75 +1,57 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { axiosRequest } from "../../helper/config";
+import { axiosRequest, getConfig } from "../../helper/config";
 import { toast } from "react-toastify";
-import useValidations from "../custom/useValidations";
-import Spinner from "../layouts/Spinner";
+import { ReviewContext } from "./context/reviewContext";
 
 
 export default function AddUpdateReview() {
 
     const { token } = useSelector(state => state.user);
-    const [user, setUser] = useState({
-      name: '',
-      email: '',
-      password: '',
-    });
-    const [validationErrors, setValidationErrors] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+  const {
+       product, review, setReview, setLoading, handleRating
+    } = useContext(ReviewContext)
 
-    useEffect(() => {
-      if (isLoggedIn) navigate('/');
-    }, [isLoggedIn]);
-
-    const registerNewUser = async e => {
+    const addReview = async e => {
       e.preventDefault();
-      setValidationErrors([]);
-      setLoading(true);
       try {
-        const response = await axiosRequest.post('user/register', user);
-        setLoading(false);
-        toast.success(response.data.message);
-        navigate('/login');
+        const response = await axiosRequest.post('review/store', review, getConfig(token))
+        
       } catch (error) {
-        if (error?.response?.status === 422) {
-          setValidationErrors(error.response.data.errors);
-        }
         console.log(error);
         setLoading(false);
       }
-    };
-
+    }
+  
   return (
         <div className="row my-5">
           <div className="col-md-6 mx-auto">
             <div className="card shadow-sm">
               <div className="card-header bg-white">
-                <h5 className="text-center mt-2">Register</h5>
+                <h5 className="text-center mt-2">Add Review</h5>
               </div>
               <div className="card-body">
                 <form
                   action=""
                   method="post"
                   className="mt-5"
-                  onSubmit={e => registerNewUser(e)}
+                  onSubmit={e => addReview(e)}
                 >
                   <div className="mb-3">
-                    <label className="form-label">Name*</label>
+                    <label className="form-label">Title*</label>
                     <input
                       type="text"
-                      id="name"
-                      value={user.name}
+                      id="title"
+                      value={review.title}
                       onChange={e =>
-                        setUser({
-                          ...user,
-                          name: e.target.value,
+                        setReview({
+                          ...review,
+                          title: e.target.value,
                         })
                       }
+                      required
                       className="form-control"
                       />
-                      {useValidations(validationErrors, 'name')}
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Email address*</label>
