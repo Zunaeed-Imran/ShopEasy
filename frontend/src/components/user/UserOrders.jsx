@@ -60,29 +60,37 @@ export default function UserOrders() {
                       ))}
                     </div>
                   </th>
-                  <th>{ order.qty }</th>
+                  <th>{order.qty}</th>
                   <th>
                     <span className="badge bg-secondary my-1 rounded-0">
                       ${order.total}
                     </span>
                   </th>
-                  <th>{ order.created_at }</th>
+                  <th>{order.created_at}</th>
                   <th>
-                    {
-                      order.delivered_at ?
-                        <span className="badge bg-success my-1 rounded-0">
-                          {product.delivered_at}
-                        </span>
-                        :
-                        <i className="text-muted">
-                          Pending...
-                        </i>
-                    }
+                    {order.delivered_at ? (
+                      <span className="badge bg-success my-1 rounded-0">
+                        {product.delivered_at}
+                      </span>
+                    ) : (
+                      <i className="text-muted">Pending...</i>
+                    )}
                   </th>
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+            {ordersToShow < user?.order?.length && (
+              <div className="d-flex justify-content-center my-3">
+                <button
+                  className="btn btn-sm btn-dark"
+                  onClick={() => loadMoreOrders()}
+                >
+                  <i className="bi bi-arrow-clockwise"></i>{''}
+                  Load More
+                </button>
+              </div>
+            )}
         </div>
       </div>
     </div>
