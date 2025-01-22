@@ -7,6 +7,7 @@ import Slider from './images/Slider';
 import {Parser} from 'html-to-react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
+import Reviews from '../reviews/Reviews';
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -157,6 +158,20 @@ export default function Product() {
                     <i className="bi bi-cart-plus-fill"></i>
                     Add To Cart
                   </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='row my-4'>
+            <div className='col-md-8 mx-auto'>
+              <div className='card'>
+                <div className='card-header bg-white text-center'>
+                  <h5 className='mt-2'>
+                    Reviews ({product?.review?.length})
+                  </h5>
+                </div>
+                <div className='card-body'>
+                  <Reviews/>
                 </div>
               </div>
             </div>
