@@ -203,6 +203,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make necessary function in controller.
 - working on backend API.
 - make Orders blade index file.
-
+- make UserOrder.jsx page for to show user orders.
+- 22:26
 - //for the backend
 - `composer require stripe/stripe-php`

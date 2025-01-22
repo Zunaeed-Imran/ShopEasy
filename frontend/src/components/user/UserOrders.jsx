@@ -67,7 +67,18 @@ export default function UserOrders() {
                     </span>
                   </th>
                   <th>{ order.created_at }</th>
-                  <th>Delivered Date</th>
+                  <th>
+                    {
+                      order.delivered_at ?
+                        <span className="badge bg-success my-1 rounded-0">
+                          {product.delivered_at}
+                        </span>
+                        :
+                        <i className="text-muted">
+                          Pending...
+                        </i>
+                    }
+                  </th>
                 </tr>
               ))}
             </tbody>
