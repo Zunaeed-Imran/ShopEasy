@@ -12,7 +12,7 @@ export default function PayByStripe() {
 
   useEffect(() => {
     if (!isLoggedIn) navigate('/login')
-    if(!cartItems.length) navigate('/user/orders')
+    if(!cartItems.length) navigate('/')
   }, [isLoggedIn, cartItems])
 
   return (
