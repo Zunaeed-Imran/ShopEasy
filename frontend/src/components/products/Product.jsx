@@ -171,7 +171,7 @@ export default function Product() {
                   </h5>
                 </div>
                 <div className='card-body'>
-                  <Reviews/>
+                      <Reviews product={product} setLoading={setLoading} />
                 </div>
               </div>
             </div>

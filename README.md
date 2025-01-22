@@ -206,6 +206,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - make UserOrder.jsx page for to show user orders.
 - after we work on review product in Product.jsx file
 - make review folder and review component and use it in product.jsx file.
+- install react rating package in frontend `npm i react-simple-star-rating`
 - 
 
 - //for the backend

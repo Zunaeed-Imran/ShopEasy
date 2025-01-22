@@ -24,6 +24,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
+    "react-simple-star-rating": "^5.1.7",
     "react-toastify": "^11.0.2",
     "redux-persist": "^6.0.0",
     "use-debounce": "^10.0.4"
