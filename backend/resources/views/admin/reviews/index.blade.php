@@ -59,9 +59,18 @@
                 </td>
                 <td scope="col">{{$review->created_at}}</td>
                 <td>
-                  <a href="#" onclick="deleteItem({{$review->id}})" class="btn btn-sm btn-danger">
-                    <i class="fas fa-trash"></i>
-                  </a>
+                 @if($review->approved)
+                    <a href="{{route('admin.reviews.update', ['review' => $review->id, 'status' => 0])}}" class="btn btn-sm btn-warning">
+                      <i class="fas fa-eye-slash"></i>
+                    </a>
+                  @else
+                    <a href="{{route('admin.reviews.update', ['review' => $review->id, 'status' => 1])}}" class="btn btn-sm btn-success">
+                      <i class="fas fa-eye-slash"></i>
+                    </a>  
+                  @endif
+                   <a href="#" onclick="deleteItem({{$review->id}})" class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash"></i>
+                   </a>
                   <form id="{{$review->id}}" action="{{route('admin.reviews.delete', $review->id)}}" method="post">
                     @csrf
                     @method('DELETE')
