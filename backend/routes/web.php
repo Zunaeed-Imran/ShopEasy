@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
@@ -22,7 +23,7 @@ Route::middleware('admin')->group(function () {
         Route::get('dashboard', [AdminController::class, 'index'])->name('admin.index');
         Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-        // colors route
+        // Colors routes
         Route::resource('colors', ColorController::class, [
             'names' => [
                 'index' => 'admin.colors.index',
@@ -34,7 +35,7 @@ Route::middleware('admin')->group(function () {
             ]
         ]);
 
-        // sizes route
+        // Sizes routes
         Route::resource('sizes', SizeController::class, [
             'names' => [
                 'index' => 'admin.sizes.index',
@@ -46,7 +47,7 @@ Route::middleware('admin')->group(function () {
             ]
         ]);
 
-        // coupons route
+        // Coupons routes
         Route::resource('coupons', CouponController::class, [
             'names' => [
                 'index' => 'admin.coupons.index',
@@ -58,7 +59,7 @@ Route::middleware('admin')->group(function () {
             ]
         ]);
 
-        // products route
+        // Products routes
         Route::resource('products', ProductController::class, [
             'names' => [
                 'index' => 'admin.products.index',
@@ -70,9 +71,14 @@ Route::middleware('admin')->group(function () {
             ]
         ]);
         
-        // Orders route
+        // Orders routes
         Route::get('orders', [OrderController::class, 'index'])->name('admin.orders.index');
         Route::get('update/{order}/order', [OrderController::class, 'updateDeliveredAtDate'])->name('admin.orders.update');
         Route::delete('delete/{order}/order', [OrderController::class, 'delete'])->name('admin.orders.delete');
+
+        // Reviews routes
+        Route::get('orders', [ReviewController::class, 'index'])->name('admin.orders.index');
+        Route::get('update/{review}/{status}/review', [ReviewController::class, 'toggleApprovedStatus'])->name('admin.reviews.update');
+        Route::delete('delete/{review}/review', [ReviewController::class, 'delete'])->name('admin.reviews.delete');
     });
 });
