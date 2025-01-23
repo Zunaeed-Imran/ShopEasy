@@ -209,6 +209,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - install react rating package in frontend `npm i react-simple-star-rating`
 - we use useContext() react in review.
 - than make controller for review `php artisan make:controller Api/ReviewController`
+- than make controller in Api `php artisan make:controller Admin/ReviewController`
 - 
 - 22:38
 
