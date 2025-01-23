@@ -9,10 +9,10 @@ import { toast } from 'react-toastify'
 export default function AddUpdateReview() {
 
     const { token } = useSelector(state => state.user);
-  const {
-    product, review, setReview, setLoading, handleRating, clearReview
-  } =
-    useContext(ReviewContext);
+    const {
+      review, setReview, setLoading, handleRating, clearReview
+    } =
+      useContext(ReviewContext);
 
     const addReview = async e => {
       e.preventDefault()
