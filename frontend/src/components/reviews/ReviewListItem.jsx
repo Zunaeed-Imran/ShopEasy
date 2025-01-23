@@ -6,7 +6,7 @@ export default function ReviewListItem({ review }) {
   const { user } = useSelector(state => state.user)
 
   const renderReviewActions = () => (
-    review?.user_id && user?.id &&
+    review?.user_id === user?.id &&
       <div className="dropdown ms-auto">
         <i className="bi bi-three-dots-verticle"
           data-bs-toggle="dropdown"></i>
