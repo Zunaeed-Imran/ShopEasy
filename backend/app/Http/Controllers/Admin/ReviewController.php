@@ -26,4 +26,13 @@ class ReviewController extends Controller
             'success' => 'Review has been updated successfully'
         ]);
     }
+
+    // Delete Reviews
+    public function destroy(Review $review)
+    {
+        $review->delete();
+        return redirect()->route('admin.reviews.index')->with([
+            'success' => 'Review has been deleted successfully'
+        ]);
+    }
 }
