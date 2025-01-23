@@ -4,7 +4,7 @@ export default function ReviewListItem({review}) {
 
   return (
     <div>
-      <li className="list-group-item bg-light d-flex justify-content-start align-items-center">
+      <li className="list-group-item bg-light d-flex justify-content-start align-items-center p-2 mb-2 rounded shadow-sm">
         <div className="me-2">
           <img
             src={review?.user?.image_path}
