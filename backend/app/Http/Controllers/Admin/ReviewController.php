@@ -28,7 +28,7 @@ class ReviewController extends Controller
     }
 
     // Delete Reviews
-    public function destroy(Review $review)
+    public function delete(Review $review)
     {
         $review->delete();
         return redirect()->route('admin.reviews.index')->with([

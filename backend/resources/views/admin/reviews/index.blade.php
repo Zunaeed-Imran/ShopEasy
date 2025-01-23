@@ -69,7 +69,7 @@
                     </a>  
                   @endif
                    <a href="#" onclick="deleteItem({{$review->id}})" class="btn btn-sm btn-danger">
-                      <i class="fas fa-trash"></i>
+                      <i class="fas fa-check-double"></i>
                    </a>
                   <form id="{{$review->id}}" action="{{route('admin.reviews.delete', $review->id)}}" method="post">
                     @csrf
