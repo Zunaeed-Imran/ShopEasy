@@ -42,6 +42,12 @@
                         Orders
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.orders.index')}}">
+                        <i class="fas fa-star"></i>
+                        Reviews
+                    </a>
+                </li>
             </ul>
             <hr class="my-3">
             <ul class="nav flex-column mb-auto">
@@ -53,6 +59,7 @@
                         <svg class="bi">
                             <use xlink:href="#door-closed" />
                         </svg>
+                        <i class="fas fa-sign-out"></i>
                         Sign out
                     </a>
                     <form id="AdminLogoutForm" action="{{route('admin.logout')}}" method="post">
