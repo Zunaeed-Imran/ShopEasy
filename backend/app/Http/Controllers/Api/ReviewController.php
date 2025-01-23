@@ -14,7 +14,7 @@ class ReviewController extends Controller
         $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
         if($exist){
             return response()->json([
-                'message' => 'You have already reviewed this product'
+                'error' => 'You have already reviewed this product'
             ]);
         }else{
             Review::create([

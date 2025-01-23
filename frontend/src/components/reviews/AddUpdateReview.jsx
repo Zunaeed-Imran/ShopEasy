@@ -23,7 +23,7 @@ export default function AddUpdateReview() {
           toast.error(response.data.error)
           setLoading(false)
         } else {
-          toast.success(response.data.success)
+          toast.success(response.data.message);
           clearReview()
           setLoading(false)
         }
