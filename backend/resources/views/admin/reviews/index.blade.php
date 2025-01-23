@@ -35,12 +35,12 @@
               @foreach ($reviews as $key => $review)
               <tr>
                 <td scope="row">{{$key += 1}}</td>
-                
+                <td scope="row">{{$review->title}}</td>
                 <td>
-                  <a href="#" onclick="deleteItem({{$order->id}})" class="btn btn-sm btn-danger">
+                  <a href="#" onclick="deleteItem({{$review->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
                   </a>
-                  <form id="{{$order->id}}" action="{{route('admin.orders.delete', $order->id)}}" method="post">
+                  <form id="{{$review->id}}" action="{{route('admin.reviews.delete', $review->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                   </form>
