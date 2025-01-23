@@ -1,3 +1,4 @@
+import { Rating } from "react-simple-star-rating";
 
 export default function ReviewListItem({review}) {
 
@@ -12,6 +13,22 @@ export default function ReviewListItem({review}) {
             width={60}
             height={60}
           />
+        </div>
+        <div className="d-flex flex-column">
+          <h6>{review?.title}</h6>
+          <p className="m-0">{review?.body}</p>
+          <Rating
+            initialValue={review?.rating}
+            readonly
+            size={24}
+          />
+          <span className="text-muted">
+            {
+              review?.created_at
+            } by <span className="fw-bold">
+              {review?.user?.name}
+            </span>
+          </span>
         </div>
       </li>
     </div>
