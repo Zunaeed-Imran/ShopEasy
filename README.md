@@ -210,8 +210,9 @@ i will make a frontend and bacaend project. with laravel and react.
 - we use useContext() react in review.
 - than make controller for review `php artisan make:controller Api/ReviewController`
 - than make controller in Api `php artisan make:controller Admin/ReviewController`
+- after making necessary function in the controller, set web route for reviews.
+- than make balde file for review
 - 
-- 22:38
 
 - //for the backend
 - `composer require stripe/stripe-php`
