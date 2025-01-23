@@ -40,6 +40,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    protected $appends = [
+        'image_path',
+    ];
 
     /**
      * Get the attributes that should be cast.
@@ -59,7 +62,7 @@ class User extends Authenticatable
         return $this->hasMany(Order::class)->with('product')->latest();
     }
 
-    public function image_path()
+    public function getImagePathAttribute()
     {
         if ($this->profile_image) {
             return asset($this->profile_image);

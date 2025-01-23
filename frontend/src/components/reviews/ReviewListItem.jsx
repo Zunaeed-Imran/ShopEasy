@@ -6,7 +6,7 @@ export default function ReviewListItem({review}) {
       <li className="list-group-item bg-light d-flex justify-content-start align-items-center">
         <div className="me-2">
           <img
-            src={review?.user?.profile_image}
+            src={review?.user?.image_path}
             alt={review?.user?.name}
             className="rounded-circle"
             width={60}
