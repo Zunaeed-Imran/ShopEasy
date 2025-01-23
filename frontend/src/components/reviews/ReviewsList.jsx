@@ -9,7 +9,7 @@ export default function ReviewsList() {
 
   return (
     <div>
-      <ul>
+      <ul className='list-group-item my-5'>
         {
           product?.reviews?.map(review => (
             <ReviewListItem key={review.id} review={review} />
