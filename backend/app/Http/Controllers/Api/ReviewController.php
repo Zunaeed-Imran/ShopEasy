@@ -29,6 +29,7 @@ class ReviewController extends Controller
             ]);
         }
     }
+
     public function checkIfUserAlreadyReviewedTheProduct($product_id, $user_id)
     {
         // check if review already exists. 
@@ -39,4 +40,23 @@ class ReviewController extends Controller
         // return the result.
         return $exist;
     }
+
+    // Update Review
+    public function update(Request $request, Review $review)
+    {
+        $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
+        if ($exist){
+            Review::create([
+                'product_id' => $request->product_id,
+                'user_id' => $request->user()->id,
+                'title' => $request->title,
+                'body' => $request->body,
+                'rating' => $request->rating
+            ]);
+            return response()->json([
+                'message' => 'Your review has been added Succesfully and will be published soon'
+            ]);
+        }
+    }
+
 }
