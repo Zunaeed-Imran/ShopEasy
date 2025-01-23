@@ -1,6 +1,37 @@
+import { useSelector } from "react-redux";
 import { Rating } from "react-simple-star-rating";
 
-export default function ReviewListItem({review}) {
+export default function ReviewListItem({ review }) {
+  
+  const { user } = useSelector(state => state.user)
+
+  const renderReviewActions = () => (
+    review?.user_id && user?.id &&
+      <div className="dropdown ms-auto">
+        <i className="bi bi-three-dots-verticle"
+          data-bs-toggle="dropdown"></i>
+        <ul className="dropdown-menu">
+          <li className="">
+            <span
+              className="dropdown-item"
+              style={{ cursor: 'pointer' }}
+              onClick={() => console.log('edit')}>
+              <i className="bi bi-pen mx-2"></i>
+                Update
+            </span>
+          </li>
+          <li className="">
+            <span
+              className="dropdown-item"
+              style={{ cursor: 'pointer' }}
+              onClick={() => console.log('delete')}>
+              <i className="bi bi-trash mx-2"></i>
+                Delete
+            </span>
+          </li>
+        </ul>
+      </div>
+  )
 
   return (
     <div>
@@ -30,6 +61,9 @@ export default function ReviewListItem({review}) {
             </span>
           </span>
         </div>
+        {
+          renderReviewActions()
+        }
       </li>
     </div>
   )
