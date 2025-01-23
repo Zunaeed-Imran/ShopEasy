@@ -36,6 +36,28 @@
               <tr>
                 <td scope="row">{{$key += 1}}</td>
                 <td scope="row">{{$review->title}}</td>
+                <td scope="col">{{$review->body}}</td>
+                <td scope="col">{{$review->rating}}</td>
+                <td scope="col">
+                  @if($review->approved)
+                    <span class="badge bg-success">
+                      Yes
+                    </span>
+                  @else
+                    <span class="badge bg-danger">
+                      No
+                    </span>  
+                  @endif
+                </td>
+                <td scope="col">{{$review->user->name}}</td>
+                <td scope="col">By</td>
+                <td scope="col">
+                  <img 
+                  src="{{asset($review->product->thumbnail)}}"
+                  alt={{$review->product->name}} 
+                  class="rounded" width="60" height="60">
+                </td>
+                <td scope="col">{{$review->created_at}}</td>
                 <td>
                   <a href="#" onclick="deleteItem({{$review->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
