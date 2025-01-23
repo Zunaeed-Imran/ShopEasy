@@ -1,20 +1,32 @@
-import { useContext } from "react";
-import { useSelector } from "react-redux";
-import { axiosRequest, getConfig } from "../../helper/config";
-import { ReviewContext } from "./context/reviewContext";
-import {Rating} from 'react-simple-star-rating'
+import { useContext } from "react"
+import { useSelector } from "react-redux"
+import { axiosRequest, getConfig } from "../../helper/config"
+import { ReviewContext } from "./context/reviewContext"
+import { Rating } from 'react-simple-star-rating'
+import { toast } from 'react-toastify'
+
 
 export default function AddUpdateReview() {
 
     const { token } = useSelector(state => state.user);
   const {
-       product, review, setReview, setLoading, handleRating
-    } = useContext(ReviewContext)
+    product, review, setReview, setLoading, handleRating, clearReview
+  } =
+    useContext(ReviewContext);
 
     const addReview = async e => {
-      e.preventDefault();
+      e.preventDefault()
+      setLoading(true)
       try {
         const response = await axiosRequest.post('review/store', review, getConfig(token))
+        if (response.data.error) {
+          toast.error(response.data.error)
+          setLoading(false)
+        } else {
+          toast.success(response.data.success)
+          clearReview()
+          setLoading(false)
+        }
         
       } catch (error) {
         console.log(error);

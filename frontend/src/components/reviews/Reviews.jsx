@@ -22,15 +22,29 @@ export default function Reviews({product, setLoading}) {
     
   }
 
+  const clearReview = () => {
+    setReview({
+      product_id: product?.id,
+      user_id: user?.id,
+      title: '',
+      body: '',
+      rating: 0,
+    });
+  }
+
 
   return (
     <ReviewContext.Provider
-      value={{ product, review, setReview, setLoading, handleRating }}
+      value={{
+        product,
+        review,
+        setReview,
+        setLoading,
+        handleRating,
+        clearReview,
+      }}
     >
-      {
-        isLoggidIn && 
-      <AddUpdateReview/>
-      }
+      {isLoggidIn && <AddUpdateReview />}
     </ReviewContext.Provider>
-  )
+  );
 }
