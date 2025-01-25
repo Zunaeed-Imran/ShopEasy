@@ -10,6 +10,7 @@ import Register from './components/user/Register'
 import Profile from './components/user/Profile'
 import PayByStripe from './components/checkout/PayByStripe'
 import UserOrders from './components/user/UserOrders'
+import PageNotFound from './components/404/PageNotFound'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/pay/order' element={<PayByStripe />} />
         <Route path='/user/orders' element={<UserOrders />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   )
