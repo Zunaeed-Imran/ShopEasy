@@ -34,6 +34,30 @@ export default function AddUpdateReview() {
       }
     }
   
+  const updateReview = async e => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axiosRequest.put(
+        'review/update',
+        review,
+        getConfig(token)
+      );
+      if (response.data.error) {
+        toast.error(response.data.error);
+        setLoading(false);
+      } else {
+        product.review = product.reviews.filter(item => item.id !== review.id);
+        toast.success(response.data.message);
+        clearReview();
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+  
   return (
     <div className="row my-5">
       <div className="col-md-8 mx-auto">
@@ -48,7 +72,7 @@ export default function AddUpdateReview() {
               action=""
               method="post"
               className="mt-5"
-              onSubmit={e => addReview(e)}
+              onSubmit={e => updating ? updateReview(e) : addReview(e)}
             >
               <div className="mb-3">
                 <label className="form-label">Title*</label>
@@ -63,6 +87,7 @@ export default function AddUpdateReview() {
                     })
                   }
                   required
+                  placeholder="Title"
                   className="form-control"
                 />
               </div>
@@ -117,7 +142,7 @@ export default function AddUpdateReview() {
                         onClick={() => clearReview()}
                     className="btn btn-danger btn-sm mx-2"
                     >
-                    Cancel
+                    Cancelf
                   </button>
                 </div>
                 )
