@@ -155,7 +155,7 @@ export default function Product() {
                   <button
                     className="btn btn-dark"
                     disabled={
-                      !selectedColor || !selectedSize || product?.qty == 0
+                      !selectedColor || !selectedSize || product?.qty == 0 || product?.status == 0
                     }
                     onClick={() => {
                       dispatch(
