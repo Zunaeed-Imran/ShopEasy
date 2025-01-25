@@ -4,6 +4,8 @@ import {axiosRequest, getConfig} from '../../helper/config'
 import { useContext } from "react";
 import { ReviewContext } from "./context/reviewContext";
 import { toast } from "react-toastify";
+// prop type validation
+import PropTypes from 'prop-types';
 
 export default function ReviewListItem({ review }) {
   
@@ -102,4 +104,10 @@ export default function ReviewListItem({ review }) {
       </li>
     </div>
   )
+}
+
+
+// prop validation
+ReviewListItem.propTypes = {
+  review: PropTypes.string,
 }

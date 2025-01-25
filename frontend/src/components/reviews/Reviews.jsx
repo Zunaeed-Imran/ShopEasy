@@ -3,6 +3,8 @@ import { useSelector } from "react-redux"
 import { ReviewContext } from "./context/reviewContext"
 import AddUpdateReview from "./AddUpdateReview"
 import ReviewsList from "./ReviewsList"
+// prop prop validation
+import PropTypes from 'prop-types'
 
 export default function Reviews({product, setLoading}) {
 
@@ -67,4 +69,11 @@ export default function Reviews({product, setLoading}) {
       }
     </ReviewContext.Provider>
   );
+}
+
+
+// prop validation
+Reviews.propTypes = {
+  product: PropTypes.string,
+  setLoading: PropTypes.bool
 }
