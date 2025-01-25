@@ -46,15 +46,16 @@ class ReviewController extends Controller
     {
         $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
         if ($exist){
-            Review::create([
+            $review->update([
                 'product_id' => $request->product_id,
                 'user_id' => $request->user()->id,
                 'title' => $request->title,
                 'body' => $request->body,
-                'rating' => $request->rating
+                'rating' => $request->rating,
+                'approved' => 0
             ]);
             return response()->json([
-                'message' => 'Your review has been added Succesfully and will be published soon'
+                'message' => 'Your review has been updated Succesfully and will be published soon'
             ]);
         }
     }

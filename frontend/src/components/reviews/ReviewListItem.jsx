@@ -33,6 +33,14 @@ export default function ReviewListItem({ review }) {
       </div>
   )
 
+  const deleteReview = async (review) => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
+
   return (
     <div>
       <li className="list-group-item bg-light d-flex justify-content-start align-items-center p-2 mb-2 rounded shadow-sm">
