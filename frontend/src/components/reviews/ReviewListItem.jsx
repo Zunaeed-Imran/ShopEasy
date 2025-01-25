@@ -1,9 +1,17 @@
 import { useSelector } from "react-redux";
 import { Rating } from "react-simple-star-rating";
+import {axiosRequest, getConfig} from '../../helper/config'
+import { useContext } from "react";
+import { ReviewContext } from "./context/reviewContext";
+import { toast } from "react-toastify";
 
 export default function ReviewListItem({ review }) {
   
-  const { user } = useSelector(state => state.user)
+  const { user, token } = useSelector(state => state.user)
+  const {
+    product, setLoading, clearReview
+  } =
+    useContext(ReviewContext);
 
   const renderReviewActions = () => (
     review?.user_id === user?.id &&
@@ -34,10 +42,28 @@ export default function ReviewListItem({ review }) {
   )
 
   const deleteReview = async (review) => {
-    try {
-      
-    } catch (error) {
-      
+    if (confirm('Are you sure ?')) {
+      try {
+        const response = await axiosRequest.post(
+          'review/delete',
+          review,
+          getConfig(token)
+        );
+        if (response.data.error) {
+          setLoading(false);
+          toast.error(response.data.error);
+          clearReview();
+        } else {
+          product.review = product.reviews.filter(
+            item => item.id !== review.id
+          );
+          toast.success(response.data.message);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
     }
   }
 
