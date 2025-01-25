@@ -33,19 +33,19 @@ class ReviewController extends Controller
     public function checkIfUserAlreadyReviewedTheProduct($product_id, $user_id)
     {
         // check if review already exists. 
-        $exist = Review::where([
+        $review = Review::where([
             'product_id' => $product_id,
             'user_id' => $user_id
-        ])->exists();
+        ])->get();
         // return the result.
-        return $exist;
+        return $review;
     }
 
     // Update Review
-    public function update(Request $request, Review $review)
+    public function update(Request $request)
     {
-        $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
-        if ($exist){
+        $review = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
+        if ($review){
             $review->update([
                 'product_id' => $request->product_id,
                 'user_id' => $request->user()->id,
@@ -56,6 +56,20 @@ class ReviewController extends Controller
             ]);
             return response()->json([
                 'message' => 'Your review has been updated Succesfully and will be published soon'
+            ]);
+        }else{
+            return response()->json([
+                'error' => 'Something went wrong try again later'
+            ]);
+        }
+    }
+    // Delete a review
+    public function delete(Request $request) {
+        $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
+        if($review){
+            $review->delete();
+            return response()->json([
+                'message' => 'Your review has been delete Succesfully'
             ]);
         }else{
             return response()->json([
