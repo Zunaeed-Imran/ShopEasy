@@ -42,6 +42,10 @@ export default function Reviews({product, setLoading}) {
     }
   }
 
+  const checkIfUserBoughtTheProduct = () => {
+    return user?.orders?.some(order => order?.products?.some(item => item.id === product.id))
+  }
+
 
   return (
     <ReviewContext.Provider
@@ -59,7 +63,7 @@ export default function Reviews({product, setLoading}) {
     >
       <ReviewsList/>
       {
-        isLoggidIn && <AddUpdateReview />
+        isLoggidIn && checkIfUserBoughtTheProduct() && <AddUpdateReview />
       }
     </ReviewContext.Provider>
   );
