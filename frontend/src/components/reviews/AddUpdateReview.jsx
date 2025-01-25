@@ -85,7 +85,10 @@ export default function AddUpdateReview() {
                       size={32}
                     />
                   </div>
-                    <button type="submit" className="btn btn-dark btn-sm">
+              <button
+                type="submit"
+                disabled={!review.title || !review.body || review.rating === 0}
+                className="btn btn-dark btn-sm">
                       Submit
                     </button>
                 </form>
