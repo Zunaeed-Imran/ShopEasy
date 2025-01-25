@@ -57,6 +57,10 @@ class ReviewController extends Controller
             return response()->json([
                 'message' => 'Your review has been updated Succesfully and will be published soon'
             ]);
+        }else{
+            return response()->json([
+                'error' => 'Something went wrong try again later'
+            ]);
         }
     }
 
