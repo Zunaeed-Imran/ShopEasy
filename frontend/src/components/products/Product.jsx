@@ -76,22 +76,21 @@ export default function Product() {
                   <h5 className="text-dark">{product?.name}</h5>
                   <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
-                {
-                      calculateReviewAverage() > 0 &&
-                      <div className='d-flex align-items-center'>
-                          <span className='mx-1 text-muted'>
-                            <i>
-                              { product?.reviews.length } {""}
-                              { product?.reviews.length > 1 ? 'Reviews' : 'Review' }
-                            </i>
-                          </span>
-                          <Rating 
-                            initialValue={calculateReviewAverage()}
-                            readonly
-                            size={32}
-                          />
-                      </div>
-                }
+                {calculateReviewAverage() > 0 && (
+                  <div className="d-flex align-items-center">
+                    <span className="mx-1 text-muted">
+                      <i>
+                        {product?.reviews.length} {''}
+                        {product?.reviews.length > 1 ? 'Reviews' : 'Review'}
+                      </i>
+                    </span>
+                    <Rating
+                      initialValue={calculateReviewAverage()}
+                      readonly
+                      size={32}
+                    />
+                  </div>
+                )}
               </div>
               <div className="my-3">{Parser().parse(product?.desc)}</div>
               <div className="d-flex justify-content-between">
@@ -158,26 +157,26 @@ export default function Product() {
                     disabled={
                       !selectedColor || !selectedSize || product?.qty == 0
                     }
-                        onClick={() => {
-                          dispatch(
-                            addToCart({
-                              product_id: product.id,
-                              ref: makeUniqueId(10),
-                              name: product.name,
-                              slug: product.slug,
-                              qty: parseInt(qty),
-                              price: parseInt(product.price),
-                              color: selectedColor.name,
-                              size: selectedSize.size,
-                              maxQty: parseInt(product.qty),
-                              image: product.thumbnail,
-                              coupon_id: null,
-                            })
-                          );
-                          setSelectedColor(null)
-                          setSelectedSize(null)
-                          setQty(1)
-                        }}
+                    onClick={() => {
+                      dispatch(
+                        addToCart({
+                          product_id: product.id,
+                          ref: makeUniqueId(10),
+                          name: product.name,
+                          slug: product.slug,
+                          qty: parseInt(qty),
+                          price: parseInt(product.price),
+                          color: selectedColor.name,
+                          size: selectedSize.size,
+                          maxQty: parseInt(product.qty),
+                          image: product.thumbnail,
+                          coupon_id: null,
+                        })
+                      );
+                      setSelectedColor(null);
+                      setSelectedSize(null);
+                      setQty(1);
+                    }}
                   >
                     <i className="bi bi-cart-plus-fill"></i>
                     Add To Cart
@@ -186,20 +185,22 @@ export default function Product() {
               </div>
             </div>
           </div>
-          <div className='row my-4'>
-            <div className='col-md-8 mx-auto'>
-              <div className='card'>
-                <div className='card-header bg-white text-center'>
-                  <h5 className='mt-2'>
-                    Reviews ({product?.review?.length})
-                  </h5>
-                </div>
-                <div className='card-body'>
-                      <Reviews product={product} setLoading={setLoading} />
+          {product?.reviews?.length > 0 && (
+            <div className="row my-4">
+              <div className="col-md-8 mx-auto">
+                <div className="card">
+                  <div className="card-header bg-white text-center">
+                    <h5 className="mt-2">
+                      Reviews ({product?.review?.length})
+                    </h5>
+                  </div>
+                  <div className="card-body">
+                    <Reviews product={product} setLoading={setLoading} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </>
       )}
     </div>
