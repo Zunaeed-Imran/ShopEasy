@@ -9,7 +9,7 @@ export default function ReviewListItem({ review }) {
   
   const { user, token } = useSelector(state => state.user)
   const {
-    product, setLoading, clearReview
+    product, setLoading, clearReview, editReview
   } =
     useContext(ReviewContext);
 
@@ -23,7 +23,7 @@ export default function ReviewListItem({ review }) {
             <span
               className="dropdown-item"
               style={{ cursor: 'pointer' }}
-              onClick={() => console.log('edit')}>
+              onClick={() => editReview(review)}>
               <i className="bi bi-pen mx-2"></i>
                 Update
             </span>

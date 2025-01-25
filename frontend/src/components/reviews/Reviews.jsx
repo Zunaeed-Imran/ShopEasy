@@ -14,6 +14,7 @@ export default function Reviews({product, setLoading}) {
     body: '',
     rating: 0,
   })
+  const [updating, setUpdating] = useState(false)
 
   // Catch Rating value
   const handleRating = (rating) => {
@@ -23,6 +24,11 @@ export default function Reviews({product, setLoading}) {
     
   }
 
+  const editReview = (data) => {
+    setReview(data)
+    setUpdating(true)
+
+    }
   const clearReview = () => {
     setReview({
       product_id: product?.id,
@@ -31,6 +37,9 @@ export default function Reviews({product, setLoading}) {
       body: '',
       rating: 0,
     });
+    if (updating) {
+      setUpdating(false)
+    }
   }
 
 
@@ -43,6 +52,9 @@ export default function Reviews({product, setLoading}) {
         setLoading,
         handleRating,
         clearReview,
+        updating,
+        setUpdating,
+        editReview
       }}
     >
       <ReviewsList/>

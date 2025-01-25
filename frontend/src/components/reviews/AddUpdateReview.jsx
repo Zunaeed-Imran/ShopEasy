@@ -10,7 +10,7 @@ export default function AddUpdateReview() {
 
     const { token } = useSelector(state => state.user);
     const {
-      review, setReview, setLoading, handleRating, clearReview
+      product, review, setReview, setLoading, handleRating, clearReview, updating
     } =
       useContext(ReviewContext);
 
@@ -35,66 +35,97 @@ export default function AddUpdateReview() {
     }
   
   return (
-        <div className="row my-5">
-          <div className="col-md-8 mx-auto">
-            <div className="card shadow-sm">
-              <div className="card-header bg-white">
-                <h5 className="text-center mt-2">Add Review</h5>
+    <div className="row my-5">
+      <div className="col-md-8 mx-auto">
+        <div className="card shadow-sm">
+          <div className="card-header bg-white">
+            <h5 className="text-center mt-2">
+              {!updating ? 'Add' : 'Edit'} Review
+            </h5>
+          </div>
+          <div className="card-body">
+            <form
+              action=""
+              method="post"
+              className="mt-5"
+              onSubmit={e => addReview(e)}
+            >
+              <div className="mb-3">
+                <label className="form-label">Title*</label>
+                <input
+                  type="text"
+                  id="title"
+                  value={review.title}
+                  onChange={e =>
+                    setReview({
+                      ...review,
+                      title: e.target.value,
+                    })
+                  }
+                  required
+                  className="form-control"
+                />
               </div>
-              <div className="card-body">
-                <form
-                  action=""
-                  method="post"
-                  className="mt-5"
-                  onSubmit={e => addReview(e)}
+              <div className="mb-3">
+                <label className="form-label">Review*</label>
+                <textarea
+                  name="body"
+                  value={review.body}
+                  rows={30}
+                  id="body"
+                  onChange={e =>
+                    setReview({
+                      ...review,
+                      body: e.target.value,
+                    })
+                  }
+                  className="form-control"
+                  placeholder="Review"
+                ></textarea>
+              </div>
+              <div className="mb-3">
+                <Rating
+                  initialValue={review.rating}
+                  onClick={handleRating}
+                  size={32}
+                />
+              </div>
+              {
+                !updating ? (
+                <button
+                  type="submit"
+                  disabled={
+                    !review.title || !review.body || review.rating === 0
+                  }
+                  className="btn btn-dark btn-sm"
                 >
-                  <div className="mb-3">
-                    <label className="form-label">Title*</label>
-                    <input
-                      type="text"
-                      id="title"
-                      value={review.title}
-                      onChange={e =>
-                        setReview({
-                          ...review,
-                          title: e.target.value,
-                        })
-                      }
-                      required
-                      className="form-control"
-                      />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Review*</label>
-                    <textarea
-                      name="body" value={review.body}
-                      rows={30} id="body"
-                      onChange={(e) => setReview({
-                        ...review, body: e.target.value
-                      })}
-                      className="form-control"
-                      placeholder="Review"
+                  Submit
+                </button>
+              ) : (
+                <div>
+                  <button
+                    type="submit"
+                    disabled={
+                      !review.title || !review.body || review.rating === 0
+                    }
+                    className="btn btn-warning btn-sm"
                     >
-                          
-                    </textarea>
-                  </div>
-                  <div className="mb-3">
-                    <Rating
-                      initialValue={review.rating}
-                      onClick={handleRating}
-                      size={32}
-                    />
-                  </div>
-              <button
-                type="submit"
-                disabled={!review.title || !review.body || review.rating === 0}
-                className="btn btn-dark btn-sm">
-                      Submit
-                    </button>
-                </form>
-              </div>
-            </div>
+                    Update
+                  </button>
+                  <button
+                        type="button"
+                        onClick={() => clearReview()}
+                    className="btn btn-danger btn-sm mx-2"
+                    >
+                    Cancel
+                  </button>
+                </div>
+                )
+              }
+            </form>
           </div>
         </div>
-  )
+      </div>
+    </div>
+  );
 }
