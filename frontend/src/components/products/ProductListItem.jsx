@@ -27,11 +27,13 @@ export default function ProductListItem({product}) {
               <h5 className="text-dark">{product.name}</h5>
               <h6 className="badge bg-danger p-2">{product.price}</h6>
             </div>
-            <Rating 
-              initialValue={calculateReviewAverage()}
-              readonly
-              size={24}
-            />
+            <div className="my-2">
+              <Rating 
+                initialValue={calculateReviewAverage()}
+                readonly
+                size={24}
+                />
+              </div>
             <div className="d-flex justify-content-between">
               <div className="d-flex justify-content-start align-items-center mb-3">
                 {product.sizes?.map(size => (
