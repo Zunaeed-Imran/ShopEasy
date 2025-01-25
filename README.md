@@ -214,7 +214,11 @@ i will make a frontend and bacaend project. with laravel and react.
 - than make balde file for review.
 - set condation in api review controller for delete.
 - in review list item component make functionality for delete review.
-
+- making condation of average review of products.
+- showing single product average product.
+- set condation if product havn't any review won't show any review star.
+- set condation if product has not any review in all products item won't how star if have will show the review star.
+- 
 
 - //for the backend
 - `composer require stripe/stripe-php`
