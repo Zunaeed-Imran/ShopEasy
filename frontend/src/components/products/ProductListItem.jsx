@@ -28,11 +28,14 @@ export default function ProductListItem({product}) {
               <h6 className="badge bg-danger p-2">{product.price}</h6>
             </div>
             <div className="my-2">
+              {
+                calculateReviewAverage() > 0 && 
               <Rating 
-                initialValue={calculateReviewAverage()}
-                readonly
-                size={24}
-                />
+              initialValue={calculateReviewAverage()}
+              readonly
+              size={24}
+              />
+              }
               </div>
             <div className="d-flex justify-content-between">
               <div className="d-flex justify-content-start align-items-center mb-3">
