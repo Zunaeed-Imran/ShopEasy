@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 // import proptypes.
 import PropTypes from 'prop-types';
+import { Rating } from "react-simple-star-rating";
 
 export default function ProductListItem({product}) {
   // console.log(product);
+
+  const calculateReviewAverage = () => {
+    let average = product?.review?.reduce((acc, review) => {
+      return (acc += review.rating / product.reviews.length);
+    }, 0);
+    return average > 0 ? average.toFixed(1) : 0;
+  };
+
   return (
     <div className="col-md-4 md-3 py-2">
       <Link to={`/product/${product.slug}`} className="text-decoration-none text-dark">
@@ -18,6 +27,11 @@ export default function ProductListItem({product}) {
               <h5 className="text-dark">{product.name}</h5>
               <h6 className="badge bg-danger p-2">{product.price}</h6>
             </div>
+            <Rating 
+              initialValue={calculateReviewAverage()}
+              readonly
+              size={24}
+            />
             <div className="d-flex justify-content-between">
               <div className="d-flex justify-content-start align-items-center mb-3">
                 {product.sizes?.map(size => (
