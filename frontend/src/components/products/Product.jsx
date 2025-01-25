@@ -8,6 +8,7 @@ import {Parser} from 'html-to-react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
 import Reviews from '../reviews/Reviews';
+import { Rating } from 'react-simple-star-rating';
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -36,6 +37,13 @@ export default function Product() {
     };
     fetchProductBySlug();
   }, [slug])
+
+  const calculateReviewAverage = () => {
+    let average = product?.review?.reduce((acc, review) => {
+      return acc += review.rating / product.reviews.length
+    }, 0);
+    return average > 0 ? average.toFixed(1) : 0
+  }
 
   const makeUniqueId = (length) => {
     let result = ''
@@ -68,6 +76,22 @@ export default function Product() {
                   <h5 className="text-dark">{product?.name}</h5>
                   <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
+                {
+                      calculateReviewAverage() > 0 &&
+                      <div className='d-flex align-items-center'>
+                          <span className='mx-1 text-muted'>
+                            <i>
+                              { product?.reviews.length } {""}
+                              { product?.reviews.length > 1 ? 'Reviews' : 'Review' }
+                            </i>
+                          </span>
+                          <Rating 
+                            initialValue={calculateReviewAverage()}
+                            readonly
+                            size={32}
+                          />
+                      </div>
+                }
               </div>
               <div className="my-3">{Parser().parse(product?.desc)}</div>
               <div className="d-flex justify-content-between">
