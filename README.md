@@ -218,6 +218,7 @@ i will make a frontend and bacaend project. with laravel and react.
 - showing single product average product.
 - set condation if product havn't any review won't show any review star.
 - set condation if product has not any review in all products item won't how star if have will show the review star.
+- set condation in review if user don't have the product can't review the product.
 - 
 
 - //for the backend
