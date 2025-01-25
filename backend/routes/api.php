@@ -27,6 +27,8 @@ Route::middleware('auth:sanctum')->group(function(){
   Route::post('pay/order', [OrderController::class, 'payOrderByStripe']);
   // reviews route
   Route::post('review/store', [ReviewController::class, 'store']);
+  Route::put('review/update', [ReviewController::class, 'update']);
+  Route::post('review/delete', [ReviewController::class, 'delete']);
 });
 
 
