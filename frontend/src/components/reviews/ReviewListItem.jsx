@@ -32,7 +32,7 @@ export default function ReviewListItem({ review }) {
             <span
               className="dropdown-item"
               style={{ cursor: 'pointer' }}
-              onClick={() => console.log('delete')}>
+              onClick={() => deleteReview(review)}>
               <i className="bi bi-trash mx-2"></i>
                 Delete
             </span>
@@ -43,6 +43,7 @@ export default function ReviewListItem({ review }) {
 
   const deleteReview = async (review) => {
     if (confirm('Are you sure ?')) {
+      setLoading(true)
       try {
         const response = await axiosRequest.post(
           'review/delete',
