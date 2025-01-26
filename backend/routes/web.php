@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Admin\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\ProductController;
@@ -77,7 +77,7 @@ Route::middleware('admin')->group(function () {
         Route::delete('delete/{order}/order', [OrderController::class, 'delete'])->name('admin.orders.delete');
 
         // Reviews routes
-        Route::get('orders', [ReviewController::class, 'index'])->name('admin.orders.index');
+        Route::get('reviews', [ReviewController::class, 'index'])->name('admin.reviews.index');
         Route::get('update/{review}/{status}/review', [ReviewController::class, 'toggleApprovedStatus'])->name('admin.reviews.update');
         Route::delete('delete/{review}/review', [ReviewController::class, 'delete'])->name('admin.reviews.delete');
     });
