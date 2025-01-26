@@ -222,6 +222,7 @@ i will make a frontend and bacaend project. with laravel and react.
 
 
 ###### This week work list
+- login logout user.
 - after click the checkout button, showing billing details and proceed to payment.
 - showing user order list.
 - make stripe account for payment.
