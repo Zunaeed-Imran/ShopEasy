@@ -87,7 +87,7 @@ export default function Checkout() {
                   </span>
                 )}
                 <span className="fw-bold text-danger">
-                  ${calculateDiscount}
+                  ${calculateDiscount()}
                 </span>
               </li>
               <li className="list-group-item d-flex justify-content-between">
