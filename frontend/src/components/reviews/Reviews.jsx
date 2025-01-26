@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 
 export default function Reviews({product, setLoading}) {
 
-  const { user, isLoggidIn } = useSelector(state => state.user)
+  const { user, isLoggedIn } = useSelector(state => state.user);
   const [review, setReview] = useState({
     product_id: product?.id,
     user_id: user?.id,
@@ -65,7 +65,7 @@ export default function Reviews({product, setLoading}) {
     >
       <ReviewsList/>
       {
-        isLoggidIn && checkIfUserBoughtTheProduct() && <AddUpdateReview />
+        isLoggedIn && checkIfUserBoughtTheProduct() && <AddUpdateReview />
       }
     </ReviewContext.Provider>
   );
