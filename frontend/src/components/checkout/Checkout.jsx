@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Coupon from "../coupons/Coupon";
-import { setValidCoupon } from "../../redux/slices/cartSlice";
+import { addCouponIdToCartItem, setValidCoupon } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import Alert from "../layouts/Alert";
@@ -18,9 +18,11 @@ export default function Checkout() {
   }, [isLoggedIn])
 
   const totalOfCartItems = cartItems.reduce((acc, item) => acc += item.price * item.qty, 0)
+
   const calculateDiscount = () => {
     return validCoupon?.discount && totalOfCartItems * validCoupon?.discount / 100
   }
+
   const totalAfterDiscount = () => {
     return totalOfCartItems - calculateDiscount()
   }
@@ -30,6 +32,7 @@ export default function Checkout() {
       name: '',
       discount: 0
     }))
+    dispatch(addCouponIdToCartItem(null))
     toast.success('Coupon Removed')
   }
 

@@ -19,7 +19,7 @@ class OrderController extends Controller
         foreach ($request->products as $product){
             $order = Order::create([
                 'qty' => $product['qty'],
-                'user_id' => $request->user->id,
+                'user_id' => $request->user()->id,
                 'coupon_id' => $product['coupon_id'],
                 'total' => $this->calculateTotal($product['price'], $product['qty'], $product['coupon_id']),
             ]);
@@ -38,7 +38,7 @@ class OrderController extends Controller
         $paymentIntent = PaymentIntent::create([
           'amount' => $this->calculateOrderTotal($request->cartItems),
           'currency' => 'usd',
-          'description' => 'React T-shirts Store'
+          'description' => 'Shop Easy'
         ]);
         // generate the client secret
         $output = [
