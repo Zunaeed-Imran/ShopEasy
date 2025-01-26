@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.orders.index')}}">
+                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="{{route('admin.reviews.index')}}">
                         <i class="fas fa-star"></i>
                         Reviews
                     </a>
