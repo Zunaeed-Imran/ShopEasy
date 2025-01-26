@@ -219,7 +219,21 @@ i will make a frontend and bacaend project. with laravel and react.
 - set condation if product havn't any review won't show any review star.
 - set condation if product has not any review in all products item won't how star if have will show the review star.
 - set condation in review if user don't have the product can't review the product.
-- 
 
-- //for the backend
-- `composer require stripe/stripe-php`
+
+###### This week work list
+- after click the checkout button, showing billing details and proceed to payment.
+- make stripe account for payment.
+- if cart empty will show message empty cart.
+- working in user review product.
+- admin handle if have a review.
+- review show in frontend react.
+- make confirem button before delete review.
+- if not have data in all file review submit button will be disabled.
+- will show the average review of the products.
+- working on review page if don't have any review don't show anything.
+- set if user don't have any product he can't review it.
+- make the not found page.
+- ste the react title.
+- aslo set the laravel balde title.
+- some some fo my file make prop set validation.
