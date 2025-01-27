@@ -67,7 +67,7 @@ class User extends Authenticatable
         if ($this->profile_image) {
             return asset($this->profile_image);
         } else {
-            return 'https://pixabay.com/illustrations/bot-colorful-robot-helper-friendly-4877998/';
+            return 'https://cdn.pixabay.com/photo/2021/03/30/17/19/robot-6137430_960_720.png';
         }
     }
 }
