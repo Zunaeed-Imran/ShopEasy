@@ -60,11 +60,13 @@ export default function UserOrders() {
                         </th>
                         <th>
                           <div className="d-flex flex-column">
-                            {order?.products?.map(product => (
-                              <span className="badge bg-danger my-1 rounded-0">
+                            {
+                              order?.products?.map(product => (
+                              <span key={product.id} className="badge bg-danger my-1 rounded-0">
                                 {product.price}
                               </span>
-                            ))}
+                              ))
+                            }
                           </div>
                         </th>
                         <th>{order.qty}</th>
@@ -75,13 +77,15 @@ export default function UserOrders() {
                         </th>
                         <th>{order.created_at}</th>
                         <th>
-                          {order.delivered_at ? (
+                          {
+                            order.delivered_at ? (
                             <span className="badge bg-success my-1 rounded-0">
-                              {product.delivered_at}
+                              {order.delivered_at}
                             </span>
                           ) : (
                             <i className="text-muted">Pending...</i>
-                          )}
+                            )
+                          }
                         </th>
                       </tr>
                     ))
@@ -92,7 +96,7 @@ export default function UserOrders() {
               <Alert content="No Orders Yet" type="primary" />
           }
           {
-            ordersToShow < user?.order?.length && (
+            ordersToShow < user?.orders?.length && (
               <div className="d-flex justify-content-center my-3">
                 <button
                   className="btn btn-sm btn-dark"
