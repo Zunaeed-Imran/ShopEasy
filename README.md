@@ -226,4 +226,4 @@ i will make a frontend and backend project. with laravel and react.
 #### tomorrow task list.
 - fix the size in cart data,
 - fix the user order lsit item,
-- 
+- revision the frontend.
