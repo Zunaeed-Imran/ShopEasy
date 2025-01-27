@@ -28,7 +28,7 @@
                 <th scope="col">By</th>
                 <th scope="col">Done</th>
                 <th scope="col">Delivered</th>
-                <th scope="col"></th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
