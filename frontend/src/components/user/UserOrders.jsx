@@ -29,7 +29,6 @@ export default function UserOrders() {
         <div className="card-body">
           {
             user?.orders?.length > 0
-          
               ?
               <table className="table">
                 <thead>
@@ -45,17 +44,18 @@ export default function UserOrders() {
                 </thead>
                 <tbody>
                   {
-                
                     user?.orders?.slice(0, ordersToShow).map((order, index) => (
-                      <tr>
+                      <tr key={index}>
                         <th>{index + 1}</th>
                         <th>
                           <div className="d-flex flex-column">
-                            {order?.products?.map(product => (
-                              <span className="badge bg-success my-1 rounded-0">
+                            {
+                              order?.products?.map(product => (
+                              <span key={product.id} className="badge bg-success my-1 rounded-0">
                                 {product.name}
                               </span>
-                            ))}
+                              ))
+                            }
                           </div>
                         </th>
                         <th>
