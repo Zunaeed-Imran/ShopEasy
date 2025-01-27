@@ -222,3 +222,8 @@ i will make a frontend and backend project. with laravel and react.
 
 
 ###### This week work list
+
+#### tomorrow task list.
+- fix the size in cart data,
+- fix the user order lsit item,
+- 
