@@ -6,13 +6,13 @@ import PropTypes from 'prop-types'
 export default function ProductsList({ products }) {
   // console.log(products);
 
-  const [productsToShow, setProductsToShow] = useState(5)
+  const [productsToShow, setProductsToShow] = useState(6)
 
   const loadMoreProducts = () => {
     if (productsToShow > products?.length) {
       return;
     } else {
-      setProductsToShow(preProductsToShow => preProductsToShow += 5)
+      setProductsToShow(preProductsToShow => preProductsToShow += 6)
     }
   }
 
