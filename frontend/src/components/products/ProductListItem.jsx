@@ -25,7 +25,7 @@ export default function ProductListItem({product}) {
           <div className="card-body">
             <div className="d-flex justify-content-between">
               <h5 className="text-dark">{product.name}</h5>
-              <h6 className="badge bg-danger p-2">{product.price}</h6>
+              <h6 className="badge bg-danger p-2">$ {product.price}</h6>
             </div>
             <div className="my-2">
               {
