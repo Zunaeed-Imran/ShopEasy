@@ -167,7 +167,7 @@ export default function Product() {
                           qty: parseInt(qty),
                           price: parseInt(product.price),
                           color: selectedColor.name,
-                          size: selectedSize.size,
+                          size: selectedSize.name,
                           maxQty: parseInt(product.qty),
                           image: product.thumbnail,
                           coupon_id: null,
