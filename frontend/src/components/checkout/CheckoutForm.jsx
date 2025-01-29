@@ -33,8 +33,6 @@ export default function CheckoutForm() {
           dispatch(setCurrentUser(response.data.user))
           setIsProcessing(false)
           toast.success('Payment done successfully')
-          navigate('/user/orders')
-
         } catch (error) {
           console.log(error)
           setIsProcessing(false)
@@ -58,7 +56,7 @@ export default function CheckoutForm() {
         // Make sure to change this to your payment completion page
       },
       redirect: 'if_required',
-    });
+    })
 
     if (
       (response.error && response.error.type === 'card_error') ||
