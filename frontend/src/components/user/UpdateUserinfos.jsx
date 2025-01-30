@@ -56,7 +56,7 @@ export default function UserUpdateinfos({profile}) {
             <div className="mb-3">
               <label className="form-label">Phone Number*</label>
               <input
-                type="text"
+                type="number"
                 id="phone_number"
                 value={userInfos.phone_number || ''}
                 onChange={e =>
