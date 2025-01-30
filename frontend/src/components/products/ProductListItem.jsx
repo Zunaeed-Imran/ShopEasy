@@ -81,5 +81,5 @@ export default function ProductListItem({product}) {
 
 // prop defining.
 ProductListItem.propTypes = {
-  product: PropTypes.object,
+  product: PropTypes.any,
 };
