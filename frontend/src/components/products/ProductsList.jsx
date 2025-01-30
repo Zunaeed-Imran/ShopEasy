@@ -40,5 +40,5 @@ export default function ProductsList({ products }) {
 
 // prop defining
 ProductsList.propTypes = {
-  products: PropTypes.string,
+  products: PropTypes.object,
 };
