@@ -69,5 +69,5 @@ export default function Slider({ product }) {
 
 // prop defining
 Slider.propTypes = {
-  product: PropTypes.object,
+  product: PropTypes.any,
 };
