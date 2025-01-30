@@ -46,7 +46,7 @@ export default function UserOrders() {
                   {
                     user?.orders?.slice(0, ordersToShow).map((order, index) => (
                       <tr key={index}>
-                        <th>{index + 1}</th>
+                        <th>{index+=1}</th>
                         <th>
                           <div className="d-flex flex-column">
                             {
@@ -63,7 +63,7 @@ export default function UserOrders() {
                             {
                               order?.products?.map(product => (
                               <span key={product.id} className="badge bg-danger my-1 rounded-0">
-                                {product.price}
+                                ${product.price}
                               </span>
                               ))
                             }
