@@ -43,7 +43,7 @@ export default function Cart() {
                           />
                         </td>
                         <td>{item.name}</td>
-                        <td>
+                        {/* <td>
                           <i
                             onClick={() => dispatch(incrementQ(item))}
                             className="bi bi-caret-up"
@@ -52,6 +52,31 @@ export default function Cart() {
                           <span className="mx-2">{item.qty}</span>
                           <i
                             onClick={() => dispatch(decrementQ(item))}
+                            className="bi bi-caret-down"
+                            style={{ cursor: 'pointer' }}
+                          ></i>
+                        </td> */}
+                        <td>
+                          <i
+                            onClick={() => dispatch(incrementQ(item))}
+                            className="bi bi-caret-up"
+                            style={{ cursor: 'pointer' }}
+                          ></i>
+                          <span className="mx-2">{item.qty}</span>
+                          <i
+                            onClick={() => {
+                              if (item.qty === 1) {
+                                if (
+                                  window.confirm(
+                                    'Are you sure you want to remove the last item from the cart?'
+                                  )
+                                ) {
+                                  dispatch(decrementQ(item));
+                                }
+                              } else {
+                                dispatch(decrementQ(item));
+                              }
+                            }}
                             className="bi bi-caret-down"
                             style={{ cursor: 'pointer' }}
                           ></i>
