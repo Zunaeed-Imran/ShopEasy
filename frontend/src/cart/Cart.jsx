@@ -73,10 +73,25 @@ export default function Cart() {
                           </span>
                         </td>
                         <td>${item.qty * item.price}</td>
-                        <td>
+                        {/* <td>
                           <i
                             className="bi bi-cart-x"
                             onClick={() => dispatch(removeFromCart(item))}
+                            style={{ cursor: 'pointer', color: 'red' }}
+                          ></i>
+                        </td> */}
+                        <td>
+                          <i
+                            className="bi bi-cart-x"
+                            onClick={() => {
+                              if (
+                                window.confirm(
+                                  'Are you sure you want to remove this item from the cart?'
+                                )
+                              ) {
+                                dispatch(removeFromCart(item));
+                              }
+                            }}
                             style={{ cursor: 'pointer', color: 'red' }}
                           ></i>
                         </td>
@@ -91,21 +106,18 @@ export default function Cart() {
                 </div>
               </>
             ) : (
-                <Alert
-                  content={'Your cart is empty'}
-                  type={'primary'} />
+              <Alert content={'Your cart is empty'} type={'primary'} />
             )}
           </div>
           <div className="my-3 d-flex justify-content-end">
             <Link to={'/'} className="btn btn-dark rounded-0 mx-2">
               Continue Shopping
             </Link>
-            {
-              cartItems.length > 0 &&
+            {cartItems.length > 0 && (
               <Link to={'/checkout'} className="btn btn-danger rounded-0 mx-2">
-                Checkout 
+                Checkout
               </Link>
-            }
+            )}
           </div>
         </div>
       </div>
