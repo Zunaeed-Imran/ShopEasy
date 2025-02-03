@@ -74,6 +74,6 @@ export default function Reviews({product, setLoading}) {
 
 // prop validation
 Reviews.propTypes = {
-  product: PropTypes.string,
-  setLoading: PropTypes.bool
+  product: PropTypes.any,
+  setLoading: PropTypes.any
 }
