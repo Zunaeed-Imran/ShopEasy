@@ -1,5 +1,5 @@
 # ShopEasy
-i will make a frontend and backend project. with laravel and react.
+i will make a Frontend and Backend project. with laravel and react.
 
 ### Laravel Project clone process
 - composer update
