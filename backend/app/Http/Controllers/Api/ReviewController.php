@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ReviewController extends Controller
 {
     // Store new Review
-    public function store()
+    public function store(Request $request)
     {
         $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
         if($exist){
@@ -65,7 +65,7 @@ class ReviewController extends Controller
     }
     // Delete a review
     public function delete(Request $request) {
-        $exist = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
+        $review = $this->checkIfUserAlreadyReviewedTheProduct($request->product_id, $request->user()->id);
         if($review){
             $review->delete();
             return response()->json([
