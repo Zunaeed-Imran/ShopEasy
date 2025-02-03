@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function orders()
     {
-        return $this->hasMany(Order::class)->with('product')->latest();
+        return $this->hasMany(Order::class)->with('products')->latest();
     }
 
     public function getImagePathAttribute()
