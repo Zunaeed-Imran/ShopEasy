@@ -83,7 +83,7 @@
                     </span>
                   @else  
                     <a href="{{route('admin.orders.update', $order->id)}}">
-                      <i class="fas fa-pencil mx-2"></i>
+                      <i class="fa-solid fa-pen-to-square mx-2"></i>
                     </a>
                   @endif
                 </td>
