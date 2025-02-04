@@ -57,7 +57,7 @@ export default function ReviewListItem({ review }) {
           toast.error(response.data.error);
           clearReview();
         } else {
-          product.review = product.reviews.filter(
+          product.reviews = product.reviews.filter(
             item => item.id !== review.id
           );
           toast.success(response.data.message);
@@ -91,9 +91,8 @@ export default function ReviewListItem({ review }) {
             size={24}
           />
           <span className="text-muted">
-            {
-              review?.created_at
-            } by <span className="fw-bold">
+            {review?.created_at} by {" "}
+            <span className="fw-bold">
               {review?.user?.name}
             </span>
           </span>
