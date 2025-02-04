@@ -26,8 +26,7 @@
                 <th scope="col">Approved</th>
                 <th scope="col">By</th>
                 <th scope="col">Product</th>
-                <th scope="col">Coupon</th>
-                {{-- <th scope="col">Created</th> --}}
+                <th scope="col">Created</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
