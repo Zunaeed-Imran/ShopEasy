@@ -38,7 +38,8 @@ export default function Reviews({product, setLoading}) {
       title: '',
       body: '',
       rating: 0,
-    });
+    })
+
     if (updating) {
       setUpdating(false)
     }
