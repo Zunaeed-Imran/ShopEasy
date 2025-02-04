@@ -141,7 +141,7 @@ export default function AddUpdateReview() {
                         onClick={() => clearReview()}
                     className="btn btn-danger btn-sm mx-2"
                     >
-                    Cancelf
+                    Cancel
                   </button>
                 </div>
                 )
