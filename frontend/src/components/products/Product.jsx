@@ -185,22 +185,24 @@ export default function Product() {
               </div>
             </div>
           </div>
-          {product?.reviews?.length > 0 && (
-            <div className="row my-4">
-              <div className="col-md-8 mx-auto">
-                <div className="card">
-                  <div className="card-header bg-white text-center">
-                    <h5 className="mt-2">
-                      Reviews ({product?.reviews?.length})
-                    </h5>
-                  </div>
-                  <div className="card-body">
-                    <Reviews product={product} setLoading={setLoading} />
+          {
+            product?.reviews?.length > 0 && (
+              <div className="row my-4">
+                <div className="col-md-8 mx-auto">
+                  <div className="card">
+                    <div className="card-header bg-white text-center">
+                      <h5 className="mt-2">
+                        Reviews ({product?.reviews?.length})
+                      </h5>
+                    </div>
+                    <div className="card-body">
+                      <Reviews product={product} setLoading={setLoading} />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )
+          }
         </>
       )}
     </div>
