@@ -47,7 +47,7 @@ export default function AddUpdateReview() {
         toast.error(response.data.error);
         setLoading(false);
       } else {
-        product.review = product.reviews.filter(item => item.id !== review.id);
+        product.reviews = product.reviews.filter(item => item.id !== review.id);
         toast.success(response.data.message);
         clearReview();
         setLoading(false);
@@ -69,7 +69,6 @@ export default function AddUpdateReview() {
           </div>
           <div className="card-body">
             <form
-              action=""
               method="post"
               className="mt-5"
               onSubmit={e => updating ? updateReview(e) : addReview(e)}
@@ -93,20 +92,21 @@ export default function AddUpdateReview() {
               </div>
               <div className="mb-3">
                 <label className="form-label">Review*</label>
-                <textarea
-                  name="body"
+                <input
+                  name="title"
                   value={review.body}
                   rows={30}
-                  id="body"
+                  id="title"
                   onChange={e =>
                     setReview({
                       ...review,
-                      body: e.target.value,
+                      title: e.target.value,
                     })
                   }
+                  required
                   className="form-control"
                   placeholder="Review"
-                ></textarea>
+                />
               </div>
               <div className="mb-3">
                 <Rating
