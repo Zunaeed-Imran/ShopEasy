@@ -92,21 +92,20 @@ export default function AddUpdateReview() {
               </div>
               <div className="mb-3">
                 <label className="form-label">Review*</label>
-                <input
-                  name="title"
+                <textarea
+                  name="body"
                   value={review.body}
-                  rows={30}
-                  id="title"
+                  rows={5}
+                  id="body"
                   onChange={e =>
                     setReview({
                       ...review,
-                      title: e.target.value,
+                      body: e.target.value,
                     })
                   }
-                  required
                   className="form-control"
                   placeholder="Review"
-                />
+                ></textarea>
               </div>
               <div className="mb-3">
                 <Rating
