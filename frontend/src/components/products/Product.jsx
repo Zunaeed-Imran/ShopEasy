@@ -191,7 +191,7 @@ export default function Product() {
                 <div className="card">
                   <div className="card-header bg-white text-center">
                     <h5 className="mt-2">
-                      Reviews ({product?.review?.length})
+                      Reviews ({product?.reviews?.length})
                     </h5>
                   </div>
                   <div className="card-body">
