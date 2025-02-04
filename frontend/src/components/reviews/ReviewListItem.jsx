@@ -109,5 +109,5 @@ export default function ReviewListItem({ review }) {
 
 // prop validation
 ReviewListItem.propTypes = {
-  review: PropTypes.string,
+  review: PropTypes.any,
 }
