@@ -142,7 +142,7 @@ export default function Product() {
                   <div className="mb-4">
                     <input
                       type="number"
-                      className="from-control"
+                      className="form-control"
                       placeholder="Qty"
                       value={qty}
                       onChange={e => setQty(e.target.value)}
