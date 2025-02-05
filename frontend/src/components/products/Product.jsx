@@ -74,7 +74,7 @@ export default function Product() {
               <div className="card-body">
                 <div className="d-flex justify-content-between">
                   <h5 className="text-dark">{product?.name}</h5>
-                  <h6 className="badge bg-danger p-2">${product?.price}</h6>
+                  <h6 className="badge bg-danger p-2">$ {product?.price}</h6>
                 </div>
                 {calculateReviewAverage() > 0 && (
                   <div className="d-flex align-items-center">
