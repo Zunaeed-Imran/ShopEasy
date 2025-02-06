@@ -15,7 +15,10 @@ export default function ProductListItem({product}) {
 
   return (
     <div className="col-md-4 md-3">
-      <Link to={`/product/${product.slug}`} className="text-decoration-none text-dark">
+      <Link
+        to={`/product/${product.slug}`}
+        className="text-decoration-none text-dark"
+      >
         <div className="card shadow-sm h-100">
           <img
             src={product.thumbnail}
@@ -28,15 +31,14 @@ export default function ProductListItem({product}) {
               <h6 className="badge bg-danger p-2">$ {product.price}</h6>
             </div>
             <div className="my-2">
-              {
-                calculateReviewAverage() > 0 && 
-              <Rating 
-              initialValue={calculateReviewAverage()}
-              readonly
-              size={24}
-              />
-              }
-              </div>
+              {calculateReviewAverage() > 0 && (
+                <Rating
+                  initialValue={calculateReviewAverage()}
+                  readonly
+                  size={24}
+                />
+              )}
+            </div>
             <div className="d-flex justify-content-between">
               <div className="d-flex justify-content-start align-items-center mb-3">
                 {
@@ -47,37 +49,31 @@ export default function ProductListItem({product}) {
                   >
                     <small>{size.name}</small>
                   </span>
-                  ))
-                }
+                ))}
               </div>
               <div>
                 {
                   product.status == 1 ? (
-                    <span className="badge bg-success p-2">
-                      In Stock
-                    </span>
+                  <span className="badge bg-success p-2">In Stock</span>
                 ) : (
-                      <span className="badge bg-danger p-2">
-                        Out of Stock
-                      </span>
+                  <span className="badge bg-danger p-2">Out of Stock</span>
                 )}
               </div>
-              <div className="d-flex justify-content-start align-items-center mb-3">
-                {
-                  product.colors?.map(color => (
-                  <div
-                    key={color.id}
-                    className="me-1 border border-light-subtle border-2"
-                    style={{
-                      backgroundColor: color.name.toLowerCase(),
-                      height: '20px',
-                      width: '20px'
-                    }}
-                  >
-                    
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="d-flex justify-content-start align-items-center mb-3">
+              {product.colors?.map(color => (
+                <div
+                  key={color.id}
+                  className="me-1 border border-light-subtle border-2"
+                  style={{
+                    backgroundColor: color.name.toLowerCase(),
+                    height: '20px',
+                    width: '20px',
+                  }}
+                >
+                </div>
+              ))
+              }
             </div>
           </div>
         </div>
