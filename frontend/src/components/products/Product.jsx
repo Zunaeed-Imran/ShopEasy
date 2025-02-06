@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { axiosRequest } from '../../helper/config';
 import Alert from '../layouts/Alert';
 import Spinner from '../layouts/Spinner';
+import { Parser } from 'html-to-react';
 import Slider from './images/Slider';
-import {Parser} from 'html-to-react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
 import Reviews from '../reviews/Reviews';
 import { Rating } from 'react-simple-star-rating';
+import { axiosRequest } from '../../helper/config';
 
 export default function Product() {
   const [product, setProduct] = useState([]);
@@ -18,7 +18,7 @@ export default function Product() {
   const [qty, setQty] = useState(1);
   const [error, setError] = useState('');
   const { slug } = useParams();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProductBySlug = async () => {
@@ -29,39 +29,40 @@ export default function Product() {
         setLoading(false);
       } catch (error) {
         if (error?.response?.status === 404) {
-          setError('The Product you are looking for does not exist.');
+          setError('The product you are looking for does not exist.');
         }
         console.log(error);
         setLoading(false);
       }
     };
     fetchProductBySlug();
-  }, [slug])
+  }, [slug]);
 
   const calculateReviewAverage = () => {
-    let average = product?.review?.reduce((acc, review) => {
-      return acc += review.rating / product.reviews.length
+    let average = product?.reviews?.reduce((acc, review) => {
+      return (acc += review.rating / product.reviews.length);
     }, 0);
-    return average > 0 ? average.toFixed(1) : 0
-  }
 
-  const makeUniqueId = (length) => {
-    let result = ''
-    const characters = 'ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    const charactersLength = characters.length
-    let counter = 0
+    return average > 0 ? average.toFixed(1) : 0;
+  };
+
+  const makeUniqueId = length => {
+    let result = '';
+    const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
     while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength))
-      counter += 1
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
     }
-    return result
-
-  }
+    return result;
+  };
 
   return (
-    <div>
+    <div className="card my-5">
       {error ? (
-        <Alert content={error} type={'danger'} />
+        <Alert content={error} type="danger" />
       ) : loading ? (
         <Spinner />
       ) : (
@@ -74,14 +75,14 @@ export default function Product() {
               <div className="card-body">
                 <div className="d-flex justify-content-between">
                   <h5 className="text-dark">{product?.name}</h5>
-                  <h6 className="badge bg-danger p-2">$ {product?.price}</h6>
+                  <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
                 {calculateReviewAverage() > 0 && (
                   <div className="d-flex align-items-center">
                     <span className="mx-1 text-muted">
                       <i>
-                        {product?.reviews.length} {''}
-                        {product?.reviews.length > 1 ? 'Reviews' : 'Review'}
+                        {product?.reviews?.length}{' '}
+                        {product?.reviews?.length > 1 ? 'Reviews' : 'Review'}
                       </i>
                     </span>
                     <Rating
@@ -101,7 +102,7 @@ export default function Product() {
                       onClick={() => setSelectedSize(size)}
                       style={{ cursor: 'pointer' }}
                       className={`bg-light text-dark me-2 p-1 fw-bold ${
-                        selectedSize?.id == size.id
+                        selectedSize?.id === size.id
                           ? 'border border-dark-subtle border-2'
                           : ''
                       }`}
@@ -117,25 +118,25 @@ export default function Product() {
                     <span className="badge bg-danger p-2">Out of Stock</span>
                   )}
                 </div>
-                <div className="d-flex justify-content-start align-items-center mb-3">
-                  {product.colors?.map(color => (
-                    <div
-                      key={color.id}
-                      onClick={() => setSelectedColor(color)}
-                      className={`me-1 ${
-                        selectedColor?.id == color.id
-                          ? 'border border-dark-subtle border-2'
-                          : ''
-                      }`}
-                      style={{
-                        backgroundColor: color.name.toLowerCase(),
-                        height: '20px',
-                        width: '20px',
-                        cursor: 'pointer',
-                      }}
-                    ></div>
-                  ))}
-                </div>
+              </div>
+              <div className="d-flex justify-content-start align-items-center mb-3">
+                {product.colors?.map(color => (
+                  <div
+                    key={color.id}
+                    onClick={() => setSelectedColor(color)}
+                    className={`me-1 ${
+                      selectedColor?.id === color.id
+                        ? 'border border-dark-subtle border-2'
+                        : ''
+                    }`}
+                    style={{
+                      backgroundColor: color.name.toLowerCase(),
+                      height: '20px',
+                      width: '20px',
+                      cursor: 'pointer',
+                    }}
+                  ></div>
+                ))}
               </div>
               <div className="row mt-5">
                 <div className="col-md-6 mx-auto">
@@ -155,7 +156,10 @@ export default function Product() {
                   <button
                     className="btn btn-dark"
                     disabled={
-                      !selectedColor || !selectedSize || product?.qty == 0 || product?.status == 0
+                      !selectedColor ||
+                      !selectedSize ||
+                      product?.qty == 0 ||
+                      product?.status == 0
                     }
                     onClick={() => {
                       dispatch(
@@ -178,31 +182,28 @@ export default function Product() {
                       setQty(1);
                     }}
                   >
-                    <i className="bi bi-cart-plus-fill"></i>
-                    Add To Cart
+                    <i className="bi bi-cart-plus-fill"></i> Add To Cart
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          {
-            product?.reviews?.length > 0 && (
-              <div className="row my-4">
-                <div className="col-md-8 mx-auto">
-                  <div className="card">
-                    <div className="card-header bg-white text-center">
-                      <h5 className="mt-2">
-                        Reviews ({product?.reviews?.length})
-                      </h5>
-                    </div>
-                    <div className="card-body">
-                      <Reviews product={product} setLoading={setLoading} />
-                    </div>
+          {product?.reviews?.length > 0 && (
+            <div className="row my-4">
+              <div className="col-md-8 mx-auto">
+                <div className="card">
+                  <div className="card-header bg-white text-center">
+                    <h5 className="mt-2">
+                      Reviews ({product?.reviews?.length})
+                    </h5>
+                  </div>
+                  <div className="card-body">
+                    <Reviews product={product} setLoading={setLoading} />
                   </div>
                 </div>
               </div>
-            )
-          }
+            </div>
+          )}
         </>
       )}
     </div>
