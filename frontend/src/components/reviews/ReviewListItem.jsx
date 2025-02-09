@@ -16,7 +16,7 @@ export default function ReviewListItem({ review }) {
     useContext(ReviewContext);
 
   const renderReviewActions = () => (
-    review?.user_id === user?.id &&
+    review?.user_id == user?.id &&
       <div className="dropdown ms-auto">
         <i className="bi bi-three-dots-vertical"
           data-bs-toggle="dropdown"></i>
