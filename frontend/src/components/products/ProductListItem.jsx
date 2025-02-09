@@ -7,14 +7,14 @@ export default function ProductListItem({product}) {
   // console.log(product);
 
   const calculateReviewAverage = () => {
-    let average = product?.review?.reduce((acc, review) => {
+    let average = product?.reviews?.reduce((acc, review) => {
       return (acc += review.rating / product.reviews.length);
     }, 0);
     return average > 0 ? average.toFixed(1) : 0;
   };
 
   return (
-    <div className="col-md-4 md-3">
+    <div className="col-md-4 mb-3">
       <Link
         to={`/product/${product.slug}`}
         className="text-decoration-none text-dark"
