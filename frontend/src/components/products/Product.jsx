@@ -81,7 +81,7 @@ export default function Product() {
                   <div className="d-flex align-items-center">
                     <span className="mx-1 text-muted">
                       <i>
-                        {product?.reviews?.length}{' '}
+                        {product?.reviews?.length}{" "}
                         {product?.reviews?.length > 1 ? 'Reviews' : 'Review'}
                       </i>
                     </span>
@@ -188,7 +188,7 @@ export default function Product() {
               </div>
             </div>
           </div>
-          {product?.reviews?.length > 0 && (
+          {
             <div className="row my-4">
               <div className="col-md-8 mx-auto">
                 <div className="card">
@@ -203,7 +203,7 @@ export default function Product() {
                 </div>
               </div>
             </div>
-          )}
+          }
         </>
       )}
     </div>
