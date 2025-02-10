@@ -219,3 +219,5 @@ i will make a Frontend and Backend project. with laravel and react.
 - set condation if product havn't any review won't show any review star.
 - set condation if product has not any review in all products item won't how star if have will show the review star.
 - set condation in review if user don't have the product can't review the product.
+
+### Enhancement list from group meeting.
