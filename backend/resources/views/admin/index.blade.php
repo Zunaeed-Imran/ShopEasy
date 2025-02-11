@@ -30,9 +30,7 @@
     </div>
 </div>
   <div class="card-footer text-center bg-white">
-    <strong class="badge bg-dark">
       Total Revenue Today's: 
-    </strong>
     <strong>
       ${{$todayOrders->sum('total')}}
     </strong>
@@ -53,9 +51,7 @@
         </div>
     </div>
     <div class="card-footer text-center bg-white">
-      <strong class="badge bg-dark">
         Total Revenue Yesterday's: 
-      </strong>
       <strong>
         ${{$yesterdayOrders->sum('total')}}
       </strong>
@@ -76,9 +72,7 @@
         </div>
     </div>
     <div class="card-footer text-center bg-white">
-      <strong class="badge bg-dark">
         Total Revenue This Month: 
-      </strong>
       <strong>
         ${{ $monthOrders->sum('total')}}
       </strong>
@@ -99,9 +93,7 @@
         </div>
     </div>
     <div class="card-footer text-center bg-white">
-      <strong class="badge bg-dark">
         Total Revenue This Year: 
-      </strong>
       <strong>
         ${{ $yearOrders->sum('total')}}
       </strong>
