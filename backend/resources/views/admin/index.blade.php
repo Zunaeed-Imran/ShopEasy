@@ -10,7 +10,7 @@
 <div class="col-md-9">
   <div class="row mt-2">
     <div class="col-md-12">
-      <div class="card-header bg-white text-center">
+      <div class="card-header bg-white text-center py-3">
         <h1 class="mt-2">ADMIN DASHBOARD</h1>
         <hr>
       </div>
