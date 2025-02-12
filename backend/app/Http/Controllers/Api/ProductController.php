@@ -45,6 +45,47 @@ class ProductController extends Controller
                 'sizes' => Size::has('products')->get(),
             ]);
     }
+    // filter product for price.
+    public function filterProducts(Request $request)
+    {
+        $query = Product::query();
+
+        if ($request->has('color') && !empty($request->color)) {
+            $query->whereHas('colors', function ($q) use ($request) {
+                $q->where('colors.id', $request->color);  // Ensure the column name is correct
+            });
+        }
+
+        if ($request->has('size') && !empty($request->size)
+        ) {
+            $query->whereHas('sizes', function ($q) use ($request) {
+                $q->where('sizes.id', $request->size);
+            });
+        }
+
+        if ($request->has('searchTerm') && !empty($request->searchTerm)) {
+            $query->where('name', 'LIKE', '%' . $request->searchTerm . '%');
+        }
+
+        if ($request->has('min_price') && $request->min_price) {
+            $query->where('price', '>=', $request->min_price);
+        }
+
+        if ($request->has('max_price') && $request->max_price) {
+            $query->where('price', '<=', $request->max_price);
+        }
+
+        $products = $query->with(['colors', 'sizes', 'reviews'])->latest()->get();
+
+        return ProductResource::collection($products)->additional([
+            'colors' => Color::has('products')->get(),
+            'sizes' => Size::has('products')->get(),
+        ]);
+    }
+
+
+
+
     // search for products by terms
     public function findProductsByTerm($searchTerm)
     {

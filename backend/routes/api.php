@@ -38,6 +38,8 @@ Route::get('products/{color}/color', [ProductController::class, 'filterProductsB
 Route::get('products/{size}/size', [ProductController::class, 'filterProductsBySize']);
 Route::get('products/{searchTerm}/find', [ProductController::class, 'findProductsByTerm']);
 Route::get('product/{product}/show', [ProductController::class, 'show']);
+Route::get('/products/filter', [ProductController::class, 'filterProducts']);
+
 
 // User routes
 Route::post('user/register', [UserController::class, 'store']);
