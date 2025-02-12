@@ -221,8 +221,6 @@ i will make a Frontend and Backend project. with laravel and react.
 - set condation in review if user don't have the product can't review the product.
 
 ### Enhancement list from group meeting.
-- order money title in dashboard page
-- order confirm button styled need to change.
 - price range filter option for product.
 - catagory filter option for product.
 - multiple admin for project backend(will think about it).
