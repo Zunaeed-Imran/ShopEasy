@@ -10,7 +10,7 @@
   <div class="col-md-9">
     <div class="row mt-2">
       <div class="col-md-12">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="py-3 card-header bg-white d-flex justify-content-between align-items-center">
           <h1 class="mt-2">Orders ({{$orders->count()}})</h1>
         </div>
         <hr>

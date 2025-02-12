@@ -10,7 +10,7 @@
   <div class="col-md-9">
     <div class="row mt-2">
       <div class="col-md-12">
-        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <div class="py-3 card-header bg-white d-flex justify-content-between align-items-center">
           <h1 class="mt-2">Coupons ({{$coupons->count()}})</h1>
           <a href="{{route('admin.coupons.create')}}" class="btn btn-sm btn-primary">
             <i class="fas fa-plus"></i>
