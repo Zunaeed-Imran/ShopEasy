@@ -59,18 +59,24 @@ export default function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/' && 'active'}`} aria-current="page" to={'/'}>
+          <ul className="navbar-nav mx-auto flex gap-3">
+            <li className="nav-item border border-black rounded">
+              <Link
+                className={`nav-link ${location.pathname === '/' && 'active'}`}
+                aria-current="page"
+                to={'/'}
+              >
                 <i className="bi bi-house"></i>
                 Home
               </Link>
             </li>
-            {isLoggedIn ? 
+            {isLoggedIn ? (
               <>
-                <li className="nav-item">
+                <li className="nav-item border border-black rounded">
                   <Link
-                    className={`nav-link ${location.pathname === '/profile' && 'active'}`}
+                    className={`nav-link ${
+                      location.pathname === '/profile' && 'active'
+                    }`}
                     aria-current="page"
                     to={'/profile'}
                   >
@@ -78,7 +84,7 @@ export default function Header() {
                     {user?.name}
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item border border-black rounded">
                   <Link
                     className="nav-link"
                     aria-current="page"
@@ -90,11 +96,13 @@ export default function Header() {
                   </Link>
                 </li>
               </>
-             : 
+            ) : (
               <>
-                <li className="nav-item">
+                <li className="nav-item border border-black rounded">
                   <Link
-                    className={`nav-link ${location.pathname === '/register' && 'active'}`}
+                    className={`nav-link ${
+                      location.pathname === '/register' && 'active'
+                    }`}
                     aria-current="page"
                     to={'/register'}
                   >
@@ -102,9 +110,11 @@ export default function Header() {
                     Register
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item border border-black rounded">
                   <Link
-                    className={`nav-link ${location.pathname === '/login' && 'active'}`}
+                    className={`nav-link ${
+                      location.pathname === '/login' && 'active'
+                    }`}
                     aria-current="page"
                     to={'/login'}
                   >
@@ -113,11 +123,14 @@ export default function Header() {
                   </Link>
                 </li>
               </>
-            }
-            <li className="nav-item">
+            )}
+            <li className="nav-item border border-black rounded">
               <Link
-                className={`nav-link ${location.pathname === '/cart' && 'active'}`}
-                to={'/cart'}>
+                className={`nav-link ${
+                  location.pathname === '/cart' && 'active'
+                }`}
+                to={'/cart'}
+              >
                 <i className="bi bi-bag"></i>
                 Cart ({cartItems.length})
               </Link>
