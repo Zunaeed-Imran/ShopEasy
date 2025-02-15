@@ -7,6 +7,7 @@ i will make a Frontend and Backend project. with laravel and react.
 - setup the myql with .env file
 - php artisan migrate
 - php artisan db:seed
+- if not working showing application key error `php artisan key:generate`
 
 ## project setup process with Laravel backend.
 - `composer create-project laravel/laravel your-project-name`
