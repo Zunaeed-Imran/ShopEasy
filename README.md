@@ -223,13 +223,8 @@ i will make a Frontend and Backend project. with laravel and react.
 
 ### Enhancement list from group meeting.
 - multiple admin for project backend(will think about it).
+- need to add popup button for order confirm also need to change button style pending.
+- price filter need to prevent (-minus value)
 
 ##### Work done list for the week.
-- admin dashboard style nehanced.
-- order confirm button style enahnced.
-- enhance style of color, size, coupon, product, order, review.
-- set price range filter option setup.
-- enhanced user navbar.
-- have some error of single product view and fix it.
-- watching some basic tutorials about docker also some document react about docker.
 - 
