@@ -223,3 +223,13 @@ i will make a Frontend and Backend project. with laravel and react.
 
 ### Enhancement list from group meeting.
 - multiple admin for project backend(will think about it).
+
+##### Work done list for the week.
+- admin dashboard style nehanced.
+- order confirm button style enahnced.
+- enhance style of color, size, coupon, product, order, review.
+- set price range filter option setup.
+- enhanced user navbar.
+- have some error of single product view and fix it.
+- watching some basic tutorials about docker also some document react about docker.
+- 
