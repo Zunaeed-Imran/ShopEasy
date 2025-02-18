@@ -70,7 +70,7 @@ export default function Home() {
                   className="form-select"
                   value={selectedColor}
                   onChange={e => setSelectedColor(e.target.value)}
-                  disabled={selectedSize || searchTerm}
+                  // disabled={selectedSize || searchTerm}
                 >
                   <option value="">All Colors</option>
                   {colors.map(color => (
@@ -88,7 +88,7 @@ export default function Home() {
                   className="form-select"
                   value={selectedSize}
                   onChange={e => setSelectedSize(e.target.value)}
-                  disabled={selectedColor || searchTerm}
+                  // disabled={selectedColor || searchTerm}
                 >
                   <option value="">All Sizes</option>
                   {sizes.map(size => (
@@ -108,7 +108,7 @@ export default function Home() {
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
                   placeholder="Search"
-                  disabled={selectedColor || selectedSize}
+                  // disabled={selectedColor || selectedSize}
                 />
               </div>
 
