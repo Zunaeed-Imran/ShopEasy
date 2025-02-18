@@ -126,6 +126,23 @@
             });
         }
     </script>
+    <script>
+        function confirmOrder(id) {
+            Swal.fire({
+                title: 'Confirm Order?',
+                text: "This will mark the order as confirmed!",
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#28a745',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Confirm it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('confirm-' + id).submit();
+                }
+            });
+        }
+    </script>
     <script src="{{asset('js/colors.js')}}"></script>
     <script>
       function readUrl(input, image){

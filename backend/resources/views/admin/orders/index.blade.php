@@ -54,11 +54,13 @@
                       {{$order->qty}}
                   </div>
                 </td>
+                {{-- total price --}}
                 <td scope="col">
                   <div class="d-flex flex-column">
                       {{$order->total}}
                   </div>
                 </td>
+                {{-- coupon title --}}
                 <td scope="col">
                   @if($order->coupon()->exists())
                     <span class="badge bg-success">
@@ -70,13 +72,16 @@
                     </span>
                   @endif
                 </td>
+                {{-- order owner name --}}
                 <td scope="col">
                       {{$order->user->name}}
                 </td>
+                {{-- created at time show --}}
                 <td scope="col">
                   {{ $order->created_at }}
                 </td>
-                <td scope="col">
+                {{-- order confirm button --}}
+                {{-- <td scope="col">
                   @if($order->delivered_at)
                     <span class="badge bg-success">
                       {{ \Carbon\Carbon::parse($order->delivered_at)->diffForHumans() }}
@@ -86,7 +91,23 @@
                       <i class="fa-solid fa-spinner fa-spin mx-2"></i>
                     </a>
                   @endif
-                </td>
+                </td> --}}
+              <td scope="col">
+                @if($order->delivered_at)
+                  <span class="badge bg-success">
+                    {{ \Carbon\Carbon::parse($order->delivered_at)->diffForHumans() }}
+                  </span>
+                @else  
+                  <a href="#" onclick="confirmOrder({{$order->id}})" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-check mx-2"></i> Confirm Order
+                  </a>
+                  <form id="confirm-{{$order->id}}" action="{{ route('admin.orders.update', $order->id) }}" method="post">
+                    @csrf
+                    @method('PATCH')
+                  </form>
+                @endif
+              </td>
+              {{-- Delete order button --}}
                 <td>
                   <a href="#" onclick="deleteItem({{$order->id}})" class="btn btn-sm btn-danger">
                     <i class="fas fa-trash"></i>
