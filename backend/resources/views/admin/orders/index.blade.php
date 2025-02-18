@@ -102,7 +102,7 @@
                   </span>
                 @else  
                   <a href="#" onclick="confirmOrder({{$order->id}})" class="btn btn-sm btn-primary">
-                    <i class="fa-solid fa-check mx-2"></i> Confirm Order
+                    <i class="fa-solid fa-spinner fa-spin mx-2"></i>
                   </a>
                   <form id="confirm-{{$order->id}}" action="{{ route('admin.orders.update', $order->id) }}" method="post">
                     @csrf
