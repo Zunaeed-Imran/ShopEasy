@@ -117,6 +117,7 @@ export default function Home() {
                 <span className="fw-bold">Min Price:</span>
                 <input
                   type="number"
+                  min={0}
                   className="form-control"
                   placeholder="Min Price"
                   value={minPrice}
@@ -129,6 +130,7 @@ export default function Home() {
                 <span className="fw-bold">Max Price:</span>
                 <input
                   type="number"
+                  min={0}
                   className="form-control"
                   placeholder="Max Price"
                   value={maxPrice}
