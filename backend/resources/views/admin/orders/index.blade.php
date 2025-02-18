@@ -35,6 +35,7 @@
               @foreach ($orders as $key => $order)
               <tr>
                 <td scope="row">{{$key += 1}}</td>
+                {{-- name of the product --}}
                 <td scope="col">
                   <div class="d-flex flex-column">
                     @foreach($order->products as $product)
@@ -42,6 +43,7 @@
                     @endforeach
                   </div>
                 </td>
+                {{-- single product price --}}
                 <td scope="col">
                   <div class="d-flex flex-column">
                     @foreach($order->products as $product)
@@ -49,6 +51,7 @@
                     @endforeach
                   </div>
                 </td>
+                {{-- product quentity --}}
                 <td scope="col">
                   <div class="d-flex flex-column">
                       {{$order->qty}}
