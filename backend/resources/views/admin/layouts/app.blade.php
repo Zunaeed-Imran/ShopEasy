@@ -138,7 +138,7 @@
                 confirmButtonText: 'Yes, Confirm it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById('confirm-' + id).submit();
+                    document.getElementById(id).submit();
                 }
             });
         }

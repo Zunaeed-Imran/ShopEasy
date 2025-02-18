@@ -104,9 +104,9 @@
                   <a href="#" onclick="confirmOrder({{$order->id}})" class="btn btn-sm btn-primary">
                     <i class="fa-solid fa-spinner fa-spin mx-2"></i>
                   </a>
-                  <form id="confirm-{{$order->id}}" action="{{ route('admin.orders.update', $order->id) }}" method="post">
+                  <form id="{$order->id}" action="{{ route('admin.orders.update', $order->id) }}" method="post">
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                   </form>
                 @endif
               </td>
