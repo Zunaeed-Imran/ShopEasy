@@ -225,4 +225,17 @@ i will make a Frontend and Backend project. with laravel and react.
 - multiple admin for project backend(will think about it).
 
 ##### Work done list for the week.
+- watch some basic docker tutorial and document.
+- change the styled of the delivered button.
+- confirm button pop-up setting.
+- have some error while pop up button set-up and fix it.
+- prevent price range filter (-1) cannot be less than zero.
+- all filter can work together all at once.
+- material UI basic tutorial and document.
+- practice basic programming function loop condation etc.
+- new product for admin showing.
+- also got some error on it and fix it.
+- new product showing on front-end react for the user.
+- show single product show new product too.
+- make gitLab account and familiar with it.
 - 
