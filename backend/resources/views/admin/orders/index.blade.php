@@ -83,8 +83,8 @@
                 <td scope="col">
                   {{ $order->created_at }}
                 </td>
-                order confirm button but have issue if accepted the button
-                <td scope="col">
+                {{-- order confirm button --}}
+                {{-- <td scope="col">
                   @if($order->delivered_at)
                     <span class="badge bg-success">
                       {{ \Carbon\Carbon::parse($order->delivered_at)->diffForHumans() }}
@@ -94,7 +94,7 @@
                       <i class="fa-solid fa-spinner fa-spin mx-2"></i>
                     </a>
                   @endif
-                </td>
+                </td> --}}
               <td scope="col">
                 @if($order->delivered_at)
                   <span class="badge bg-success">
