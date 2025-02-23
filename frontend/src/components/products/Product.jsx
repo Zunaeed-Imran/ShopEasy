@@ -77,11 +77,14 @@ export default function Product() {
                   <h5 className="text-dark">{product?.name}</h5>
                   <h6 className="badge bg-danger p-2">${product?.price}</h6>
                 </div>
+                {product.is_new && (
+                  <span className="badge bg-primary p-2">New</span>
+                )}
                 {calculateReviewAverage() > 0 && (
                   <div className="d-flex align-items-center">
                     <span className="mx-1 text-muted">
                       <i>
-                        {product?.reviews?.length}{" "}
+                        {product?.reviews?.length}{' '}
                         {product?.reviews?.length > 1 ? 'Reviews' : 'Review'}
                       </i>
                     </span>

@@ -29,6 +29,7 @@ class ProductResource extends JsonResource
             'first_image' => $this->first_image ? asset($this->first_image) : null,
             'second_image' => $this->second_image ? asset($this->second_image) : null,
             'third_image' => $this->third_image ? asset($this->third_image) : null,
+            'is_new' => $this->isNew(), // Add this line for new product show.
             'id' => $this->id,
         ];
     }
