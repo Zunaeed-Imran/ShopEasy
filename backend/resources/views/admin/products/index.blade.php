@@ -37,7 +37,13 @@
               @foreach ($products as $key => $product)
               <tr>
                 <th scope="row">{{$key += 1}}</th>
-                <td>{{$product->name}}</td>
+                {{-- <td>{{$product->name}}</td> --}}
+                <td>
+                    {{$product->name}}
+                    @if ($product->isNew())
+                        <span class="badge bg-info">New</span>
+                    @endif
+                </td>
                 <td>
                   @foreach ($product->colors as $color)
                       <span class="badge bg-light text-dark">
